@@ -76,6 +76,13 @@ namespace tracking_example
             
         }
 
+        async Task listenForNewData()
+        {
+            //Subscribe to receive new data
+            var messaging = new Messaging(userApi, userId);
+            await messaging.start();
+        }
+
         static void Main(string[] args)
         {
             var example = new Program();
@@ -86,6 +93,9 @@ namespace tracking_example
             example.getDevices();
             example.printLastLocations();
 
+            var wait = example.listenForNewData();
+            while (!wait.IsCompleted) ;
+            
         }
     }
 }
