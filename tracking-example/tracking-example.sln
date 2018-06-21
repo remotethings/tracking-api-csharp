@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tracking-example", "tracking-example.csproj", "{0FB6965C-CACB-46E7-9BCF-5606621784C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO.Swagger", "..\lib\src\IO.Swagger\IO.Swagger.csproj", "{7B80677E-1985-4054-BE1E-5CEF22A106C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FB6965C-CACB-46E7-9BCF-5606621784C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FB6965C-CACB-46E7-9BCF-5606621784C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FB6965C-CACB-46E7-9BCF-5606621784C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FB6965C-CACB-46E7-9BCF-5606621784C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B80677E-1985-4054-BE1E-5CEF22A106C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B80677E-1985-4054-BE1E-5CEF22A106C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B80677E-1985-4054-BE1E-5CEF22A106C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B80677E-1985-4054-BE1E-5CEF22A106C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
