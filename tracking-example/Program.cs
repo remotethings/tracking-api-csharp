@@ -74,6 +74,8 @@ namespace tracking_example
                 var points = this.deviceApi.DevicePrototypeGetPoints(device.Id, jsonFilter);
                 foreach(var point in points)
                 {
+                    if(point.Location == null) continue;
+                    if (point.Address == null) point.Address = "";
                     Debug.Print("Point for device {0}: {1},{2} at {3}, {4}", device.Id, point.Location.Lat, point.Location.Lng, point.Timestamp.ToString(), point.Address);
                 }
             }

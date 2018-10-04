@@ -49,9 +49,9 @@ namespace tracking_example
             {
                 "users/" + userId + "/devices/+/datapoints",
                 "users/" + userId + "/devices/+/readings",
-                "users/" + userId + "/devices/+/notifications",
+                "users/" + userId + "/devices/+/notifications"
             };
-            client.Subscribe(topics, new byte[] { 2, 2 });
+            client.Subscribe(topics, new byte[] { 2, 2, 2 });
             client.MqttMsgSubscribed += Client_MqttMsgSubscribed;
             client.MqttMsgPublishReceived += ProcessNewMessage;
 
@@ -149,14 +149,14 @@ namespace tracking_example
                 dynamic notification = JObject.Parse(message);
                 if ("geofence".Equals(notification.trigger.type))
                 {
-                    Debug.Print("Received new geofence notification ({0}) for device {1}", notification.trigger.name, deviceId);
+                    Debug.Print("Received new geofence notification ({0}) for device {1}", (string)notification.trigger.name, deviceId);
 
-                }            
+                }
 
             }
             catch (Exception e)
             {
-                Debug.Print("Invalid sensor message received: {0}", e.Message);
+                Debug.Print("Invalid notification message received: {0}", e.Message);
             }
         }
 
