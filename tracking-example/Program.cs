@@ -32,6 +32,10 @@ namespace tracking_example
                 this.authToken = token.Id;
                 this.userApi.Configuration.AddDefaultHeader("Authorization", token.Id);
                 this.deviceApi.Configuration.AddDefaultHeader("Authorization", token.Id);
+
+                //var notif = new NotificationTrigger();
+                //notif.Delivery = new Dictionary<string, bool>() { { "mqtt", true } };
+
             } 
             catch(Exception e)
             {

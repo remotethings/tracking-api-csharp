@@ -10,6 +10,7 @@ using System.Web.Script.Serialization;
 using IO.Swagger.Model;
 using IO.Swagger.Api;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace tracking_example
 {
@@ -47,7 +48,8 @@ namespace tracking_example
             var topics = new string[]
             {
                 "users/" + userId + "/devices/+/datapoints",
-                "users/" + userId + "/devices/+/readings"
+                "users/" + userId + "/devices/+/readings",
+                "users/" + userId + "/devices/+/notifications",
             };
             client.Subscribe(topics, new byte[] { 2, 2 });
             client.MqttMsgSubscribed += Client_MqttMsgSubscribed;
@@ -86,6 +88,10 @@ namespace tracking_example
             {
                 this.processNewSensorReading(deviceId, msg);
             }
+            else if (messageType.Equals("notifications"))
+            {
+                this.processNewNotification(deviceId, msg);
+            }
         }
 
         private void Client_MqttMsgSubscribed(object sender, MqttMsgSubscribedEventArgs e)
@@ -110,6 +116,43 @@ namespace tracking_example
                 }
                 */
                 
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Invalid sensor message received: {0}", e.Message);
+            }
+        }
+
+        private void processNewNotification(string deviceId, string message)
+        {
+            try
+            {
+                // Object incoming
+                /*
+                {
+                    timestamp: timestamp (notification creation time),
+                    params: Object (notificationTrigger params) ,
+                    trigger: {
+                        name: string (notificationTrigger name),
+                        id: int (notificationTrigger id),
+                        type: string (notificationTrigger type)
+                    },
+                    point: DataPoint,
+                    device: {
+                        id: int (device id),
+                        name: string (device name),
+                        serial: string (device serial number)
+                    }
+                }
+                */
+                Debug.Print("Incoming notification: {0}", message);
+                dynamic notification = JObject.Parse(message);
+                if ("geofence".Equals(notification.trigger.type))
+                {
+                    Debug.Print("Received new geofence notification ({0}) for device {1}", notification.trigger.name, deviceId);
+
+                }            
+
             }
             catch (Exception e)
             {
