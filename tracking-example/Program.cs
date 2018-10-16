@@ -9,7 +9,7 @@ using IO.Swagger.Api;
 using IO.Swagger.Client;
 using IO.Swagger.Model;
 using System.Web.Script.Serialization;
-
+using System.Dynamic;
 
 namespace tracking_example
 {
@@ -32,16 +32,62 @@ namespace tracking_example
                 this.authToken = token.Id;
                 this.userApi.Configuration.AddDefaultHeader("Authorization", token.Id);
                 this.deviceApi.Configuration.AddDefaultHeader("Authorization", token.Id);
-
-                //var notif = new NotificationTrigger();
-                //notif.Delivery = new Dictionary<string, bool>() { { "mqtt", true } };
-
             } 
             catch(Exception e)
             {
                 Debug.Print("Failed to login, please check credentials");
             }
 
+        }
+
+        Geofence createGeofence()
+        {
+            Geofence geofence = new Geofence();
+            geofence.Name = "Zone Test 2";
+            geofence.Type = "reporting"; // "reporting" = yellow, "safe" = green, "prohibited" = red when drawn on map
+            geofence.Outline = new List<object>();
+            GeoPoint geoPoint = new GeoPoint();
+            geoPoint.Lat = Convert.ToDecimal(-18.0);
+            geoPoint.Lng = Convert.ToDecimal(120.4);
+            geofence.Outline.Add(geoPoint);
+            geoPoint = new GeoPoint();
+            geoPoint.Lat = Convert.ToDecimal(-20.3);
+            geoPoint.Lng = Convert.ToDecimal(160.0);
+            geofence.Outline.Add(geoPoint);
+            geoPoint = new GeoPoint();
+            geoPoint.Lat = Convert.ToDecimal(-32.5);
+            geoPoint.Lng = Convert.ToDecimal(140.0);
+            geofence.Outline.Add(geoPoint);
+
+            return this.userApi.UserPrototypeCreateGeofences(this.userId, geofence);            
+        }
+
+        NotificationTrigger createGeofenceAlert(Decimal deviceId)
+        {
+
+            var fence = createGeofence();
+
+            dynamic parameters = new ExpandoObject();
+            parameters.zoneId = fence.Id;
+            parameters.zoneType = "inside"; // can be "inside", "outside" or "cross"
+            // Optional
+
+            // If delivery.email = true, use the following to send email to address other than username
+            // parameters.email = "example@gmail.com"
+
+            // If delivery.http = true, use the following to define the endpoint
+            // parameters.endpoint = "https://example.com/myalertreceiver"
+
+            var notif = new NotificationTrigger(            
+                Name: "geofence alert test",
+                Type: "geofence",
+                MuteFor: 0, // disable rate limit
+                Delivery: new Dictionary<string, bool>() { { "mqtt", true } },
+                UserId: Decimal.Parse(this.userId),
+                Parameters: parameters
+            );            
+
+            return this.deviceApi.DevicePrototypeCreateNotificationTriggers(deviceId, notif);
         }
         
         void getDevices()
@@ -95,6 +141,10 @@ namespace tracking_example
             example.login();
 
             if (example.authToken == null) return;
+
+            var notif = example.createGeofenceAlert(123); // todo: change device id
+            if (notif != null && notif.Id != null) Debug.Print("Created alert {0} with id {1}", notif.Name, notif.Id);
+            else Debug.Print("Failed to created alert");
 
             example.getDevices();
             example.printLastLocations();
