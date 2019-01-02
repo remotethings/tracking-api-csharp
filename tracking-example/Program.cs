@@ -89,7 +89,63 @@ namespace tracking_example
 
             return this.deviceApi.DevicePrototypeCreateNotificationTriggers(deviceId, notif);
         }
-        
+
+
+        // Setup forwarding of datapoints to SQS for all devices on account
+        // You will need to have setup an SQS queue on your account with the following Policy Document:
+        // NOTE: replace  "arn:aws:sqs:us-east-2:829297355604:test_lb" with your queue ARN
+        // {
+        //     "Version": "2012-10-17",
+        //     "Id": "AllowLightbugPush",
+        //     "Statement": [
+        //      {
+        //         "Sid": "AllowLightbugPush001",
+        //         "Effect": "Allow",
+        //         "Principal": "*",
+        //         "Action": "sqs:SendMessage",
+        //         "Resource": "arn:aws:sqs:us-east-2:829297355604:test_lb",
+        //         "Condition": {
+        //             "ArnEquals": {
+        //                 "aws:SourceArn": "arn:aws:sns:*:367158939173:*"
+        //             }
+        //         }
+        //      }
+        //     ]
+        // }
+        //
+        // Based on information available https://docs.aws.amazon.com/sns/latest/dg/SendMessageToSQS.cross.account.html
+        // Once you have run this script, you will need to wait for "SubscriptionConfirmation" message and
+        // visit the SubscribeURL to confirm subscription, as detailed int the above link under *To confirm a subscription using the Amazon SQS console*
+        NotificationTrigger setupSqsPush(Decimal deviceId)
+        {
+
+            var triggers = this.deviceApi.DevicePrototypeGetNotificationTriggers(deviceId);
+            for(var i=0; i< triggers.Count; i++)
+            {
+                if (triggers[i].Name == "PushSQS")
+                {
+                    Debug.Print("Push already setup for device {0}", deviceId);
+                    return triggers[i];
+                }
+            }
+
+            //Not found, create
+            dynamic parameters = new ExpandoObject();
+            parameters.sqsArn = "arn:aws:sqs:us-east-2:829297355604:test_lb"; // TODO change to your ARN
+
+            var notif = new NotificationTrigger(
+                Name: "PushSQS",
+                Type: "newLoc",
+                MuteFor: 0, // disable rate limit
+                Delivery: new Dictionary<string, bool>() { { "sqs", true } },
+                UserId: Decimal.Parse(this.userId),
+                Parameters: parameters
+            );
+
+            Debug.Print("Setting up push for device {0}", deviceId);
+            return this.deviceApi.DevicePrototypeCreateNotificationTriggers(deviceId, notif);
+        }
+
         void getDevices()
         {
             this.devices = this.userApi.UserPrototypeGetDevices(this.userId);
@@ -142,16 +198,24 @@ namespace tracking_example
 
             if (example.authToken == null) return;
 
-            var notif = example.createGeofenceAlert(123); // todo: change device id
-            if (notif != null && notif.Id != null) Debug.Print("Created alert {0} with id {1}", notif.Name, notif.Id);
-            else Debug.Print("Failed to created alert");
+            //var notif = example.createGeofenceAlert(123); // todo: change device id
+            //if (notif != null && notif.Id != null) Debug.Print("Created alert {0} with id {1}", notif.Name, notif.Id);
+            //else Debug.Print("Failed to created alert");
+
 
             example.getDevices();
+
+            //setup SQS push:
+            //example.devices.ForEach(d => {
+            //    if (d.Id != null) example.setupSqsPush((decimal)d.Id);
+            //});
+
+
             example.printLastLocations();
 
             var wait = example.listenForNewData();
             while (!wait.IsCompleted) ;
-            
+
         }
     }
 }
