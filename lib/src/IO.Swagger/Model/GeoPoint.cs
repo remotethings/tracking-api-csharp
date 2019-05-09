@@ -33,12 +33,12 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GeoPoint" /> class.
         /// </summary>
-        /// <param name="Lat">Lat.</param>
-        /// <param name="Lng">Lng.</param>
-        public GeoPoint(decimal? Lat = default(decimal?), decimal? Lng = default(decimal?))
+        /// <param name="lat">lat.</param>
+        /// <param name="lng">lng.</param>
+        public GeoPoint(decimal? lat = default(decimal?), decimal? lng = default(decimal?))
         {
-            this.Lat = Lat;
-            this.Lng = Lng;
+            this.Lat = lat;
+            this.Lng = lng;
         }
         
         /// <summary>
@@ -71,7 +71,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

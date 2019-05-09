@@ -79,16 +79,22 @@ namespace tracking_example
             // parameters.endpoint = "https://example.com/myalertreceiver"
 
             var notif = new NotificationTrigger(            
-                Name: "geofence alert test",
-                Type: "geofence",
-                MuteFor: 0, // disable rate limit
-                Delivery: new Dictionary<string, bool>() { { "mqtt", true } },
-                UserId: Decimal.Parse(this.userId),
-                Parameters: parameters
+                name: "geofence alert test",
+                type: "geofence",
+                muteFor: 0, // disable rate limit
+                delivery: new Dictionary<string, bool>() { { "mqtt", true } },
+                userId: Decimal.Parse(this.userId),
+                parameters: parameters
             );            
 
             return this.deviceApi.DevicePrototypeCreateNotificationTriggers(deviceId, notif);
         }
+
+        void enterFlightMode(Decimal deviceId, UInt16 minutes)
+        {
+            this.deviceApi.DevicePrototypeFlightMode(deviceId, (decimal)minutes);
+        }
+
 
 
         // Setup forwarding of datapoints to SQS for all devices on account
@@ -134,12 +140,12 @@ namespace tracking_example
             parameters.sqsArn = "arn:aws:sqs:us-east-2:829297355604:test_lb"; // TODO change to your ARN
 
             var notif = new NotificationTrigger(
-                Name: "PushSQS",
-                Type: "newLoc",
-                MuteFor: 0, // disable rate limit
-                Delivery: new Dictionary<string, bool>() { { "sqs", true } },
-                UserId: Decimal.Parse(this.userId),
-                Parameters: parameters
+                name: "PushSQS",
+                type: "newLoc",
+                muteFor: 0, // disable rate limit
+                delivery: new Dictionary<string, bool>() { { "sqs", true } },
+                userId: Decimal.Parse(this.userId),
+                parameters: parameters
             );
 
             Debug.Print("Setting up push for device {0}", deviceId);
@@ -209,6 +215,10 @@ namespace tracking_example
             //example.devices.ForEach(d => {
             //    if (d.Id != null) example.setupSqsPush((decimal)d.Id);
             //});
+
+            // send Device into flightMode for 1 day
+            //example.enterFlightMode(deviceId, 60 * 24);
+
 
 
             example.printLastLocations();

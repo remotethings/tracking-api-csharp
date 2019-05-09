@@ -38,132 +38,134 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DeviceConfig" /> class.
         /// </summary>
-        /// <param name="CurrentFW">Current Firmware version.</param>
-        /// <param name="OtaFW">Pending Firmware version. If non null, the unit will be told to upgrade to this version when it next transmits in sleep mode..</param>
-        /// <param name="Interval">The wake mode interval in seconds. The unit will connect to the server this often when awake. (required).</param>
-        /// <param name="SleepInterval">Sleep mode interval in seconds. The unit will try to connect this often to the server when asleep (required).</param>
-        /// <param name="CheckInInterval">Internal Use. A failsafe to ensure the unit connects to the server at least this often. (required).</param>
-        /// <param name="Packing">The number of GPS points to send with each transmission. A packing setting of 3 with an &#39;interval&#39; of 60s will result in points recorded approximately every 20s, but they will only be sent together. This increases the time you have to wait for locations to come through to the server but improves battery life (required).</param>
-        /// <param name="MovementSensitivity">Deprecated. See debounce..</param>
-        /// <param name="Debounce">Movement sensitivity on a scale of 1 to 10, with 1 being the most sensitive. It is correlated to the number of consecutive milliseconds the acceleration needs to exceed the movementSensitivity threshold.</param>
-        /// <param name="MovementSensitivity2">A secondary debounce value. Typically this value is lower or equal to debounce, representing increased sensitivity to movement once the device is already moving..</param>
-        /// <param name="Behavior">Char Bitfield with various flags. Advanced use only.  DisableBluetooth:32 |  Encrypt:128 |  GsmOnWhenAwake:1 |  GsmOnWhenAsleep:2 |  GpsOnWhenAwake:4 |  DisableWifiAccuracyAssist:8 |  RepeatSleep:16 |  DisableWifi:64.</param>
-        /// <param name="ModeControl">Char Bitfield with various flags. Advanced use only.  StartStopOnly:1 |  LockAwakeOnAlert:2 |  SendSleepLocAfterBtDisconnect:4 | .</param>
-        /// <param name="GpsTimeout">How long to let the GPS searches for a lock in seconds before giving up. Max 255s..</param>
-        /// <param name="TransmitTimeout">When the unit first wakes up from sleep, how long to wait before trying to transmit in multiples of 30 seconds. 0 &#x3D; instant, 1 &#x3D; 30s, 2 &#x3D; 60s...   Useful to avoid detection or draining battery inside shielded buildings..</param>
-        /// <param name="GpsStabilize">How long to let the GPS stabilise in seconds once a lock is achieved before sending the position. Higher values may increase accuracy..</param>
-        /// <param name="GpsCheckInterval">If a safe-zone is used, how often to check the wifi &amp; gps to see if its still inside it (only applies when motion is detected).</param>
-        /// <param name="StopTimeout">The total amount of time in seconds the unit has to be stationary for before deeming the journey over and switching to sleep mode.</param>
-        /// <param name="TolerancePercentage">Reserved for internal use..</param>
-        /// <param name="ReasonsToWake">ReasonsToWake.</param>
-        /// <param name="Modified">Set to any non null date to indicate the configuration should be pushed to the device when it next connects.</param>
-        /// <param name="ForceFw">Internal use.   Used with otaFW. Set to true to force the unit to upgrade on next connection (rather than waiting for a sleep connection (default to false).</param>
-        /// <param name="ReceivedAt">Indicates the last time the settings were sent to the device.</param>
-        /// <param name="Reset">Non NULL values cause unit to restart on next connection   0 &#x3D; Normal reboot   1 &#x3D; Clear settings cache and restart   2 &#x3D; Clear cache and bluetooth connection data, then restart.</param>
-        /// <param name="FlashTryCount">Internal use. Set to 0 when changing otaFW.</param>
-        /// <param name="HomeWifiNetwork">WiFi network name to use as a Safe-zone. When this network is visible, stay asleep.</param>
-        /// <param name="WakeAction">What to do when the unit wakes up (ie is moved and not in a safe-zone). Options are &#39;available&#39; (lost and found), and &#39;normal&#39; (tracking) (required) (default to &quot;normal&quot;).</param>
-        /// <param name="OnDemandTime">Deprecated (required).</param>
-        /// <param name="AlertAction">What to do when the button is pressed or the unit is dropped. Options are &#39;available&#39; (stay registered on the mobile network), &#39;nothing&#39; (one transmission) and  &#39;lockOn&#39; (keep transmitting at &#39;interval&#39; until instructed otherwise (required) (default to &quot;nothing&quot;).</param>
-        /// <param name="Id">Id.</param>
-        /// <param name="DeviceId">DeviceId.</param>
-        /// <param name="SafeZoneId">SafeZoneId.</param>
-        public DeviceConfig(string CurrentFW = default(string), string OtaFW = default(string), decimal? Interval = default(decimal?), decimal? SleepInterval = default(decimal?), decimal? CheckInInterval = default(decimal?), decimal? Packing = default(decimal?), decimal? MovementSensitivity = default(decimal?), decimal? Debounce = default(decimal?), decimal? MovementSensitivity2 = default(decimal?), decimal? Behavior = default(decimal?), decimal? ModeControl = default(decimal?), decimal? GpsTimeout = default(decimal?), decimal? TransmitTimeout = default(decimal?), decimal? GpsStabilize = default(decimal?), decimal? GpsCheckInterval = default(decimal?), decimal? StopTimeout = default(decimal?), decimal? TolerancePercentage = default(decimal?), List<Object> ReasonsToWake = default(List<Object>), DateTime? Modified = default(DateTime?), bool? ForceFw = false, DateTime? ReceivedAt = default(DateTime?), decimal? Reset = default(decimal?), decimal? FlashTryCount = default(decimal?), string HomeWifiNetwork = default(string), string WakeAction = "normal", decimal? OnDemandTime = default(decimal?), string AlertAction = "nothing", decimal? Id = default(decimal?), decimal? DeviceId = default(decimal?), decimal? SafeZoneId = default(decimal?))
+        /// <param name="currentFW">Current Firmware version.</param>
+        /// <param name="otaFW">Pending Firmware version. If non null, the unit will be told to upgrade to this version when it next transmits in sleep mode..</param>
+        /// <param name="interval">The wake mode interval in seconds. The unit will connect to the server this often when awake. (required).</param>
+        /// <param name="sleepInterval">Sleep mode interval in seconds. The unit will try to connect this often to the server when asleep (required).</param>
+        /// <param name="checkInInterval">Internal Use. A failsafe to ensure the unit connects to the server at least this often. (required).</param>
+        /// <param name="packing">The number of GPS points to send with each transmission. A packing setting of 3 with an &#39;interval&#39; of 60s will result in points recorded approximately every 20s, but they will only be sent together. This increases the time you have to wait for locations to come through to the server but improves battery life (required).</param>
+        /// <param name="movementSensitivity">Deprecated. See debounce..</param>
+        /// <param name="debounce">Movement sensitivity on a scale of 1 to 10, with 1 being the most sensitive. It is correlated to the number of consecutive milliseconds the acceleration needs to exceed the movementSensitivity threshold.</param>
+        /// <param name="movementSensitivity2">A secondary debounce value. Typically this value is lower or equal to debounce, representing increased sensitivity to movement once the device is already moving..</param>
+        /// <param name="behavior">Char Bitfield with various flags. Advanced use only.  DisableBluetooth:32 |  Encrypt:128 |  GsmOnWhenAwake:1 |  GsmOnWhenAsleep:2 |  GpsOnWhenAwake:4 |  DisableWifiAccuracyAssist:8 |  RepeatSleep:16 |  DisableWifi:64.</param>
+        /// <param name="modeControl">Char Bitfield with various flags. Advanced use only.  StartStopOnly:1 |  LockAwakeOnAlert:2 |  SendSleepLocAfterBtDisconnect:4 | .</param>
+        /// <param name="gpsTimeout">How long to let the GPS searches for a lock in seconds before giving up. Max 255s..</param>
+        /// <param name="transmitTimeout">When the unit first wakes up from sleep, how long to wait before trying to transmit in multiples of 30 seconds. 0 &#x3D; instant, 1 &#x3D; 30s, 2 &#x3D; 60s...   Useful to avoid detection or draining battery inside shielded buildings..</param>
+        /// <param name="gpsStabilize">How long to let the GPS stabilise in seconds once a lock is achieved before sending the position. Higher values may increase accuracy..</param>
+        /// <param name="gpsCheckInterval">If a safe-zone is used, how often to check the wifi &amp; gps to see if its still inside it (only applies when motion is detected).</param>
+        /// <param name="stopTimeout">The total amount of time in seconds the unit has to be stationary for before deeming the journey over and switching to sleep mode.</param>
+        /// <param name="tolerancePercentage">Reserved for internal use..</param>
+        /// <param name="reasonsToWake">reasonsToWake.</param>
+        /// <param name="modified">Set to any non null date to indicate the configuration should be pushed to the device when it next connects.</param>
+        /// <param name="forceFw">Internal use.   Used with otaFW. Set to true to force the unit to upgrade on next connection (rather than waiting for a sleep connection (default to false).</param>
+        /// <param name="receivedAt">Indicates the last time the settings were sent to the device.</param>
+        /// <param name="reset">Non NULL values cause unit to restart on next connection   0 &#x3D; Normal reboot   1 &#x3D; Clear settings cache and restart   2 &#x3D; Clear cache and bluetooth connection data, then restart.</param>
+        /// <param name="flashTryCount">Internal use. Set to 0 when changing otaFW.</param>
+        /// <param name="homeWifiNetwork">WiFi network name to use as a Safe-zone. When this network is visible, stay asleep.</param>
+        /// <param name="homeWifiPassword">WiFi network paswword. If set enables transmission over WiFi..</param>
+        /// <param name="wakeAction">What to do when the unit wakes up (ie is moved and not in a safe-zone). Options are &#39;available&#39; (lost and found), and &#39;normal&#39; (tracking) (required) (default to &quot;normal&quot;).</param>
+        /// <param name="onDemandTime">Deprecated (required).</param>
+        /// <param name="alertAction">What to do when the button is pressed or the unit is dropped. Options are &#39;available&#39; (stay registered on the mobile network), &#39;nothing&#39; (one transmission) and  &#39;lockOn&#39; (keep transmitting at &#39;interval&#39; until instructed otherwise (required) (default to &quot;nothing&quot;).</param>
+        /// <param name="id">id.</param>
+        /// <param name="deviceId">deviceId.</param>
+        /// <param name="safeZoneId">safeZoneId.</param>
+        public DeviceConfig(string currentFW = default(string), string otaFW = default(string), decimal? interval = default(decimal?), decimal? sleepInterval = default(decimal?), decimal? checkInInterval = default(decimal?), decimal? packing = default(decimal?), decimal? movementSensitivity = default(decimal?), decimal? debounce = default(decimal?), decimal? movementSensitivity2 = default(decimal?), decimal? behavior = default(decimal?), decimal? modeControl = default(decimal?), decimal? gpsTimeout = default(decimal?), decimal? transmitTimeout = default(decimal?), decimal? gpsStabilize = default(decimal?), decimal? gpsCheckInterval = default(decimal?), decimal? stopTimeout = default(decimal?), decimal? tolerancePercentage = default(decimal?), List<Object> reasonsToWake = default(List<Object>), DateTime? modified = default(DateTime?), bool? forceFw = false, DateTime? receivedAt = default(DateTime?), decimal? reset = default(decimal?), decimal? flashTryCount = default(decimal?), string homeWifiNetwork = default(string), string homeWifiPassword = default(string), string wakeAction = "normal", decimal? onDemandTime = default(decimal?), string alertAction = "nothing", decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? safeZoneId = default(decimal?))
         {
-            // to ensure "Interval" is required (not null)
-            if (Interval == null)
+            // to ensure "interval" is required (not null)
+            if (interval == null)
             {
-                throw new InvalidDataException("Interval is a required property for DeviceConfig and cannot be null");
+                throw new InvalidDataException("interval is a required property for DeviceConfig and cannot be null");
             }
             else
             {
-                this.Interval = Interval;
+                this.Interval = interval;
             }
-            // to ensure "SleepInterval" is required (not null)
-            if (SleepInterval == null)
+            // to ensure "sleepInterval" is required (not null)
+            if (sleepInterval == null)
             {
-                throw new InvalidDataException("SleepInterval is a required property for DeviceConfig and cannot be null");
+                throw new InvalidDataException("sleepInterval is a required property for DeviceConfig and cannot be null");
             }
             else
             {
-                this.SleepInterval = SleepInterval;
+                this.SleepInterval = sleepInterval;
             }
-            // to ensure "CheckInInterval" is required (not null)
-            if (CheckInInterval == null)
+            // to ensure "checkInInterval" is required (not null)
+            if (checkInInterval == null)
             {
-                throw new InvalidDataException("CheckInInterval is a required property for DeviceConfig and cannot be null");
+                throw new InvalidDataException("checkInInterval is a required property for DeviceConfig and cannot be null");
             }
             else
             {
-                this.CheckInInterval = CheckInInterval;
+                this.CheckInInterval = checkInInterval;
             }
-            // to ensure "Packing" is required (not null)
-            if (Packing == null)
+            // to ensure "packing" is required (not null)
+            if (packing == null)
             {
-                throw new InvalidDataException("Packing is a required property for DeviceConfig and cannot be null");
+                throw new InvalidDataException("packing is a required property for DeviceConfig and cannot be null");
             }
             else
             {
-                this.Packing = Packing;
+                this.Packing = packing;
             }
-            // to ensure "WakeAction" is required (not null)
-            if (WakeAction == null)
+            // to ensure "wakeAction" is required (not null)
+            if (wakeAction == null)
             {
-                throw new InvalidDataException("WakeAction is a required property for DeviceConfig and cannot be null");
+                throw new InvalidDataException("wakeAction is a required property for DeviceConfig and cannot be null");
             }
             else
             {
-                this.WakeAction = WakeAction;
+                this.WakeAction = wakeAction;
             }
-            // to ensure "OnDemandTime" is required (not null)
-            if (OnDemandTime == null)
+            // to ensure "onDemandTime" is required (not null)
+            if (onDemandTime == null)
             {
-                throw new InvalidDataException("OnDemandTime is a required property for DeviceConfig and cannot be null");
+                throw new InvalidDataException("onDemandTime is a required property for DeviceConfig and cannot be null");
             }
             else
             {
-                this.OnDemandTime = OnDemandTime;
+                this.OnDemandTime = onDemandTime;
             }
-            // to ensure "AlertAction" is required (not null)
-            if (AlertAction == null)
+            // to ensure "alertAction" is required (not null)
+            if (alertAction == null)
             {
-                throw new InvalidDataException("AlertAction is a required property for DeviceConfig and cannot be null");
+                throw new InvalidDataException("alertAction is a required property for DeviceConfig and cannot be null");
             }
             else
             {
-                this.AlertAction = AlertAction;
+                this.AlertAction = alertAction;
             }
-            this.CurrentFW = CurrentFW;
-            this.OtaFW = OtaFW;
-            this.MovementSensitivity = MovementSensitivity;
-            this.Debounce = Debounce;
-            this.MovementSensitivity2 = MovementSensitivity2;
-            this.Behavior = Behavior;
-            this.ModeControl = ModeControl;
-            this.GpsTimeout = GpsTimeout;
-            this.TransmitTimeout = TransmitTimeout;
-            this.GpsStabilize = GpsStabilize;
-            this.GpsCheckInterval = GpsCheckInterval;
-            this.StopTimeout = StopTimeout;
-            this.TolerancePercentage = TolerancePercentage;
-            this.ReasonsToWake = ReasonsToWake;
-            this.Modified = Modified;
-            // use default value if no "ForceFw" provided
-            if (ForceFw == null)
+            this.CurrentFW = currentFW;
+            this.OtaFW = otaFW;
+            this.MovementSensitivity = movementSensitivity;
+            this.Debounce = debounce;
+            this.MovementSensitivity2 = movementSensitivity2;
+            this.Behavior = behavior;
+            this.ModeControl = modeControl;
+            this.GpsTimeout = gpsTimeout;
+            this.TransmitTimeout = transmitTimeout;
+            this.GpsStabilize = gpsStabilize;
+            this.GpsCheckInterval = gpsCheckInterval;
+            this.StopTimeout = stopTimeout;
+            this.TolerancePercentage = tolerancePercentage;
+            this.ReasonsToWake = reasonsToWake;
+            this.Modified = modified;
+            // use default value if no "forceFw" provided
+            if (forceFw == null)
             {
                 this.ForceFw = false;
             }
             else
             {
-                this.ForceFw = ForceFw;
+                this.ForceFw = forceFw;
             }
-            this.ReceivedAt = ReceivedAt;
-            this.Reset = Reset;
-            this.FlashTryCount = FlashTryCount;
-            this.HomeWifiNetwork = HomeWifiNetwork;
-            this.Id = Id;
-            this.DeviceId = DeviceId;
-            this.SafeZoneId = SafeZoneId;
+            this.ReceivedAt = receivedAt;
+            this.Reset = reset;
+            this.FlashTryCount = flashTryCount;
+            this.HomeWifiNetwork = homeWifiNetwork;
+            this.HomeWifiPassword = homeWifiPassword;
+            this.Id = id;
+            this.DeviceId = deviceId;
+            this.SafeZoneId = safeZoneId;
         }
         
         /// <summary>
@@ -334,6 +336,13 @@ namespace IO.Swagger.Model
         public string HomeWifiNetwork { get; set; }
 
         /// <summary>
+        /// WiFi network paswword. If set enables transmission over WiFi.
+        /// </summary>
+        /// <value>WiFi network paswword. If set enables transmission over WiFi.</value>
+        [DataMember(Name="homeWifiPassword", EmitDefaultValue=false)]
+        public string HomeWifiPassword { get; set; }
+
+        /// <summary>
         /// What to do when the unit wakes up (ie is moved and not in a safe-zone). Options are &#39;available&#39; (lost and found), and &#39;normal&#39; (tracking)
         /// </summary>
         /// <value>What to do when the unit wakes up (ie is moved and not in a safe-zone). Options are &#39;available&#39; (lost and found), and &#39;normal&#39; (tracking)</value>
@@ -404,6 +413,7 @@ namespace IO.Swagger.Model
             sb.Append("  Reset: ").Append(Reset).Append("\n");
             sb.Append("  FlashTryCount: ").Append(FlashTryCount).Append("\n");
             sb.Append("  HomeWifiNetwork: ").Append(HomeWifiNetwork).Append("\n");
+            sb.Append("  HomeWifiPassword: ").Append(HomeWifiPassword).Append("\n");
             sb.Append("  WakeAction: ").Append(WakeAction).Append("\n");
             sb.Append("  OnDemandTime: ").Append(OnDemandTime).Append("\n");
             sb.Append("  AlertAction: ").Append(AlertAction).Append("\n");
@@ -418,7 +428,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -565,6 +575,11 @@ namespace IO.Swagger.Model
                     this.HomeWifiNetwork.Equals(input.HomeWifiNetwork))
                 ) && 
                 (
+                    this.HomeWifiPassword == input.HomeWifiPassword ||
+                    (this.HomeWifiPassword != null &&
+                    this.HomeWifiPassword.Equals(input.HomeWifiPassword))
+                ) && 
+                (
                     this.WakeAction == input.WakeAction ||
                     (this.WakeAction != null &&
                     this.WakeAction.Equals(input.WakeAction))
@@ -653,6 +668,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.FlashTryCount.GetHashCode();
                 if (this.HomeWifiNetwork != null)
                     hashCode = hashCode * 59 + this.HomeWifiNetwork.GetHashCode();
+                if (this.HomeWifiPassword != null)
+                    hashCode = hashCode * 59 + this.HomeWifiPassword.GetHashCode();
                 if (this.WakeAction != null)
                     hashCode = hashCode * 59 + this.WakeAction.GetHashCode();
                 if (this.OnDemandTime != null)
@@ -680,6 +697,12 @@ namespace IO.Swagger.Model
             if(this.HomeWifiNetwork != null && this.HomeWifiNetwork.Length > 127)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for HomeWifiNetwork, length must be less than 127.", new [] { "HomeWifiNetwork" });
+            }
+
+            // HomeWifiPassword (string) maxLength
+            if(this.HomeWifiPassword != null && this.HomeWifiPassword.Length > 127)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for HomeWifiPassword, length must be less than 127.", new [] { "HomeWifiPassword" });
             }
 
             yield break;

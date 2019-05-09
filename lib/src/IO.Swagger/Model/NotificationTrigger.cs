@@ -38,58 +38,58 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NotificationTrigger" /> class.
         /// </summary>
-        /// <param name="Name">Name (required).</param>
-        /// <param name="Type">Type (required).</param>
-        /// <param name="Parameters">Parameters.</param>
-        /// <param name="MuteFor">MuteFor (required).</param>
-        /// <param name="LastTriggered">LastTriggered.</param>
-        /// <param name="Delivery">Delivery (required).</param>
-        /// <param name="Id">Id.</param>
-        /// <param name="DeviceId">DeviceId.</param>
-        /// <param name="UserId">UserId.</param>
-        public NotificationTrigger(string Name = default(string), string Type = default(string), Object Parameters = default(Object), decimal? MuteFor = default(decimal?), DateTime? LastTriggered = default(DateTime?), Object Delivery = default(Object), decimal? Id = default(decimal?), decimal? DeviceId = default(decimal?), decimal? UserId = default(decimal?))
+        /// <param name="name">name (required).</param>
+        /// <param name="type">type (required).</param>
+        /// <param name="parameters">parameters.</param>
+        /// <param name="muteFor">muteFor (required).</param>
+        /// <param name="lastTriggered">lastTriggered.</param>
+        /// <param name="delivery">delivery (required).</param>
+        /// <param name="id">id.</param>
+        /// <param name="deviceId">deviceId.</param>
+        /// <param name="userId">userId.</param>
+        public NotificationTrigger(string name = default(string), string type = default(string), Object parameters = default(Object), decimal? muteFor = default(decimal?), DateTime? lastTriggered = default(DateTime?), Object delivery = default(Object), decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? userId = default(decimal?))
         {
-            // to ensure "Name" is required (not null)
-            if (Name == null)
+            // to ensure "name" is required (not null)
+            if (name == null)
             {
-                throw new InvalidDataException("Name is a required property for NotificationTrigger and cannot be null");
+                throw new InvalidDataException("name is a required property for NotificationTrigger and cannot be null");
             }
             else
             {
-                this.Name = Name;
+                this.Name = name;
             }
-            // to ensure "Type" is required (not null)
-            if (Type == null)
+            // to ensure "type" is required (not null)
+            if (type == null)
             {
-                throw new InvalidDataException("Type is a required property for NotificationTrigger and cannot be null");
+                throw new InvalidDataException("type is a required property for NotificationTrigger and cannot be null");
             }
             else
             {
-                this.Type = Type;
+                this.Type = type;
             }
-            // to ensure "MuteFor" is required (not null)
-            if (MuteFor == null)
+            // to ensure "muteFor" is required (not null)
+            if (muteFor == null)
             {
-                throw new InvalidDataException("MuteFor is a required property for NotificationTrigger and cannot be null");
+                throw new InvalidDataException("muteFor is a required property for NotificationTrigger and cannot be null");
             }
             else
             {
-                this.MuteFor = MuteFor;
+                this.MuteFor = muteFor;
             }
-            // to ensure "Delivery" is required (not null)
-            if (Delivery == null)
+            // to ensure "delivery" is required (not null)
+            if (delivery == null)
             {
-                throw new InvalidDataException("Delivery is a required property for NotificationTrigger and cannot be null");
+                throw new InvalidDataException("delivery is a required property for NotificationTrigger and cannot be null");
             }
             else
             {
-                this.Delivery = Delivery;
+                this.Delivery = delivery;
             }
-            this.Parameters = Parameters;
-            this.LastTriggered = LastTriggered;
-            this.Id = Id;
-            this.DeviceId = DeviceId;
-            this.UserId = UserId;
+            this.Parameters = parameters;
+            this.LastTriggered = lastTriggered;
+            this.Id = id;
+            this.DeviceId = deviceId;
+            this.UserId = userId;
         }
         
         /// <summary>
@@ -171,7 +171,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

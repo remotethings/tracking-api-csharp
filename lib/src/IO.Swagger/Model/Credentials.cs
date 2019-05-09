@@ -33,12 +33,12 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Credentials" /> class.
         /// </summary>
-        /// <param name="Username">Username.</param>
-        /// <param name="Password">Password.</param>
-        public Credentials(string Username = default(string), string Password = default(string))
+        /// <param name="username">username.</param>
+        /// <param name="password">password.</param>
+        public Credentials(string username = default(string), string password = default(string))
         {
-            this.Username = Username;
-            this.Password = Password;
+            this.Username = username;
+            this.Password = password;
         }
         
         /// <summary>
@@ -71,7 +71,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

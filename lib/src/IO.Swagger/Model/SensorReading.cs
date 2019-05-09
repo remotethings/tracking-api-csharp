@@ -38,60 +38,60 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SensorReading" /> class.
         /// </summary>
-        /// <param name="Timestamp">Timestamp for the reading (required).</param>
-        /// <param name="Created">Timestamp for the writing to db (required).</param>
-        /// <param name="Type">Sensor type: &#39;ultra&#39; (fill level), &#39;temp&#39; (temperature), ... (required).</param>
-        /// <param name="Value">JSON value (required).</param>
-        /// <param name="Meta">JSON metadata.</param>
-        /// <param name="Id">Id.</param>
-        /// <param name="GatewayId">GatewayId.</param>
-        /// <param name="DeviceId">DeviceId.</param>
-        /// <param name="SensorDeviceId">SensorDeviceId.</param>
-        /// <param name="DatapointId">DatapointId.</param>
-        public SensorReading(DateTime? Timestamp = default(DateTime?), DateTime? Created = default(DateTime?), string Type = default(string), Object Value = default(Object), Object Meta = default(Object), decimal? Id = default(decimal?), decimal? GatewayId = default(decimal?), decimal? DeviceId = default(decimal?), string SensorDeviceId = default(string), decimal? DatapointId = default(decimal?))
+        /// <param name="timestamp">Timestamp for the reading (required).</param>
+        /// <param name="created">Timestamp for the writing to db (required).</param>
+        /// <param name="type">Sensor type: &#39;ultra&#39; (fill level), &#39;temp&#39; (temperature), ... (required).</param>
+        /// <param name="value">JSON value (required).</param>
+        /// <param name="meta">JSON metadata.</param>
+        /// <param name="id">id.</param>
+        /// <param name="gatewayId">gatewayId.</param>
+        /// <param name="deviceId">deviceId.</param>
+        /// <param name="sensorDeviceId">sensorDeviceId.</param>
+        /// <param name="datapointId">datapointId.</param>
+        public SensorReading(DateTime? timestamp = default(DateTime?), DateTime? created = default(DateTime?), string type = default(string), Object value = default(Object), Object meta = default(Object), decimal? id = default(decimal?), decimal? gatewayId = default(decimal?), decimal? deviceId = default(decimal?), string sensorDeviceId = default(string), decimal? datapointId = default(decimal?))
         {
-            // to ensure "Timestamp" is required (not null)
-            if (Timestamp == null)
+            // to ensure "timestamp" is required (not null)
+            if (timestamp == null)
             {
-                throw new InvalidDataException("Timestamp is a required property for SensorReading and cannot be null");
+                throw new InvalidDataException("timestamp is a required property for SensorReading and cannot be null");
             }
             else
             {
-                this.Timestamp = Timestamp;
+                this.Timestamp = timestamp;
             }
-            // to ensure "Created" is required (not null)
-            if (Created == null)
+            // to ensure "created" is required (not null)
+            if (created == null)
             {
-                throw new InvalidDataException("Created is a required property for SensorReading and cannot be null");
+                throw new InvalidDataException("created is a required property for SensorReading and cannot be null");
             }
             else
             {
-                this.Created = Created;
+                this.Created = created;
             }
-            // to ensure "Type" is required (not null)
-            if (Type == null)
+            // to ensure "type" is required (not null)
+            if (type == null)
             {
-                throw new InvalidDataException("Type is a required property for SensorReading and cannot be null");
+                throw new InvalidDataException("type is a required property for SensorReading and cannot be null");
             }
             else
             {
-                this.Type = Type;
+                this.Type = type;
             }
-            // to ensure "Value" is required (not null)
-            if (Value == null)
+            // to ensure "value" is required (not null)
+            if (value == null)
             {
-                throw new InvalidDataException("Value is a required property for SensorReading and cannot be null");
+                throw new InvalidDataException("value is a required property for SensorReading and cannot be null");
             }
             else
             {
-                this.Value = Value;
+                this.Value = value;
             }
-            this.Meta = Meta;
-            this.Id = Id;
-            this.GatewayId = GatewayId;
-            this.DeviceId = DeviceId;
-            this.SensorDeviceId = SensorDeviceId;
-            this.DatapointId = DatapointId;
+            this.Meta = meta;
+            this.Id = id;
+            this.GatewayId = gatewayId;
+            this.DeviceId = deviceId;
+            this.SensorDeviceId = sensorDeviceId;
+            this.DatapointId = datapointId;
         }
         
         /// <summary>
@@ -185,7 +185,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

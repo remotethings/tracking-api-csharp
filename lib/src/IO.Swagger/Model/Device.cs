@@ -38,132 +38,144 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Device" /> class.
         /// </summary>
-        /// <param name="Imei">Imei (required).</param>
-        /// <param name="Iccid">Iccid (required).</param>
-        /// <param name="Imsi">Imsi.</param>
-        /// <param name="BtMacAddress">BtMacAddress.</param>
-        /// <param name="Type">Type.</param>
-        /// <param name="LastConnection">LastConnection.</param>
-        /// <param name="FirstSeen">FirstSeen (required).</param>
-        /// <param name="Mode">Mode (required) (default to &quot;default&quot;).</param>
-        /// <param name="Name">Name.</param>
-        /// <param name="BatteryVoltage">BatteryVoltage.</param>
-        /// <param name="BatteryType">BatteryType (default to &quot;LIO&quot;).</param>
-        /// <param name="Tags">Tags.</param>
-        /// <param name="CurrentMode">CurrentMode.</param>
-        /// <param name="Color">Color (default to &quot;ce0027&quot;).</param>
-        /// <param name="SaveToWeb">SaveToWeb (default to false).</param>
-        /// <param name="Expires">Expires.</param>
-        /// <param name="Active">Active (default to false).</param>
-        /// <param name="DeepSleep">DeepSleep (default to false).</param>
-        /// <param name="Simstate">Simstate (default to &quot;active&quot;).</param>
-        /// <param name="Id">Id.</param>
-        /// <param name="OwnerId">OwnerId.</param>
-        /// <param name="SecurePhoneId">SecurePhoneId.</param>
-        public Device(string Imei = default(string), string Iccid = default(string), string Imsi = default(string), string BtMacAddress = default(string), string Type = default(string), DateTime? LastConnection = default(DateTime?), DateTime? FirstSeen = default(DateTime?), string Mode = "default", string Name = default(string), decimal? BatteryVoltage = default(decimal?), string BatteryType = "LIO", List<string> Tags = default(List<string>), decimal? CurrentMode = default(decimal?), string Color = "ce0027", bool? SaveToWeb = false, DateTime? Expires = default(DateTime?), bool? Active = false, bool? DeepSleep = false, string Simstate = "active", decimal? Id = default(decimal?), decimal? OwnerId = default(decimal?), decimal? SecurePhoneId = default(decimal?))
+        /// <param name="imei">imei (required).</param>
+        /// <param name="iccid">iccid (required).</param>
+        /// <param name="imsi">imsi.</param>
+        /// <param name="btMacAddress">btMacAddress.</param>
+        /// <param name="serial">serial.</param>
+        /// <param name="type">type.</param>
+        /// <param name="expires">expires.</param>
+        /// <param name="lastConnection">lastConnection.</param>
+        /// <param name="firstSeen">firstSeen (required).</param>
+        /// <param name="mode">mode (required) (default to &quot;default&quot;).</param>
+        /// <param name="name">name.</param>
+        /// <param name="batteryVoltage">batteryVoltage.</param>
+        /// <param name="batteryType">batteryType (default to &quot;LIO&quot;).</param>
+        /// <param name="tags">tags.</param>
+        /// <param name="currentMode">currentMode.</param>
+        /// <param name="color">color (default to &quot;fc7c3d&quot;).</param>
+        /// <param name="saveToWeb">saveToWeb (default to false).</param>
+        /// <param name="active">active (default to false).</param>
+        /// <param name="deepSleep">deepSleep (default to false).</param>
+        /// <param name="simstate">simstate (default to &quot;active&quot;).</param>
+        /// <param name="stripeSubscription">stripeSubscription.</param>
+        /// <param name="subscriptionType">subscriptionType.</param>
+        /// <param name="meta">meta.</param>
+        /// <param name="id">id.</param>
+        /// <param name="ownerId">ownerId.</param>
+        /// <param name="securePhoneId">securePhoneId.</param>
+        /// <param name="resellerId">resellerId.</param>
+        /// <param name="resellerPlanId">resellerPlanId.</param>
+        public Device(string imei = default(string), string iccid = default(string), string imsi = default(string), string btMacAddress = default(string), string serial = default(string), string type = default(string), DateTime? expires = default(DateTime?), DateTime? lastConnection = default(DateTime?), DateTime? firstSeen = default(DateTime?), string mode = "default", string name = default(string), decimal? batteryVoltage = default(decimal?), string batteryType = "LIO", List<string> tags = default(List<string>), decimal? currentMode = default(decimal?), string color = "fc7c3d", bool? saveToWeb = false, bool? active = false, bool? deepSleep = false, string simstate = "active", string stripeSubscription = default(string), string subscriptionType = default(string), Object meta = default(Object), decimal? id = default(decimal?), decimal? ownerId = default(decimal?), decimal? securePhoneId = default(decimal?), decimal? resellerId = default(decimal?), decimal? resellerPlanId = default(decimal?))
         {
-            // to ensure "Imei" is required (not null)
-            if (Imei == null)
+            // to ensure "imei" is required (not null)
+            if (imei == null)
             {
-                throw new InvalidDataException("Imei is a required property for Device and cannot be null");
+                throw new InvalidDataException("imei is a required property for Device and cannot be null");
             }
             else
             {
-                this.Imei = Imei;
+                this.Imei = imei;
             }
-            // to ensure "Iccid" is required (not null)
-            if (Iccid == null)
+            // to ensure "iccid" is required (not null)
+            if (iccid == null)
             {
-                throw new InvalidDataException("Iccid is a required property for Device and cannot be null");
+                throw new InvalidDataException("iccid is a required property for Device and cannot be null");
             }
             else
             {
-                this.Iccid = Iccid;
+                this.Iccid = iccid;
             }
-            // to ensure "FirstSeen" is required (not null)
-            if (FirstSeen == null)
+            // to ensure "firstSeen" is required (not null)
+            if (firstSeen == null)
             {
-                throw new InvalidDataException("FirstSeen is a required property for Device and cannot be null");
+                throw new InvalidDataException("firstSeen is a required property for Device and cannot be null");
             }
             else
             {
-                this.FirstSeen = FirstSeen;
+                this.FirstSeen = firstSeen;
             }
-            // to ensure "Mode" is required (not null)
-            if (Mode == null)
+            // to ensure "mode" is required (not null)
+            if (mode == null)
             {
-                throw new InvalidDataException("Mode is a required property for Device and cannot be null");
+                throw new InvalidDataException("mode is a required property for Device and cannot be null");
             }
             else
             {
-                this.Mode = Mode;
+                this.Mode = mode;
             }
-            this.Imsi = Imsi;
-            this.BtMacAddress = BtMacAddress;
-            this.Type = Type;
-            this.LastConnection = LastConnection;
-            this.Name = Name;
-            this.BatteryVoltage = BatteryVoltage;
-            // use default value if no "BatteryType" provided
-            if (BatteryType == null)
+            this.Imsi = imsi;
+            this.BtMacAddress = btMacAddress;
+            this.Serial = serial;
+            this.Type = type;
+            this.Expires = expires;
+            this.LastConnection = lastConnection;
+            this.Name = name;
+            this.BatteryVoltage = batteryVoltage;
+            // use default value if no "batteryType" provided
+            if (batteryType == null)
             {
                 this.BatteryType = "LIO";
             }
             else
             {
-                this.BatteryType = BatteryType;
+                this.BatteryType = batteryType;
             }
-            this.Tags = Tags;
-            this.CurrentMode = CurrentMode;
-            // use default value if no "Color" provided
-            if (Color == null)
+            this.Tags = tags;
+            this.CurrentMode = currentMode;
+            // use default value if no "color" provided
+            if (color == null)
             {
-                this.Color = "ce0027";
+                this.Color = "fc7c3d";
             }
             else
             {
-                this.Color = Color;
+                this.Color = color;
             }
-            // use default value if no "SaveToWeb" provided
-            if (SaveToWeb == null)
+            // use default value if no "saveToWeb" provided
+            if (saveToWeb == null)
             {
                 this.SaveToWeb = false;
             }
             else
             {
-                this.SaveToWeb = SaveToWeb;
+                this.SaveToWeb = saveToWeb;
             }
-            this.Expires = Expires;
-            // use default value if no "Active" provided
-            if (Active == null)
+            // use default value if no "active" provided
+            if (active == null)
             {
                 this.Active = false;
             }
             else
             {
-                this.Active = Active;
+                this.Active = active;
             }
-            // use default value if no "DeepSleep" provided
-            if (DeepSleep == null)
+            // use default value if no "deepSleep" provided
+            if (deepSleep == null)
             {
                 this.DeepSleep = false;
             }
             else
             {
-                this.DeepSleep = DeepSleep;
+                this.DeepSleep = deepSleep;
             }
-            // use default value if no "Simstate" provided
-            if (Simstate == null)
+            // use default value if no "simstate" provided
+            if (simstate == null)
             {
                 this.Simstate = "active";
             }
             else
             {
-                this.Simstate = Simstate;
+                this.Simstate = simstate;
             }
-            this.Id = Id;
-            this.OwnerId = OwnerId;
-            this.SecurePhoneId = SecurePhoneId;
+            this.StripeSubscription = stripeSubscription;
+            this.SubscriptionType = subscriptionType;
+            this.Meta = meta;
+            this.Id = id;
+            this.OwnerId = ownerId;
+            this.SecurePhoneId = securePhoneId;
+            this.ResellerId = resellerId;
+            this.ResellerPlanId = resellerPlanId;
         }
         
         /// <summary>
@@ -191,10 +203,22 @@ namespace IO.Swagger.Model
         public string BtMacAddress { get; set; }
 
         /// <summary>
+        /// Gets or Sets Serial
+        /// </summary>
+        [DataMember(Name="serial", EmitDefaultValue=false)]
+        public string Serial { get; set; }
+
+        /// <summary>
         /// Gets or Sets Type
         /// </summary>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Expires
+        /// </summary>
+        [DataMember(Name="expires", EmitDefaultValue=false)]
+        public DateTime? Expires { get; set; }
 
         /// <summary>
         /// Gets or Sets LastConnection
@@ -257,12 +281,6 @@ namespace IO.Swagger.Model
         public bool? SaveToWeb { get; set; }
 
         /// <summary>
-        /// Gets or Sets Expires
-        /// </summary>
-        [DataMember(Name="expires", EmitDefaultValue=false)]
-        public DateTime? Expires { get; set; }
-
-        /// <summary>
         /// Gets or Sets Active
         /// </summary>
         [DataMember(Name="active", EmitDefaultValue=false)]
@@ -279,6 +297,24 @@ namespace IO.Swagger.Model
         /// </summary>
         [DataMember(Name="simstate", EmitDefaultValue=false)]
         public string Simstate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets StripeSubscription
+        /// </summary>
+        [DataMember(Name="stripeSubscription", EmitDefaultValue=false)]
+        public string StripeSubscription { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SubscriptionType
+        /// </summary>
+        [DataMember(Name="subscriptionType", EmitDefaultValue=false)]
+        public string SubscriptionType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Meta
+        /// </summary>
+        [DataMember(Name="meta", EmitDefaultValue=false)]
+        public Object Meta { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -299,6 +335,18 @@ namespace IO.Swagger.Model
         public decimal? SecurePhoneId { get; set; }
 
         /// <summary>
+        /// Gets or Sets ResellerId
+        /// </summary>
+        [DataMember(Name="resellerId", EmitDefaultValue=false)]
+        public decimal? ResellerId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ResellerPlanId
+        /// </summary>
+        [DataMember(Name="resellerPlanId", EmitDefaultValue=false)]
+        public decimal? ResellerPlanId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -310,7 +358,9 @@ namespace IO.Swagger.Model
             sb.Append("  Iccid: ").Append(Iccid).Append("\n");
             sb.Append("  Imsi: ").Append(Imsi).Append("\n");
             sb.Append("  BtMacAddress: ").Append(BtMacAddress).Append("\n");
+            sb.Append("  Serial: ").Append(Serial).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Expires: ").Append(Expires).Append("\n");
             sb.Append("  LastConnection: ").Append(LastConnection).Append("\n");
             sb.Append("  FirstSeen: ").Append(FirstSeen).Append("\n");
             sb.Append("  Mode: ").Append(Mode).Append("\n");
@@ -321,13 +371,17 @@ namespace IO.Swagger.Model
             sb.Append("  CurrentMode: ").Append(CurrentMode).Append("\n");
             sb.Append("  Color: ").Append(Color).Append("\n");
             sb.Append("  SaveToWeb: ").Append(SaveToWeb).Append("\n");
-            sb.Append("  Expires: ").Append(Expires).Append("\n");
             sb.Append("  Active: ").Append(Active).Append("\n");
             sb.Append("  DeepSleep: ").Append(DeepSleep).Append("\n");
             sb.Append("  Simstate: ").Append(Simstate).Append("\n");
+            sb.Append("  StripeSubscription: ").Append(StripeSubscription).Append("\n");
+            sb.Append("  SubscriptionType: ").Append(SubscriptionType).Append("\n");
+            sb.Append("  Meta: ").Append(Meta).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("  SecurePhoneId: ").Append(SecurePhoneId).Append("\n");
+            sb.Append("  ResellerId: ").Append(ResellerId).Append("\n");
+            sb.Append("  ResellerPlanId: ").Append(ResellerPlanId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -336,7 +390,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -383,9 +437,19 @@ namespace IO.Swagger.Model
                     this.BtMacAddress.Equals(input.BtMacAddress))
                 ) && 
                 (
+                    this.Serial == input.Serial ||
+                    (this.Serial != null &&
+                    this.Serial.Equals(input.Serial))
+                ) && 
+                (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.Expires == input.Expires ||
+                    (this.Expires != null &&
+                    this.Expires.Equals(input.Expires))
                 ) && 
                 (
                     this.LastConnection == input.LastConnection ||
@@ -438,11 +502,6 @@ namespace IO.Swagger.Model
                     this.SaveToWeb.Equals(input.SaveToWeb))
                 ) && 
                 (
-                    this.Expires == input.Expires ||
-                    (this.Expires != null &&
-                    this.Expires.Equals(input.Expires))
-                ) && 
-                (
                     this.Active == input.Active ||
                     (this.Active != null &&
                     this.Active.Equals(input.Active))
@@ -458,6 +517,21 @@ namespace IO.Swagger.Model
                     this.Simstate.Equals(input.Simstate))
                 ) && 
                 (
+                    this.StripeSubscription == input.StripeSubscription ||
+                    (this.StripeSubscription != null &&
+                    this.StripeSubscription.Equals(input.StripeSubscription))
+                ) && 
+                (
+                    this.SubscriptionType == input.SubscriptionType ||
+                    (this.SubscriptionType != null &&
+                    this.SubscriptionType.Equals(input.SubscriptionType))
+                ) && 
+                (
+                    this.Meta == input.Meta ||
+                    (this.Meta != null &&
+                    this.Meta.Equals(input.Meta))
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -471,6 +545,16 @@ namespace IO.Swagger.Model
                     this.SecurePhoneId == input.SecurePhoneId ||
                     (this.SecurePhoneId != null &&
                     this.SecurePhoneId.Equals(input.SecurePhoneId))
+                ) && 
+                (
+                    this.ResellerId == input.ResellerId ||
+                    (this.ResellerId != null &&
+                    this.ResellerId.Equals(input.ResellerId))
+                ) && 
+                (
+                    this.ResellerPlanId == input.ResellerPlanId ||
+                    (this.ResellerPlanId != null &&
+                    this.ResellerPlanId.Equals(input.ResellerPlanId))
                 );
         }
 
@@ -491,8 +575,12 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Imsi.GetHashCode();
                 if (this.BtMacAddress != null)
                     hashCode = hashCode * 59 + this.BtMacAddress.GetHashCode();
+                if (this.Serial != null)
+                    hashCode = hashCode * 59 + this.Serial.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Expires != null)
+                    hashCode = hashCode * 59 + this.Expires.GetHashCode();
                 if (this.LastConnection != null)
                     hashCode = hashCode * 59 + this.LastConnection.GetHashCode();
                 if (this.FirstSeen != null)
@@ -513,20 +601,28 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Color.GetHashCode();
                 if (this.SaveToWeb != null)
                     hashCode = hashCode * 59 + this.SaveToWeb.GetHashCode();
-                if (this.Expires != null)
-                    hashCode = hashCode * 59 + this.Expires.GetHashCode();
                 if (this.Active != null)
                     hashCode = hashCode * 59 + this.Active.GetHashCode();
                 if (this.DeepSleep != null)
                     hashCode = hashCode * 59 + this.DeepSleep.GetHashCode();
                 if (this.Simstate != null)
                     hashCode = hashCode * 59 + this.Simstate.GetHashCode();
+                if (this.StripeSubscription != null)
+                    hashCode = hashCode * 59 + this.StripeSubscription.GetHashCode();
+                if (this.SubscriptionType != null)
+                    hashCode = hashCode * 59 + this.SubscriptionType.GetHashCode();
+                if (this.Meta != null)
+                    hashCode = hashCode * 59 + this.Meta.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.OwnerId != null)
                     hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
                 if (this.SecurePhoneId != null)
                     hashCode = hashCode * 59 + this.SecurePhoneId.GetHashCode();
+                if (this.ResellerId != null)
+                    hashCode = hashCode * 59 + this.ResellerId.GetHashCode();
+                if (this.ResellerPlanId != null)
+                    hashCode = hashCode * 59 + this.ResellerPlanId.GetHashCode();
                 return hashCode;
             }
         }

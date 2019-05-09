@@ -38,24 +38,26 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccessToken" /> class.
         /// </summary>
-        /// <param name="Id">Id (required).</param>
-        /// <param name="Ttl">time to live in seconds (2 weeks by default).</param>
-        /// <param name="Created">Created.</param>
-        /// <param name="UserId">UserId.</param>
-        public AccessToken(string Id = default(string), decimal? Ttl = default(decimal?), DateTime? Created = default(DateTime?), decimal? UserId = default(decimal?))
+        /// <param name="id">id (required).</param>
+        /// <param name="ttl">time to live in seconds (2 weeks by default).</param>
+        /// <param name="scopes">Array of scopes granted to this access token..</param>
+        /// <param name="created">created.</param>
+        /// <param name="userId">userId.</param>
+        public AccessToken(string id = default(string), decimal? ttl = default(decimal?), List<string> scopes = default(List<string>), DateTime? created = default(DateTime?), decimal? userId = default(decimal?))
         {
-            // to ensure "Id" is required (not null)
-            if (Id == null)
+            // to ensure "id" is required (not null)
+            if (id == null)
             {
-                throw new InvalidDataException("Id is a required property for AccessToken and cannot be null");
+                throw new InvalidDataException("id is a required property for AccessToken and cannot be null");
             }
             else
             {
-                this.Id = Id;
+                this.Id = id;
             }
-            this.Ttl = Ttl;
-            this.Created = Created;
-            this.UserId = UserId;
+            this.Ttl = ttl;
+            this.Scopes = scopes;
+            this.Created = created;
+            this.UserId = userId;
         }
         
         /// <summary>
@@ -70,6 +72,13 @@ namespace IO.Swagger.Model
         /// <value>time to live in seconds (2 weeks by default)</value>
         [DataMember(Name="ttl", EmitDefaultValue=false)]
         public decimal? Ttl { get; set; }
+
+        /// <summary>
+        /// Array of scopes granted to this access token.
+        /// </summary>
+        /// <value>Array of scopes granted to this access token.</value>
+        [DataMember(Name="scopes", EmitDefaultValue=false)]
+        public List<string> Scopes { get; set; }
 
         /// <summary>
         /// Gets or Sets Created
@@ -93,6 +102,7 @@ namespace IO.Swagger.Model
             sb.Append("class AccessToken {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Ttl: ").Append(Ttl).Append("\n");
+            sb.Append("  Scopes: ").Append(Scopes).Append("\n");
             sb.Append("  Created: ").Append(Created).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
             sb.Append("}\n");
@@ -103,7 +113,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -140,6 +150,11 @@ namespace IO.Swagger.Model
                     this.Ttl.Equals(input.Ttl))
                 ) && 
                 (
+                    this.Scopes == input.Scopes ||
+                    this.Scopes != null &&
+                    this.Scopes.SequenceEqual(input.Scopes)
+                ) && 
+                (
                     this.Created == input.Created ||
                     (this.Created != null &&
                     this.Created.Equals(input.Created))
@@ -164,6 +179,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Ttl != null)
                     hashCode = hashCode * 59 + this.Ttl.GetHashCode();
+                if (this.Scopes != null)
+                    hashCode = hashCode * 59 + this.Scopes.GetHashCode();
                 if (this.Created != null)
                     hashCode = hashCode * 59 + this.Created.GetHashCode();
                 if (this.UserId != null)

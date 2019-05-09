@@ -98,10 +98,10 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for points</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for points</param>
         /// <returns></returns>
-        void DevicePrototypeDestroyByIdPoints (decimal? fk, decimal? id);
+        void DevicePrototypeDestroyByIdPoints (decimal? id, decimal? fk);
 
         /// <summary>
         /// Delete a specific point for a device
@@ -110,10 +110,10 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for points</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for points</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DevicePrototypeDestroyByIdPointsWithHttpInfo (decimal? fk, decimal? id);
+        ApiResponse<Object> DevicePrototypeDestroyByIdPointsWithHttpInfo (decimal? id, decimal? fk);
         /// <summary>
         /// Retrieve a specific point for a device
         /// </summary>
@@ -121,10 +121,10 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for points</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for points</param>
         /// <returns>Datapoint</returns>
-        Datapoint DevicePrototypeFindByIdPoints (decimal? fk, decimal? id);
+        Datapoint DevicePrototypeFindByIdPoints (decimal? id, decimal? fk);
 
         /// <summary>
         /// Retrieve a specific point for a device
@@ -133,10 +133,10 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for points</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for points</param>
         /// <returns>ApiResponse of Datapoint</returns>
-        ApiResponse<Datapoint> DevicePrototypeFindByIdPointsWithHttpInfo (decimal? fk, decimal? id);
+        ApiResponse<Datapoint> DevicePrototypeFindByIdPointsWithHttpInfo (decimal? id, decimal? fk);
         /// <summary>
         /// Retrieve a specific reading for a device
         /// </summary>
@@ -144,10 +144,10 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for readings</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for readings</param>
         /// <returns>SensorReading</returns>
-        SensorReading DevicePrototypeFindByIdReadings (decimal? fk, decimal? id);
+        SensorReading DevicePrototypeFindByIdReadings (decimal? id, decimal? fk);
 
         /// <summary>
         /// Retrieve a specific reading for a device
@@ -156,10 +156,33 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for readings</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for readings</param>
         /// <returns>ApiResponse of SensorReading</returns>
-        ApiResponse<SensorReading> DevicePrototypeFindByIdReadingsWithHttpInfo (decimal? fk, decimal? id);
+        ApiResponse<SensorReading> DevicePrototypeFindByIdReadingsWithHttpInfo (decimal? id, decimal? fk);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="duration">How long to go into flightMode, in minutes</param>
+        /// <returns>Object</returns>
+        Object DevicePrototypeFlightMode (decimal? id, decimal? duration);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="duration">How long to go into flightMode, in minutes</param>
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> DevicePrototypeFlightModeWithHttpInfo (decimal? id, decimal? duration);
         /// <summary>
         /// Retrieve configuration for a device
         /// </summary>
@@ -280,10 +303,10 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <param name="id">device id</param>
+        /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <returns>Geofence</returns>
-        Geofence DevicePrototypeSetSafeZone (List<GeoPoint> data, decimal? id);
+        Geofence DevicePrototypeSetSafeZone (decimal? id, List<GeoPoint> data);
 
         /// <summary>
         /// Update safe-zone for device
@@ -292,10 +315,10 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <param name="id">device id</param>
+        /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <returns>ApiResponse of Geofence</returns>
-        ApiResponse<Geofence> DevicePrototypeSetSafeZoneWithHttpInfo (List<GeoPoint> data, decimal? id);
+        ApiResponse<Geofence> DevicePrototypeSetSafeZoneWithHttpInfo (decimal? id, List<GeoPoint> data);
         /// <summary>
         /// Send sleep instruction to device
         /// </summary>
@@ -441,10 +464,10 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for points</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for points</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DevicePrototypeDestroyByIdPointsAsync (decimal? fk, decimal? id);
+        System.Threading.Tasks.Task DevicePrototypeDestroyByIdPointsAsync (decimal? id, decimal? fk);
 
         /// <summary>
         /// Delete a specific point for a device
@@ -453,10 +476,10 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for points</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for points</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDestroyByIdPointsAsyncWithHttpInfo (decimal? fk, decimal? id);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDestroyByIdPointsAsyncWithHttpInfo (decimal? id, decimal? fk);
         /// <summary>
         /// Retrieve a specific point for a device
         /// </summary>
@@ -464,10 +487,10 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for points</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for points</param>
         /// <returns>Task of Datapoint</returns>
-        System.Threading.Tasks.Task<Datapoint> DevicePrototypeFindByIdPointsAsync (decimal? fk, decimal? id);
+        System.Threading.Tasks.Task<Datapoint> DevicePrototypeFindByIdPointsAsync (decimal? id, decimal? fk);
 
         /// <summary>
         /// Retrieve a specific point for a device
@@ -476,10 +499,10 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for points</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for points</param>
         /// <returns>Task of ApiResponse (Datapoint)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Datapoint>> DevicePrototypeFindByIdPointsAsyncWithHttpInfo (decimal? fk, decimal? id);
+        System.Threading.Tasks.Task<ApiResponse<Datapoint>> DevicePrototypeFindByIdPointsAsyncWithHttpInfo (decimal? id, decimal? fk);
         /// <summary>
         /// Retrieve a specific reading for a device
         /// </summary>
@@ -487,10 +510,10 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for readings</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for readings</param>
         /// <returns>Task of SensorReading</returns>
-        System.Threading.Tasks.Task<SensorReading> DevicePrototypeFindByIdReadingsAsync (decimal? fk, decimal? id);
+        System.Threading.Tasks.Task<SensorReading> DevicePrototypeFindByIdReadingsAsync (decimal? id, decimal? fk);
 
         /// <summary>
         /// Retrieve a specific reading for a device
@@ -499,10 +522,33 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for readings</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for readings</param>
         /// <returns>Task of ApiResponse (SensorReading)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SensorReading>> DevicePrototypeFindByIdReadingsAsyncWithHttpInfo (decimal? fk, decimal? id);
+        System.Threading.Tasks.Task<ApiResponse<SensorReading>> DevicePrototypeFindByIdReadingsAsyncWithHttpInfo (decimal? id, decimal? fk);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="duration">How long to go into flightMode, in minutes</param>
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> DevicePrototypeFlightModeAsync (decimal? id, decimal? duration);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="duration">How long to go into flightMode, in minutes</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeFlightModeAsyncWithHttpInfo (decimal? id, decimal? duration);
         /// <summary>
         /// Retrieve configuration for a device
         /// </summary>
@@ -623,10 +669,10 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <param name="id">device id</param>
+        /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <returns>Task of Geofence</returns>
-        System.Threading.Tasks.Task<Geofence> DevicePrototypeSetSafeZoneAsync (List<GeoPoint> data, decimal? id);
+        System.Threading.Tasks.Task<Geofence> DevicePrototypeSetSafeZoneAsync (decimal? id, List<GeoPoint> data);
 
         /// <summary>
         /// Update safe-zone for device
@@ -635,10 +681,10 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <param name="id">device id</param>
+        /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <returns>Task of ApiResponse (Geofence)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Geofence>> DevicePrototypeSetSafeZoneAsyncWithHttpInfo (List<GeoPoint> data, decimal? id);
+        System.Threading.Tasks.Task<ApiResponse<Geofence>> DevicePrototypeSetSafeZoneAsyncWithHttpInfo (decimal? id, List<GeoPoint> data);
         /// <summary>
         /// Send sleep instruction to device
         /// </summary>
@@ -724,7 +770,7 @@ namespace IO.Swagger.Api
         /// <returns></returns>
         public DeviceApi(String basePath)
         {
-            this.Configuration = new Configuration { BasePath = basePath };
+            this.Configuration = new IO.Swagger.Client.Configuration { BasePath = basePath };
 
             ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
         }
@@ -735,10 +781,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public DeviceApi(Configuration configuration = null)
+        public DeviceApi(IO.Swagger.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = Configuration.Default;
+                this.Configuration = IO.Swagger.Client.Configuration.Default;
             else
                 this.Configuration = configuration;
 
@@ -768,7 +814,7 @@ namespace IO.Swagger.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public IO.Swagger.Client.Configuration Configuration {get; set;}
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -837,7 +883,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -849,7 +895,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -859,16 +905,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (filter != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -882,7 +928,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Device>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
+                (Device) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
         }
 
         /// <summary>
@@ -915,7 +961,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -927,7 +973,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -937,16 +983,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (filter != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -960,7 +1006,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Device>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
+                (Device) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
         }
 
         /// <summary>
@@ -992,7 +1038,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/notificationTriggers";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1004,7 +1050,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -1014,14 +1060,14 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (data != null && data.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(data); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(data); // http body (model) parameter
             }
             else
             {
@@ -1030,7 +1076,7 @@ namespace IO.Swagger.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1044,7 +1090,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<NotificationTrigger>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (NotificationTrigger) Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotificationTrigger)));
+                (NotificationTrigger) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotificationTrigger)));
         }
 
         /// <summary>
@@ -1077,7 +1123,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/notificationTriggers";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1089,7 +1135,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -1099,14 +1145,14 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (data != null && data.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(data); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(data); // http body (model) parameter
             }
             else
             {
@@ -1115,7 +1161,7 @@ namespace IO.Swagger.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1129,7 +1175,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<NotificationTrigger>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (NotificationTrigger) Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotificationTrigger)));
+                (NotificationTrigger) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotificationTrigger)));
         }
 
         /// <summary>
@@ -1158,7 +1204,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/notificationTriggers";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1170,7 +1216,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -1180,15 +1226,15 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1232,7 +1278,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/notificationTriggers";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1244,7 +1290,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -1254,15 +1300,15 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1283,34 +1329,34 @@ namespace IO.Swagger.Api
         /// Delete a specific point for a device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for points</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for points</param>
         /// <returns></returns>
-        public void DevicePrototypeDestroyByIdPoints (decimal? fk, decimal? id)
+        public void DevicePrototypeDestroyByIdPoints (decimal? id, decimal? fk)
         {
-             DevicePrototypeDestroyByIdPointsWithHttpInfo(fk, id);
+             DevicePrototypeDestroyByIdPointsWithHttpInfo(id, fk);
         }
 
         /// <summary>
         /// Delete a specific point for a device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for points</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for points</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DevicePrototypeDestroyByIdPointsWithHttpInfo (decimal? fk, decimal? id)
+        public ApiResponse<Object> DevicePrototypeDestroyByIdPointsWithHttpInfo (decimal? id, decimal? fk)
         {
-            // verify the required parameter 'fk' is set
-            if (fk == null)
-                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeDestroyByIdPoints");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeDestroyByIdPoints");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeDestroyByIdPoints");
 
             var localVarPath = "/devices/{id}/points/{fk}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1322,7 +1368,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -1332,16 +1378,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (fk != null) localVarPathParams.Add("fk", Configuration.ApiClient.ParameterToString(fk)); // path parameter
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1362,12 +1408,12 @@ namespace IO.Swagger.Api
         /// Delete a specific point for a device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for points</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for points</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DevicePrototypeDestroyByIdPointsAsync (decimal? fk, decimal? id)
+        public async System.Threading.Tasks.Task DevicePrototypeDestroyByIdPointsAsync (decimal? id, decimal? fk)
         {
-             await DevicePrototypeDestroyByIdPointsAsyncWithHttpInfo(fk, id);
+             await DevicePrototypeDestroyByIdPointsAsyncWithHttpInfo(id, fk);
 
         }
 
@@ -1375,22 +1421,22 @@ namespace IO.Swagger.Api
         /// Delete a specific point for a device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for points</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for points</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDestroyByIdPointsAsyncWithHttpInfo (decimal? fk, decimal? id)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDestroyByIdPointsAsyncWithHttpInfo (decimal? id, decimal? fk)
         {
-            // verify the required parameter 'fk' is set
-            if (fk == null)
-                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeDestroyByIdPoints");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeDestroyByIdPoints");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeDestroyByIdPoints");
 
             var localVarPath = "/devices/{id}/points/{fk}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1402,7 +1448,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -1412,16 +1458,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (fk != null) localVarPathParams.Add("fk", Configuration.ApiClient.ParameterToString(fk)); // path parameter
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1442,12 +1488,12 @@ namespace IO.Swagger.Api
         /// Retrieve a specific point for a device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for points</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for points</param>
         /// <returns>Datapoint</returns>
-        public Datapoint DevicePrototypeFindByIdPoints (decimal? fk, decimal? id)
+        public Datapoint DevicePrototypeFindByIdPoints (decimal? id, decimal? fk)
         {
-             ApiResponse<Datapoint> localVarResponse = DevicePrototypeFindByIdPointsWithHttpInfo(fk, id);
+             ApiResponse<Datapoint> localVarResponse = DevicePrototypeFindByIdPointsWithHttpInfo(id, fk);
              return localVarResponse.Data;
         }
 
@@ -1455,22 +1501,22 @@ namespace IO.Swagger.Api
         /// Retrieve a specific point for a device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for points</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for points</param>
         /// <returns>ApiResponse of Datapoint</returns>
-        public ApiResponse< Datapoint > DevicePrototypeFindByIdPointsWithHttpInfo (decimal? fk, decimal? id)
+        public ApiResponse< Datapoint > DevicePrototypeFindByIdPointsWithHttpInfo (decimal? id, decimal? fk)
         {
-            // verify the required parameter 'fk' is set
-            if (fk == null)
-                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeFindByIdPoints");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeFindByIdPoints");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeFindByIdPoints");
 
             var localVarPath = "/devices/{id}/points/{fk}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1482,7 +1528,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -1492,16 +1538,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (fk != null) localVarPathParams.Add("fk", Configuration.ApiClient.ParameterToString(fk)); // path parameter
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1515,19 +1561,19 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Datapoint>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Datapoint) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Datapoint)));
+                (Datapoint) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Datapoint)));
         }
 
         /// <summary>
         /// Retrieve a specific point for a device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for points</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for points</param>
         /// <returns>Task of Datapoint</returns>
-        public async System.Threading.Tasks.Task<Datapoint> DevicePrototypeFindByIdPointsAsync (decimal? fk, decimal? id)
+        public async System.Threading.Tasks.Task<Datapoint> DevicePrototypeFindByIdPointsAsync (decimal? id, decimal? fk)
         {
-             ApiResponse<Datapoint> localVarResponse = await DevicePrototypeFindByIdPointsAsyncWithHttpInfo(fk, id);
+             ApiResponse<Datapoint> localVarResponse = await DevicePrototypeFindByIdPointsAsyncWithHttpInfo(id, fk);
              return localVarResponse.Data;
 
         }
@@ -1536,22 +1582,22 @@ namespace IO.Swagger.Api
         /// Retrieve a specific point for a device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for points</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for points</param>
         /// <returns>Task of ApiResponse (Datapoint)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Datapoint>> DevicePrototypeFindByIdPointsAsyncWithHttpInfo (decimal? fk, decimal? id)
+        public async System.Threading.Tasks.Task<ApiResponse<Datapoint>> DevicePrototypeFindByIdPointsAsyncWithHttpInfo (decimal? id, decimal? fk)
         {
-            // verify the required parameter 'fk' is set
-            if (fk == null)
-                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeFindByIdPoints");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeFindByIdPoints");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeFindByIdPoints");
 
             var localVarPath = "/devices/{id}/points/{fk}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1563,7 +1609,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -1573,16 +1619,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (fk != null) localVarPathParams.Add("fk", Configuration.ApiClient.ParameterToString(fk)); // path parameter
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1596,19 +1642,19 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Datapoint>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Datapoint) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Datapoint)));
+                (Datapoint) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Datapoint)));
         }
 
         /// <summary>
         /// Retrieve a specific reading for a device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for readings</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for readings</param>
         /// <returns>SensorReading</returns>
-        public SensorReading DevicePrototypeFindByIdReadings (decimal? fk, decimal? id)
+        public SensorReading DevicePrototypeFindByIdReadings (decimal? id, decimal? fk)
         {
-             ApiResponse<SensorReading> localVarResponse = DevicePrototypeFindByIdReadingsWithHttpInfo(fk, id);
+             ApiResponse<SensorReading> localVarResponse = DevicePrototypeFindByIdReadingsWithHttpInfo(id, fk);
              return localVarResponse.Data;
         }
 
@@ -1616,22 +1662,22 @@ namespace IO.Swagger.Api
         /// Retrieve a specific reading for a device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for readings</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for readings</param>
         /// <returns>ApiResponse of SensorReading</returns>
-        public ApiResponse< SensorReading > DevicePrototypeFindByIdReadingsWithHttpInfo (decimal? fk, decimal? id)
+        public ApiResponse< SensorReading > DevicePrototypeFindByIdReadingsWithHttpInfo (decimal? id, decimal? fk)
         {
-            // verify the required parameter 'fk' is set
-            if (fk == null)
-                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeFindByIdReadings");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeFindByIdReadings");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeFindByIdReadings");
 
             var localVarPath = "/devices/{id}/readings/{fk}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1643,7 +1689,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -1653,16 +1699,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (fk != null) localVarPathParams.Add("fk", Configuration.ApiClient.ParameterToString(fk)); // path parameter
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1676,19 +1722,19 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<SensorReading>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SensorReading) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SensorReading)));
+                (SensorReading) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SensorReading)));
         }
 
         /// <summary>
         /// Retrieve a specific reading for a device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for readings</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for readings</param>
         /// <returns>Task of SensorReading</returns>
-        public async System.Threading.Tasks.Task<SensorReading> DevicePrototypeFindByIdReadingsAsync (decimal? fk, decimal? id)
+        public async System.Threading.Tasks.Task<SensorReading> DevicePrototypeFindByIdReadingsAsync (decimal? id, decimal? fk)
         {
-             ApiResponse<SensorReading> localVarResponse = await DevicePrototypeFindByIdReadingsAsyncWithHttpInfo(fk, id);
+             ApiResponse<SensorReading> localVarResponse = await DevicePrototypeFindByIdReadingsAsyncWithHttpInfo(id, fk);
              return localVarResponse.Data;
 
         }
@@ -1697,22 +1743,22 @@ namespace IO.Swagger.Api
         /// Retrieve a specific reading for a device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fk">Foreign key for readings</param>
         /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for readings</param>
         /// <returns>Task of ApiResponse (SensorReading)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SensorReading>> DevicePrototypeFindByIdReadingsAsyncWithHttpInfo (decimal? fk, decimal? id)
+        public async System.Threading.Tasks.Task<ApiResponse<SensorReading>> DevicePrototypeFindByIdReadingsAsyncWithHttpInfo (decimal? id, decimal? fk)
         {
-            // verify the required parameter 'fk' is set
-            if (fk == null)
-                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeFindByIdReadings");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeFindByIdReadings");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeFindByIdReadings");
 
             var localVarPath = "/devices/{id}/readings/{fk}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1724,7 +1770,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -1734,16 +1780,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (fk != null) localVarPathParams.Add("fk", Configuration.ApiClient.ParameterToString(fk)); // path parameter
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1757,7 +1803,168 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<SensorReading>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SensorReading) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SensorReading)));
+                (SensorReading) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SensorReading)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="duration">How long to go into flightMode, in minutes</param>
+        /// <returns>Object</returns>
+        public Object DevicePrototypeFlightMode (decimal? id, decimal? duration)
+        {
+             ApiResponse<Object> localVarResponse = DevicePrototypeFlightModeWithHttpInfo(id, duration);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="duration">How long to go into flightMode, in minutes</param>
+        /// <returns>ApiResponse of Object</returns>
+        public ApiResponse< Object > DevicePrototypeFlightModeWithHttpInfo (decimal? id, decimal? duration)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeFlightMode");
+            // verify the required parameter 'duration' is set
+            if (duration == null)
+                throw new ApiException(400, "Missing required parameter 'duration' when calling DeviceApi->DevicePrototypeFlightMode");
+
+            var localVarPath = "/devices/{id}/flightMode";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (duration != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "duration", duration)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeFlightMode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="duration">How long to go into flightMode, in minutes</param>
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> DevicePrototypeFlightModeAsync (decimal? id, decimal? duration)
+        {
+             ApiResponse<Object> localVarResponse = await DevicePrototypeFlightModeAsyncWithHttpInfo(id, duration);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="duration">How long to go into flightMode, in minutes</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeFlightModeAsyncWithHttpInfo (decimal? id, decimal? duration)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeFlightMode");
+            // verify the required parameter 'duration' is set
+            if (duration == null)
+                throw new ApiException(400, "Missing required parameter 'duration' when calling DeviceApi->DevicePrototypeFlightMode");
+
+            var localVarPath = "/devices/{id}/flightMode";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (duration != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "duration", duration)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeFlightMode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
         /// <summary>
@@ -1789,7 +1996,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/config";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1801,7 +2008,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -1811,16 +2018,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (refresh != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "refresh", refresh)); // query parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (refresh != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "refresh", refresh)); // query parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1834,7 +2041,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<DeviceConfig>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DeviceConfig) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeviceConfig)));
+                (DeviceConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeviceConfig)));
         }
 
         /// <summary>
@@ -1867,7 +2074,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/config";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1879,7 +2086,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -1889,16 +2096,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (refresh != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "refresh", refresh)); // query parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (refresh != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "refresh", refresh)); // query parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1912,7 +2119,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<DeviceConfig>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DeviceConfig) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeviceConfig)));
+                (DeviceConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeviceConfig)));
         }
 
         /// <summary>
@@ -1944,7 +2151,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/notificationTriggers";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1956,7 +2163,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -1966,16 +2173,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (filter != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1989,7 +2196,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<List<NotificationTrigger>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<NotificationTrigger>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<NotificationTrigger>)));
+                (List<NotificationTrigger>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<NotificationTrigger>)));
         }
 
         /// <summary>
@@ -2022,7 +2229,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/notificationTriggers";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -2034,7 +2241,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -2044,16 +2251,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (filter != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -2067,7 +2274,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<List<NotificationTrigger>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<NotificationTrigger>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<NotificationTrigger>)));
+                (List<NotificationTrigger>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<NotificationTrigger>)));
         }
 
         /// <summary>
@@ -2099,7 +2306,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/points";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -2111,7 +2318,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -2121,16 +2328,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (filter != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -2144,7 +2351,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<List<Datapoint>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<Datapoint>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Datapoint>)));
+                (List<Datapoint>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Datapoint>)));
         }
 
         /// <summary>
@@ -2177,7 +2384,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/points";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -2189,7 +2396,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -2199,16 +2406,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (filter != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -2222,7 +2429,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<List<Datapoint>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<Datapoint>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Datapoint>)));
+                (List<Datapoint>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Datapoint>)));
         }
 
         /// <summary>
@@ -2254,7 +2461,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/readings";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -2266,7 +2473,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -2276,16 +2483,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (filter != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -2299,7 +2506,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<List<SensorReading>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<SensorReading>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SensorReading>)));
+                (List<SensorReading>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SensorReading>)));
         }
 
         /// <summary>
@@ -2332,7 +2539,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/readings";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -2344,7 +2551,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -2354,16 +2561,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (filter != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -2377,7 +2584,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<List<SensorReading>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<SensorReading>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SensorReading>)));
+                (List<SensorReading>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SensorReading>)));
         }
 
         /// <summary>
@@ -2407,7 +2614,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/getSafeZone";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -2419,7 +2626,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -2429,15 +2636,15 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -2451,7 +2658,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Geofence>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Geofence) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Geofence)));
+                (Geofence) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Geofence)));
         }
 
         /// <summary>
@@ -2482,7 +2689,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/getSafeZone";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -2494,7 +2701,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -2504,15 +2711,15 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -2526,19 +2733,19 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Geofence>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Geofence) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Geofence)));
+                (Geofence) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Geofence)));
         }
 
         /// <summary>
         /// Update safe-zone for device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <param name="id">device id</param>
+        /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <returns>Geofence</returns>
-        public Geofence DevicePrototypeSetSafeZone (List<GeoPoint> data, decimal? id)
+        public Geofence DevicePrototypeSetSafeZone (decimal? id, List<GeoPoint> data)
         {
-             ApiResponse<Geofence> localVarResponse = DevicePrototypeSetSafeZoneWithHttpInfo(data, id);
+             ApiResponse<Geofence> localVarResponse = DevicePrototypeSetSafeZoneWithHttpInfo(id, data);
              return localVarResponse.Data;
         }
 
@@ -2546,22 +2753,22 @@ namespace IO.Swagger.Api
         /// Update safe-zone for device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <param name="id">device id</param>
+        /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <returns>ApiResponse of Geofence</returns>
-        public ApiResponse< Geofence > DevicePrototypeSetSafeZoneWithHttpInfo (List<GeoPoint> data, decimal? id)
+        public ApiResponse< Geofence > DevicePrototypeSetSafeZoneWithHttpInfo (decimal? id, List<GeoPoint> data)
         {
-            // verify the required parameter 'data' is set
-            if (data == null)
-                throw new ApiException(400, "Missing required parameter 'data' when calling DeviceApi->DevicePrototypeSetSafeZone");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeSetSafeZone");
+            // verify the required parameter 'data' is set
+            if (data == null)
+                throw new ApiException(400, "Missing required parameter 'data' when calling DeviceApi->DevicePrototypeSetSafeZone");
 
             var localVarPath = "/devices/{id}/setSafeZone";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -2573,7 +2780,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -2583,14 +2790,14 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (data != null && data.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(data); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(data); // http body (model) parameter
             }
             else
             {
@@ -2599,7 +2806,7 @@ namespace IO.Swagger.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -2613,19 +2820,19 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Geofence>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Geofence) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Geofence)));
+                (Geofence) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Geofence)));
         }
 
         /// <summary>
         /// Update safe-zone for device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <param name="id">device id</param>
+        /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <returns>Task of Geofence</returns>
-        public async System.Threading.Tasks.Task<Geofence> DevicePrototypeSetSafeZoneAsync (List<GeoPoint> data, decimal? id)
+        public async System.Threading.Tasks.Task<Geofence> DevicePrototypeSetSafeZoneAsync (decimal? id, List<GeoPoint> data)
         {
-             ApiResponse<Geofence> localVarResponse = await DevicePrototypeSetSafeZoneAsyncWithHttpInfo(data, id);
+             ApiResponse<Geofence> localVarResponse = await DevicePrototypeSetSafeZoneAsyncWithHttpInfo(id, data);
              return localVarResponse.Data;
 
         }
@@ -2634,22 +2841,22 @@ namespace IO.Swagger.Api
         /// Update safe-zone for device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <param name="id">device id</param>
+        /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <returns>Task of ApiResponse (Geofence)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Geofence>> DevicePrototypeSetSafeZoneAsyncWithHttpInfo (List<GeoPoint> data, decimal? id)
+        public async System.Threading.Tasks.Task<ApiResponse<Geofence>> DevicePrototypeSetSafeZoneAsyncWithHttpInfo (decimal? id, List<GeoPoint> data)
         {
-            // verify the required parameter 'data' is set
-            if (data == null)
-                throw new ApiException(400, "Missing required parameter 'data' when calling DeviceApi->DevicePrototypeSetSafeZone");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeSetSafeZone");
+            // verify the required parameter 'data' is set
+            if (data == null)
+                throw new ApiException(400, "Missing required parameter 'data' when calling DeviceApi->DevicePrototypeSetSafeZone");
 
             var localVarPath = "/devices/{id}/setSafeZone";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -2661,7 +2868,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -2671,14 +2878,14 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (data != null && data.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(data); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(data); // http body (model) parameter
             }
             else
             {
@@ -2687,7 +2894,7 @@ namespace IO.Swagger.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -2701,7 +2908,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Geofence>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Geofence) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Geofence)));
+                (Geofence) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Geofence)));
         }
 
         /// <summary>
@@ -2733,7 +2940,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/sleep";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -2745,7 +2952,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -2755,16 +2962,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (duration != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "duration", duration)); // query parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (duration != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "duration", duration)); // query parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -2778,7 +2985,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
         /// <summary>
@@ -2811,7 +3018,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/sleep";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -2823,7 +3030,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -2833,16 +3040,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (duration != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "duration", duration)); // query parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (duration != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "duration", duration)); // query parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -2856,7 +3063,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
         /// <summary>
@@ -2888,7 +3095,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/config";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -2900,7 +3107,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -2910,14 +3117,14 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (data != null && data.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(data); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(data); // http body (model) parameter
             }
             else
             {
@@ -2926,7 +3133,7 @@ namespace IO.Swagger.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -2940,7 +3147,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<DeviceConfig>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DeviceConfig) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeviceConfig)));
+                (DeviceConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeviceConfig)));
         }
 
         /// <summary>
@@ -2973,7 +3180,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/config";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -2985,7 +3192,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -2995,14 +3202,14 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (data != null && data.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(data); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(data); // http body (model) parameter
             }
             else
             {
@@ -3011,7 +3218,7 @@ namespace IO.Swagger.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -3025,7 +3232,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<DeviceConfig>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DeviceConfig) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeviceConfig)));
+                (DeviceConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeviceConfig)));
         }
 
         /// <summary>
@@ -3057,7 +3264,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/wakeUp";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -3069,7 +3276,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -3079,16 +3286,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (duration != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "duration", duration)); // query parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (duration != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "duration", duration)); // query parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -3102,7 +3309,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
         /// <summary>
@@ -3135,7 +3342,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/devices/{id}/wakeUp";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -3147,7 +3354,7 @@ namespace IO.Swagger.Api
                 "application/xml", 
                 "text/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
@@ -3157,16 +3364,16 @@ namespace IO.Swagger.Api
                 "application/javascript",
                 "text/javascript"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (duration != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "duration", duration)); // query parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (duration != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "duration", duration)); // query parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -3180,7 +3387,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
     }

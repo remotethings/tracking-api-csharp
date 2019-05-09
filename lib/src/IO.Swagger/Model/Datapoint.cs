@@ -38,70 +38,74 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Datapoint" /> class.
         /// </summary>
-        /// <param name="Location">Location.</param>
-        /// <param name="Timestamp">Timestamp for the datapoint. NB this is not necessarily the same as &#39;created&#39; (required).</param>
-        /// <param name="Speed">Ground velocity in kmh, as determined by the GPS.</param>
-        /// <param name="Altitude">Altitude in m, as determined by the GPS.</param>
-        /// <param name="Course">Course in degrees, as determined by the GPS.</param>
-        /// <param name="NumValue">Internal use only.</param>
-        /// <param name="StringValue">Internal use only.</param>
-        /// <param name="SendReason">Bitfield indicating reason for datapoint transmission and status of the device at the time.   Bit1(1): Wake mode active,    Bit2(2): Sleep mode active,    Bit3(4): Bluetooth disconnected,    Bit4(8): Outside of Safe-zone,    Bit5(16): Motion detected,    Bit6(32): Device started moving,    Bit7(64): Device stopped moving,    Bit8(128): Position is stale: last known location was used   Special case 255/0xFF: device was checking in with server. Ignore all data.</param>
-        /// <param name="Sats">Number of visible satellites, as determined by the GPS.</param>
-        /// <param name="Hdop">Deprecated.</param>
-        /// <param name="Accuracy">Accuracy of the location in meters.</param>
-        /// <param name="LocationType">Type of position. Can be &#39;gps&#39;, &#39;wifi&#39;, &#39;gsm&#39; or &#39;invalid&#39; (required) (default to &quot;gps&quot;).</param>
-        /// <param name="BatteryVoltage">Battery charge level in volts..</param>
-        /// <param name="AverageCharge">Internal Use. 255 indicates plugged in and charging..</param>
-        /// <param name="Created">Timestamp for when the datapoint was received and processed by the server (required).</param>
-        /// <param name="Address">A reverse geocode result for the point.</param>
-        /// <param name="AlertType">Bitfield indicating what alerts where active at transmission time   Bit1(1): Freefall / Drop detected,    Bit2(2): Rotation detected,    Bit3(4): GSM jamming detected,    Bit4(8): Button was pressed,    Bit5(16): Generic Alert .</param>
-        /// <param name="Id">Id.</param>
-        /// <param name="DeviceId">DeviceId.</param>
-        public Datapoint(GeoPoint Location = default(GeoPoint), DateTime? Timestamp = default(DateTime?), decimal? Speed = default(decimal?), decimal? Altitude = default(decimal?), decimal? Course = default(decimal?), string NumValue = default(string), string StringValue = default(string), decimal? SendReason = default(decimal?), decimal? Sats = default(decimal?), decimal? Hdop = default(decimal?), decimal? Accuracy = default(decimal?), string LocationType = "gps", decimal? BatteryVoltage = default(decimal?), decimal? AverageCharge = default(decimal?), DateTime? Created = default(DateTime?), string Address = default(string), decimal? AlertType = default(decimal?), decimal? Id = default(decimal?), decimal? DeviceId = default(decimal?))
+        /// <param name="location">location.</param>
+        /// <param name="timestamp">Timestamp for the datapoint. NB this is not necessarily the same as &#39;created&#39; (required).</param>
+        /// <param name="speed">Ground velocity in kmh, as determined by the GPS.</param>
+        /// <param name="altitude">Altitude in m, as determined by the GPS.</param>
+        /// <param name="course">Course in degrees, as determined by the GPS.</param>
+        /// <param name="numValue">Internal use only.</param>
+        /// <param name="stringValue">Internal use only.</param>
+        /// <param name="sendReason">Bitfield indicating reason for datapoint transmission and status of the device at the time.   Bit1(1): Wake mode active,    Bit2(2): Sleep mode active,    Bit3(4): Bluetooth disconnected,    Bit4(8): Outside of Safe-zone,    Bit5(16): Motion detected,    Bit6(32): Device started moving,    Bit7(64): Device stopped moving,    Bit8(128): Position is stale: last known location was used   Special case 255/0xFF: device was checking in with server. Ignore all data.</param>
+        /// <param name="sats">Number of visible satellites, as determined by the GPS.</param>
+        /// <param name="hdop">Deprecated.</param>
+        /// <param name="accuracy">Accuracy of the location in meters.</param>
+        /// <param name="locationType">Type of position. Can be &#39;gps&#39;, &#39;wifi&#39;, &#39;gsm&#39; or &#39;invalid&#39; (required) (default to &quot;gps&quot;).</param>
+        /// <param name="batteryVoltage">Battery charge level in volts..</param>
+        /// <param name="averageCharge">Internal Use. 255 indicates plugged in and charging..</param>
+        /// <param name="created">Timestamp for when the datapoint was received and processed by the server (required).</param>
+        /// <param name="address">A reverse geocode result for the point.</param>
+        /// <param name="alertType">Bitfield indicating what alerts where active at transmission time   Bit1(1): Freefall / Drop detected,    Bit2(2): Rotation detected,    Bit3(4): GSM jamming detected,    Bit4(8): Button was pressed,    Bit5(16): Generic Alert .</param>
+        /// <param name="currentUsed">Current Used to send this location in microAmp Hours.</param>
+        /// <param name="gsmSignal">GSM CSQ value.</param>
+        /// <param name="id">id.</param>
+        /// <param name="deviceId">deviceId.</param>
+        public Datapoint(GeoPoint location = default(GeoPoint), DateTime? timestamp = default(DateTime?), decimal? speed = default(decimal?), decimal? altitude = default(decimal?), decimal? course = default(decimal?), string numValue = default(string), string stringValue = default(string), decimal? sendReason = default(decimal?), decimal? sats = default(decimal?), decimal? hdop = default(decimal?), decimal? accuracy = default(decimal?), string locationType = "gps", decimal? batteryVoltage = default(decimal?), decimal? averageCharge = default(decimal?), DateTime? created = default(DateTime?), string address = default(string), decimal? alertType = default(decimal?), decimal? currentUsed = default(decimal?), decimal? gsmSignal = default(decimal?), decimal? id = default(decimal?), decimal? deviceId = default(decimal?))
         {
-            // to ensure "Timestamp" is required (not null)
-            if (Timestamp == null)
+            // to ensure "timestamp" is required (not null)
+            if (timestamp == null)
             {
-                throw new InvalidDataException("Timestamp is a required property for Datapoint and cannot be null");
+                throw new InvalidDataException("timestamp is a required property for Datapoint and cannot be null");
             }
             else
             {
-                this.Timestamp = Timestamp;
+                this.Timestamp = timestamp;
             }
-            // to ensure "LocationType" is required (not null)
-            if (LocationType == null)
+            // to ensure "locationType" is required (not null)
+            if (locationType == null)
             {
-                throw new InvalidDataException("LocationType is a required property for Datapoint and cannot be null");
+                throw new InvalidDataException("locationType is a required property for Datapoint and cannot be null");
             }
             else
             {
-                this.LocationType = LocationType;
+                this.LocationType = locationType;
             }
-            // to ensure "Created" is required (not null)
-            if (Created == null)
+            // to ensure "created" is required (not null)
+            if (created == null)
             {
-                throw new InvalidDataException("Created is a required property for Datapoint and cannot be null");
+                throw new InvalidDataException("created is a required property for Datapoint and cannot be null");
             }
             else
             {
-                this.Created = Created;
+                this.Created = created;
             }
-            this.Location = Location;
-            this.Speed = Speed;
-            this.Altitude = Altitude;
-            this.Course = Course;
-            this.NumValue = NumValue;
-            this.StringValue = StringValue;
-            this.SendReason = SendReason;
-            this.Sats = Sats;
-            this.Hdop = Hdop;
-            this.Accuracy = Accuracy;
-            this.BatteryVoltage = BatteryVoltage;
-            this.AverageCharge = AverageCharge;
-            this.Address = Address;
-            this.AlertType = AlertType;
-            this.Id = Id;
-            this.DeviceId = DeviceId;
+            this.Location = location;
+            this.Speed = speed;
+            this.Altitude = altitude;
+            this.Course = course;
+            this.NumValue = numValue;
+            this.StringValue = stringValue;
+            this.SendReason = sendReason;
+            this.Sats = sats;
+            this.Hdop = hdop;
+            this.Accuracy = accuracy;
+            this.BatteryVoltage = batteryVoltage;
+            this.AverageCharge = averageCharge;
+            this.Address = address;
+            this.AlertType = alertType;
+            this.CurrentUsed = currentUsed;
+            this.GsmSignal = gsmSignal;
+            this.Id = id;
+            this.DeviceId = deviceId;
         }
         
         /// <summary>
@@ -223,6 +227,20 @@ namespace IO.Swagger.Model
         public decimal? AlertType { get; set; }
 
         /// <summary>
+        /// Current Used to send this location in microAmp Hours
+        /// </summary>
+        /// <value>Current Used to send this location in microAmp Hours</value>
+        [DataMember(Name="currentUsed", EmitDefaultValue=false)]
+        public decimal? CurrentUsed { get; set; }
+
+        /// <summary>
+        /// GSM CSQ value
+        /// </summary>
+        /// <value>GSM CSQ value</value>
+        [DataMember(Name="gsmSignal", EmitDefaultValue=false)]
+        public decimal? GsmSignal { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name="id", EmitDefaultValue=false)]
@@ -259,6 +277,8 @@ namespace IO.Swagger.Model
             sb.Append("  Created: ").Append(Created).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  AlertType: ").Append(AlertType).Append("\n");
+            sb.Append("  CurrentUsed: ").Append(CurrentUsed).Append("\n");
+            sb.Append("  GsmSignal: ").Append(GsmSignal).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DeviceId: ").Append(DeviceId).Append("\n");
             sb.Append("}\n");
@@ -269,7 +289,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -381,6 +401,16 @@ namespace IO.Swagger.Model
                     this.AlertType.Equals(input.AlertType))
                 ) && 
                 (
+                    this.CurrentUsed == input.CurrentUsed ||
+                    (this.CurrentUsed != null &&
+                    this.CurrentUsed.Equals(input.CurrentUsed))
+                ) && 
+                (
+                    this.GsmSignal == input.GsmSignal ||
+                    (this.GsmSignal != null &&
+                    this.GsmSignal.Equals(input.GsmSignal))
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -435,6 +465,10 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Address.GetHashCode();
                 if (this.AlertType != null)
                     hashCode = hashCode * 59 + this.AlertType.GetHashCode();
+                if (this.CurrentUsed != null)
+                    hashCode = hashCode * 59 + this.CurrentUsed.GetHashCode();
+                if (this.GsmSignal != null)
+                    hashCode = hashCode * 59 + this.GsmSignal.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.DeviceId != null)

@@ -33,14 +33,14 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse200" /> class.
         /// </summary>
-        /// <param name="ClientId">ClientId.</param>
-        /// <param name="Username">Username.</param>
-        /// <param name="Password">Password.</param>
-        public InlineResponse200(string ClientId = default(string), string Username = default(string), string Password = default(string))
+        /// <param name="clientId">clientId.</param>
+        /// <param name="username">username.</param>
+        /// <param name="password">password.</param>
+        public InlineResponse200(string clientId = default(string), string username = default(string), string password = default(string))
         {
-            this.ClientId = ClientId;
-            this.Username = Username;
-            this.Password = Password;
+            this.ClientId = clientId;
+            this.Username = username;
+            this.Password = password;
         }
         
         /// <summary>
@@ -80,7 +80,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

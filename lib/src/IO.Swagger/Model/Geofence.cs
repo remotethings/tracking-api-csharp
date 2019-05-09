@@ -33,52 +33,70 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Geofence" /> class.
         /// </summary>
-        /// <param name="Outline">Array of {lat:x,lng:y} objects representing the vertices of the polygon.</param>
-        /// <param name="Type">&#39;inside&#39;, &#39;outside&#39; or &#39;cross&#39;. For device safe-zone the value is ignored (always &#39;outside&#39;).</param>
-        /// <param name="Name">Name.</param>
-        /// <param name="WasInside">If the last point received was inside the geofence. Only updated for notifications (not the safe-zone as that is evaluated on the device) (default to false).</param>
-        /// <param name="LastChecked">When the geofence was last evaluated. Only updated for notifications (not the safe-zone as that is evaluated on the device).</param>
-        /// <param name="Modified">Modified (default to false).</param>
-        /// <param name="Id">Id.</param>
-        /// <param name="DeviceId">DeviceId.</param>
-        /// <param name="ConfigId">ConfigId.</param>
-        /// <param name="UserId">UserId.</param>
-        public Geofence(List<Object> Outline = default(List<Object>), string Type = default(string), string Name = default(string), bool? WasInside = false, DateTime? LastChecked = default(DateTime?), bool? Modified = false, decimal? Id = default(decimal?), decimal? DeviceId = default(decimal?), decimal? ConfigId = default(decimal?), decimal? UserId = default(decimal?))
+        /// <param name="outline">Array of {lat:x,lng:y} objects representing the vertices of the polygon. Do not use with center and radius..</param>
+        /// <param name="center">For circular geofences, the center. Property is ignored if outline !&#x3D; null..</param>
+        /// <param name="radius">For circular geofences, the radius of the circle in meters. Property is ignored if outline !&#x3D; null..</param>
+        /// <param name="type">&#39;inside&#39;, &#39;outside&#39; or &#39;cross&#39;. For device safe-zone the value is ignored (always &#39;outside&#39;).</param>
+        /// <param name="name">name.</param>
+        /// <param name="wasInside">If the last point received was inside the geofence. Only updated for notifications (not the safe-zone as that is evaluated on the device) (default to false).</param>
+        /// <param name="lastChecked">When the geofence was last evaluated. Only updated for notifications (not the safe-zone as that is evaluated on the device).</param>
+        /// <param name="modified">modified (default to false).</param>
+        /// <param name="id">id.</param>
+        /// <param name="deviceId">deviceId.</param>
+        /// <param name="configId">configId.</param>
+        /// <param name="userId">userId.</param>
+        public Geofence(List<Object> outline = default(List<Object>), GeoPoint center = default(GeoPoint), decimal? radius = default(decimal?), string type = default(string), string name = default(string), bool? wasInside = false, DateTime? lastChecked = default(DateTime?), bool? modified = false, decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? configId = default(decimal?), decimal? userId = default(decimal?))
         {
-            this.Outline = Outline;
-            this.Type = Type;
-            this.Name = Name;
-            // use default value if no "WasInside" provided
-            if (WasInside == null)
+            this.Outline = outline;
+            this.Center = center;
+            this.Radius = radius;
+            this.Type = type;
+            this.Name = name;
+            // use default value if no "wasInside" provided
+            if (wasInside == null)
             {
                 this.WasInside = false;
             }
             else
             {
-                this.WasInside = WasInside;
+                this.WasInside = wasInside;
             }
-            this.LastChecked = LastChecked;
-            // use default value if no "Modified" provided
-            if (Modified == null)
+            this.LastChecked = lastChecked;
+            // use default value if no "modified" provided
+            if (modified == null)
             {
                 this.Modified = false;
             }
             else
             {
-                this.Modified = Modified;
+                this.Modified = modified;
             }
-            this.Id = Id;
-            this.DeviceId = DeviceId;
-            this.ConfigId = ConfigId;
-            this.UserId = UserId;
+            this.Id = id;
+            this.DeviceId = deviceId;
+            this.ConfigId = configId;
+            this.UserId = userId;
         }
         
         /// <summary>
-        /// Array of {lat:x,lng:y} objects representing the vertices of the polygon
+        /// Array of {lat:x,lng:y} objects representing the vertices of the polygon. Do not use with center and radius.
         /// </summary>
-        /// <value>Array of {lat:x,lng:y} objects representing the vertices of the polygon</value>
+        /// <value>Array of {lat:x,lng:y} objects representing the vertices of the polygon. Do not use with center and radius.</value>
         [DataMember(Name="outline", EmitDefaultValue=false)]
         public List<Object> Outline { get; set; }
+
+        /// <summary>
+        /// For circular geofences, the center. Property is ignored if outline !&#x3D; null.
+        /// </summary>
+        /// <value>For circular geofences, the center. Property is ignored if outline !&#x3D; null.</value>
+        [DataMember(Name="center", EmitDefaultValue=false)]
+        public GeoPoint Center { get; set; }
+
+        /// <summary>
+        /// For circular geofences, the radius of the circle in meters. Property is ignored if outline !&#x3D; null.
+        /// </summary>
+        /// <value>For circular geofences, the radius of the circle in meters. Property is ignored if outline !&#x3D; null.</value>
+        [DataMember(Name="radius", EmitDefaultValue=false)]
+        public decimal? Radius { get; set; }
 
         /// <summary>
         /// &#39;inside&#39;, &#39;outside&#39; or &#39;cross&#39;. For device safe-zone the value is ignored (always &#39;outside&#39;)
@@ -146,6 +164,8 @@ namespace IO.Swagger.Model
             var sb = new StringBuilder();
             sb.Append("class Geofence {\n");
             sb.Append("  Outline: ").Append(Outline).Append("\n");
+            sb.Append("  Center: ").Append(Center).Append("\n");
+            sb.Append("  Radius: ").Append(Radius).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  WasInside: ").Append(WasInside).Append("\n");
@@ -163,7 +183,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -193,6 +213,16 @@ namespace IO.Swagger.Model
                     this.Outline == input.Outline ||
                     this.Outline != null &&
                     this.Outline.SequenceEqual(input.Outline)
+                ) && 
+                (
+                    this.Center == input.Center ||
+                    (this.Center != null &&
+                    this.Center.Equals(input.Center))
+                ) && 
+                (
+                    this.Radius == input.Radius ||
+                    (this.Radius != null &&
+                    this.Radius.Equals(input.Radius))
                 ) && 
                 (
                     this.Type == input.Type ||
@@ -252,6 +282,10 @@ namespace IO.Swagger.Model
                 int hashCode = 41;
                 if (this.Outline != null)
                     hashCode = hashCode * 59 + this.Outline.GetHashCode();
+                if (this.Center != null)
+                    hashCode = hashCode * 59 + this.Center.GetHashCode();
+                if (this.Radius != null)
+                    hashCode = hashCode * 59 + this.Radius.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Name != null)
