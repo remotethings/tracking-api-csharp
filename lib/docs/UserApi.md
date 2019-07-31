@@ -1,6 +1,6 @@
 # IO.Swagger.Api.UserApi
 
-All URIs are relative to *https://cp.remotethings.co.uk/api*
+All URIs are relative to *https://api.thelightbug.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**UserPrototypeFindByIdGeofences**](UserApi.md#userprototypefindbyidgeofences) | **GET** /users/{id}/geofences/{fk} | Find a related item by id for geofences.
 [**UserPrototypeGetDevices**](UserApi.md#userprototypegetdevices) | **GET** /users/{id}/devices | Queries devices of user.
 [**UserPrototypeGetGeofences**](UserApi.md#userprototypegetgeofences) | **GET** /users/{id}/geofences | Queries geofences of user.
+[**UserPrototypeGetMqttCredentials**](UserApi.md#userprototypegetmqttcredentials) | **GET** /users/{id}/getMqttCredentials | 
 [**UserPrototypeUpdateByIdGeofences**](UserApi.md#userprototypeupdatebyidgeofences) | **PUT** /users/{id}/geofences/{fk} | Update a related item by id for geofences.
 
 
@@ -196,7 +197,7 @@ No authorization required
 
 <a name="userprototypedestroybyidgeofences"></a>
 # **UserPrototypeDestroyByIdGeofences**
-> void UserPrototypeDestroyByIdGeofences (decimal? fk, string id)
+> void UserPrototypeDestroyByIdGeofences (string id, decimal? fk)
 
 Delete a related item by id for geofences.
 
@@ -215,13 +216,13 @@ namespace Example
         public void main()
         {
             var apiInstance = new UserApi();
-            var fk = 8.14;  // decimal? | Foreign key for geofences
             var id = id_example;  // string | user id
+            var fk = 8.14;  // decimal? | Foreign key for geofences
 
             try
             {
                 // Delete a related item by id for geofences.
-                apiInstance.UserPrototypeDestroyByIdGeofences(fk, id);
+                apiInstance.UserPrototypeDestroyByIdGeofences(id, fk);
             }
             catch (Exception e)
             {
@@ -236,8 +237,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **decimal?**| Foreign key for geofences | 
  **id** | **string**| user id | 
+ **fk** | **decimal?**| Foreign key for geofences | 
 
 ### Return type
 
@@ -256,7 +257,7 @@ No authorization required
 
 <a name="userprototypefindbyidgeofences"></a>
 # **UserPrototypeFindByIdGeofences**
-> Geofence UserPrototypeFindByIdGeofences (decimal? fk, string id)
+> Geofence UserPrototypeFindByIdGeofences (string id, decimal? fk)
 
 Find a related item by id for geofences.
 
@@ -275,13 +276,13 @@ namespace Example
         public void main()
         {
             var apiInstance = new UserApi();
-            var fk = 8.14;  // decimal? | Foreign key for geofences
             var id = id_example;  // string | user id
+            var fk = 8.14;  // decimal? | Foreign key for geofences
 
             try
             {
                 // Find a related item by id for geofences.
-                Geofence result = apiInstance.UserPrototypeFindByIdGeofences(fk, id);
+                Geofence result = apiInstance.UserPrototypeFindByIdGeofences(id, fk);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -297,8 +298,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **decimal?**| Foreign key for geofences | 
  **id** | **string**| user id | 
+ **fk** | **decimal?**| Foreign key for geofences | 
 
 ### Return type
 
@@ -437,9 +438,67 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="userprototypegetmqttcredentials"></a>
+# **UserPrototypeGetMqttCredentials**
+> InlineResponse200 UserPrototypeGetMqttCredentials (string id)
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class UserPrototypeGetMqttCredentialsExample
+    {
+        public void main()
+        {
+            var apiInstance = new UserApi();
+            var id = id_example;  // string | user id
+
+            try
+            {
+                InlineResponse200 result = apiInstance.UserPrototypeGetMqttCredentials(id);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UserApi.UserPrototypeGetMqttCredentials: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| user id | 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="userprototypeupdatebyidgeofences"></a>
 # **UserPrototypeUpdateByIdGeofences**
-> Geofence UserPrototypeUpdateByIdGeofences (decimal? fk, string id, Geofence data = null)
+> Geofence UserPrototypeUpdateByIdGeofences (string id, decimal? fk, Geofence data = null)
 
 Update a related item by id for geofences.
 
@@ -458,14 +517,14 @@ namespace Example
         public void main()
         {
             var apiInstance = new UserApi();
-            var fk = 8.14;  // decimal? | Foreign key for geofences
             var id = id_example;  // string | user id
+            var fk = 8.14;  // decimal? | Foreign key for geofences
             var data = new Geofence(); // Geofence | Body (JSON) (optional) 
 
             try
             {
                 // Update a related item by id for geofences.
-                Geofence result = apiInstance.UserPrototypeUpdateByIdGeofences(fk, id, data);
+                Geofence result = apiInstance.UserPrototypeUpdateByIdGeofences(id, fk, data);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -481,8 +540,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **decimal?**| Foreign key for geofences | 
  **id** | **string**| user id | 
+ **fk** | **decimal?**| Foreign key for geofences | 
  **data** | [**Geofence**](Geofence.md)| Body (JSON) | [optional] 
 
 ### Return type

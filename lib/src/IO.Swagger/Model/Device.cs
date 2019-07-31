@@ -28,7 +28,7 @@ namespace IO.Swagger.Model
     /// Device
     /// </summary>
     [DataContract]
-    public partial class Device :  IEquatable<Device>, IValidatableObject
+    public partial class Device : Dictionary<String, Object>,  IEquatable<Device>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Device" /> class.
@@ -38,8 +38,9 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Device" /> class.
         /// </summary>
-        /// <param name="imei">imei (required).</param>
-        /// <param name="iccid">iccid (required).</param>
+        /// <param name="imei">imei.</param>
+        /// <param name="iccid">iccid.</param>
+        /// <param name="loraId">loraId.</param>
         /// <param name="imsi">imsi.</param>
         /// <param name="btMacAddress">btMacAddress.</param>
         /// <param name="serial">serial.</param>
@@ -47,12 +48,12 @@ namespace IO.Swagger.Model
         /// <param name="expires">expires.</param>
         /// <param name="lastConnection">lastConnection.</param>
         /// <param name="firstSeen">firstSeen (required).</param>
-        /// <param name="mode">mode (required) (default to &quot;default&quot;).</param>
+        /// <param name="mode">mode (default to &quot;default&quot;).</param>
         /// <param name="name">name.</param>
         /// <param name="batteryVoltage">batteryVoltage.</param>
         /// <param name="batteryType">batteryType (default to &quot;LIO&quot;).</param>
         /// <param name="tags">tags.</param>
-        /// <param name="currentMode">currentMode.</param>
+        /// <param name="currentMode">Indicates last known device state. 0 &#x3D; awake, 1 &#x3D; sleep, 6 &#x3D; flight mode.</param>
         /// <param name="color">color (default to &quot;fc7c3d&quot;).</param>
         /// <param name="saveToWeb">saveToWeb (default to false).</param>
         /// <param name="active">active (default to false).</param>
@@ -66,26 +67,8 @@ namespace IO.Swagger.Model
         /// <param name="securePhoneId">securePhoneId.</param>
         /// <param name="resellerId">resellerId.</param>
         /// <param name="resellerPlanId">resellerPlanId.</param>
-        public Device(string imei = default(string), string iccid = default(string), string imsi = default(string), string btMacAddress = default(string), string serial = default(string), string type = default(string), DateTime? expires = default(DateTime?), DateTime? lastConnection = default(DateTime?), DateTime? firstSeen = default(DateTime?), string mode = "default", string name = default(string), decimal? batteryVoltage = default(decimal?), string batteryType = "LIO", List<string> tags = default(List<string>), decimal? currentMode = default(decimal?), string color = "fc7c3d", bool? saveToWeb = false, bool? active = false, bool? deepSleep = false, string simstate = "active", string stripeSubscription = default(string), string subscriptionType = default(string), Object meta = default(Object), decimal? id = default(decimal?), decimal? ownerId = default(decimal?), decimal? securePhoneId = default(decimal?), decimal? resellerId = default(decimal?), decimal? resellerPlanId = default(decimal?))
+        public Device(string imei = default(string), string iccid = default(string), decimal? loraId = default(decimal?), string imsi = default(string), string btMacAddress = default(string), string serial = default(string), string type = default(string), DateTime? expires = default(DateTime?), DateTime? lastConnection = default(DateTime?), DateTime? firstSeen = default(DateTime?), string mode = "default", string name = default(string), decimal? batteryVoltage = default(decimal?), string batteryType = "LIO", List<string> tags = default(List<string>), decimal? currentMode = default(decimal?), string color = "fc7c3d", bool? saveToWeb = false, bool? active = false, bool? deepSleep = false, string simstate = "active", string stripeSubscription = default(string), string subscriptionType = default(string), Object meta = default(Object), decimal? id = default(decimal?), decimal? ownerId = default(decimal?), decimal? securePhoneId = default(decimal?), decimal? resellerId = default(decimal?), decimal? resellerPlanId = default(decimal?)) : base()
         {
-            // to ensure "imei" is required (not null)
-            if (imei == null)
-            {
-                throw new InvalidDataException("imei is a required property for Device and cannot be null");
-            }
-            else
-            {
-                this.Imei = imei;
-            }
-            // to ensure "iccid" is required (not null)
-            if (iccid == null)
-            {
-                throw new InvalidDataException("iccid is a required property for Device and cannot be null");
-            }
-            else
-            {
-                this.Iccid = iccid;
-            }
             // to ensure "firstSeen" is required (not null)
             if (firstSeen == null)
             {
@@ -95,21 +78,24 @@ namespace IO.Swagger.Model
             {
                 this.FirstSeen = firstSeen;
             }
-            // to ensure "mode" is required (not null)
-            if (mode == null)
-            {
-                throw new InvalidDataException("mode is a required property for Device and cannot be null");
-            }
-            else
-            {
-                this.Mode = mode;
-            }
+            this.Imei = imei;
+            this.Iccid = iccid;
+            this.LoraId = loraId;
             this.Imsi = imsi;
             this.BtMacAddress = btMacAddress;
             this.Serial = serial;
             this.Type = type;
             this.Expires = expires;
             this.LastConnection = lastConnection;
+            // use default value if no "mode" provided
+            if (mode == null)
+            {
+                this.Mode = "default";
+            }
+            else
+            {
+                this.Mode = mode;
+            }
             this.Name = name;
             this.BatteryVoltage = batteryVoltage;
             // use default value if no "batteryType" provided
@@ -191,6 +177,12 @@ namespace IO.Swagger.Model
         public string Iccid { get; set; }
 
         /// <summary>
+        /// Gets or Sets LoraId
+        /// </summary>
+        [DataMember(Name="loraId", EmitDefaultValue=false)]
+        public decimal? LoraId { get; set; }
+
+        /// <summary>
         /// Gets or Sets Imsi
         /// </summary>
         [DataMember(Name="imsi", EmitDefaultValue=false)]
@@ -263,8 +255,9 @@ namespace IO.Swagger.Model
         public List<string> Tags { get; set; }
 
         /// <summary>
-        /// Gets or Sets CurrentMode
+        /// Indicates last known device state. 0 &#x3D; awake, 1 &#x3D; sleep, 6 &#x3D; flight mode
         /// </summary>
+        /// <value>Indicates last known device state. 0 &#x3D; awake, 1 &#x3D; sleep, 6 &#x3D; flight mode</value>
         [DataMember(Name="currentMode", EmitDefaultValue=false)]
         public decimal? CurrentMode { get; set; }
 
@@ -354,8 +347,10 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Device {\n");
+            sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  Imei: ").Append(Imei).Append("\n");
             sb.Append("  Iccid: ").Append(Iccid).Append("\n");
+            sb.Append("  LoraId: ").Append(LoraId).Append("\n");
             sb.Append("  Imsi: ").Append(Imsi).Append("\n");
             sb.Append("  BtMacAddress: ").Append(BtMacAddress).Append("\n");
             sb.Append("  Serial: ").Append(Serial).Append("\n");
@@ -390,7 +385,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public virtual string ToJson()
+        public override string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -415,142 +410,147 @@ namespace IO.Swagger.Model
             if (input == null)
                 return false;
 
-            return 
+            return base.Equals(input) && 
                 (
                     this.Imei == input.Imei ||
                     (this.Imei != null &&
                     this.Imei.Equals(input.Imei))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Iccid == input.Iccid ||
                     (this.Iccid != null &&
                     this.Iccid.Equals(input.Iccid))
-                ) && 
+                ) && base.Equals(input) && 
+                (
+                    this.LoraId == input.LoraId ||
+                    (this.LoraId != null &&
+                    this.LoraId.Equals(input.LoraId))
+                ) && base.Equals(input) && 
                 (
                     this.Imsi == input.Imsi ||
                     (this.Imsi != null &&
                     this.Imsi.Equals(input.Imsi))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.BtMacAddress == input.BtMacAddress ||
                     (this.BtMacAddress != null &&
                     this.BtMacAddress.Equals(input.BtMacAddress))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Serial == input.Serial ||
                     (this.Serial != null &&
                     this.Serial.Equals(input.Serial))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Expires == input.Expires ||
                     (this.Expires != null &&
                     this.Expires.Equals(input.Expires))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.LastConnection == input.LastConnection ||
                     (this.LastConnection != null &&
                     this.LastConnection.Equals(input.LastConnection))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.FirstSeen == input.FirstSeen ||
                     (this.FirstSeen != null &&
                     this.FirstSeen.Equals(input.FirstSeen))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Mode == input.Mode ||
                     (this.Mode != null &&
                     this.Mode.Equals(input.Mode))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.BatteryVoltage == input.BatteryVoltage ||
                     (this.BatteryVoltage != null &&
                     this.BatteryVoltage.Equals(input.BatteryVoltage))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.BatteryType == input.BatteryType ||
                     (this.BatteryType != null &&
                     this.BatteryType.Equals(input.BatteryType))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Tags == input.Tags ||
                     this.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.CurrentMode == input.CurrentMode ||
                     (this.CurrentMode != null &&
                     this.CurrentMode.Equals(input.CurrentMode))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Color == input.Color ||
                     (this.Color != null &&
                     this.Color.Equals(input.Color))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.SaveToWeb == input.SaveToWeb ||
                     (this.SaveToWeb != null &&
                     this.SaveToWeb.Equals(input.SaveToWeb))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Active == input.Active ||
                     (this.Active != null &&
                     this.Active.Equals(input.Active))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.DeepSleep == input.DeepSleep ||
                     (this.DeepSleep != null &&
                     this.DeepSleep.Equals(input.DeepSleep))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Simstate == input.Simstate ||
                     (this.Simstate != null &&
                     this.Simstate.Equals(input.Simstate))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.StripeSubscription == input.StripeSubscription ||
                     (this.StripeSubscription != null &&
                     this.StripeSubscription.Equals(input.StripeSubscription))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.SubscriptionType == input.SubscriptionType ||
                     (this.SubscriptionType != null &&
                     this.SubscriptionType.Equals(input.SubscriptionType))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Meta == input.Meta ||
                     (this.Meta != null &&
                     this.Meta.Equals(input.Meta))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.OwnerId == input.OwnerId ||
                     (this.OwnerId != null &&
                     this.OwnerId.Equals(input.OwnerId))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.SecurePhoneId == input.SecurePhoneId ||
                     (this.SecurePhoneId != null &&
                     this.SecurePhoneId.Equals(input.SecurePhoneId))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.ResellerId == input.ResellerId ||
                     (this.ResellerId != null &&
                     this.ResellerId.Equals(input.ResellerId))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.ResellerPlanId == input.ResellerPlanId ||
                     (this.ResellerPlanId != null &&
@@ -566,11 +566,13 @@ namespace IO.Swagger.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hashCode = base.GetHashCode();
                 if (this.Imei != null)
                     hashCode = hashCode * 59 + this.Imei.GetHashCode();
                 if (this.Iccid != null)
                     hashCode = hashCode * 59 + this.Iccid.GetHashCode();
+                if (this.LoraId != null)
+                    hashCode = hashCode * 59 + this.LoraId.GetHashCode();
                 if (this.Imsi != null)
                     hashCode = hashCode * 59 + this.Imsi.GetHashCode();
                 if (this.BtMacAddress != null)
@@ -634,6 +636,7 @@ namespace IO.Swagger.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            foreach(var x in BaseValidate(validationContext)) yield return x;
             // Imei (string) maxLength
             if(this.Imei != null && this.Imei.Length > 15)
             {

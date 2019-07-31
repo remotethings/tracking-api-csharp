@@ -28,7 +28,7 @@ namespace IO.Swagger.Model
     /// NotificationTrigger
     /// </summary>
     [DataContract]
-    public partial class NotificationTrigger :  IEquatable<NotificationTrigger>, IValidatableObject
+    public partial class NotificationTrigger : Dictionary<String, Object>,  IEquatable<NotificationTrigger>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="NotificationTrigger" /> class.
@@ -47,7 +47,7 @@ namespace IO.Swagger.Model
         /// <param name="id">id.</param>
         /// <param name="deviceId">deviceId.</param>
         /// <param name="userId">userId.</param>
-        public NotificationTrigger(string name = default(string), string type = default(string), Object parameters = default(Object), decimal? muteFor = default(decimal?), DateTime? lastTriggered = default(DateTime?), Object delivery = default(Object), decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? userId = default(decimal?))
+        public NotificationTrigger(string name = default(string), string type = default(string), Object parameters = default(Object), decimal? muteFor = default(decimal?), DateTime? lastTriggered = default(DateTime?), Object delivery = default(Object), decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? userId = default(decimal?)) : base()
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -154,6 +154,7 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class NotificationTrigger {\n");
+            sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Parameters: ").Append(Parameters).Append("\n");
@@ -171,7 +172,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public virtual string ToJson()
+        public override string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -196,47 +197,47 @@ namespace IO.Swagger.Model
             if (input == null)
                 return false;
 
-            return 
+            return base.Equals(input) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Parameters == input.Parameters ||
                     (this.Parameters != null &&
                     this.Parameters.Equals(input.Parameters))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.MuteFor == input.MuteFor ||
                     (this.MuteFor != null &&
                     this.MuteFor.Equals(input.MuteFor))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.LastTriggered == input.LastTriggered ||
                     (this.LastTriggered != null &&
                     this.LastTriggered.Equals(input.LastTriggered))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Delivery == input.Delivery ||
                     (this.Delivery != null &&
                     this.Delivery.Equals(input.Delivery))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.DeviceId == input.DeviceId ||
                     (this.DeviceId != null &&
                     this.DeviceId.Equals(input.DeviceId))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.UserId == input.UserId ||
                     (this.UserId != null &&
@@ -252,7 +253,7 @@ namespace IO.Swagger.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hashCode = base.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Type != null)
@@ -282,6 +283,7 @@ namespace IO.Swagger.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

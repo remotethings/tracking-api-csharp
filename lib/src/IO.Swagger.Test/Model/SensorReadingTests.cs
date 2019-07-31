@@ -107,6 +107,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Meta'
         }
         /// <summary>
+        /// Test the property 'RelatedId'
+        /// </summary>
+        [Test]
+        public void RelatedIdTest()
+        {
+            // TODO unit test for the property 'RelatedId'
+        }
+        /// <summary>
         /// Test the property 'Id'
         /// </summary>
         [Test]

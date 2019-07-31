@@ -92,6 +92,29 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DevicePrototypeDeleteNotificationTriggersWithHttpInfo (decimal? id);
         /// <summary>
+        /// Remove alert/notification trigger by id {fk} for device
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <returns></returns>
+        void DevicePrototypeDestroyByIdNotificationTriggers (decimal? id, decimal? fk);
+
+        /// <summary>
+        /// Remove alert/notification trigger by id {fk} for device
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DevicePrototypeDestroyByIdNotificationTriggersWithHttpInfo (decimal? id, decimal? fk);
+        /// <summary>
         /// Delete a specific point for a device
         /// </summary>
         /// <remarks>
@@ -114,6 +137,29 @@ namespace IO.Swagger.Api
         /// <param name="fk">Foreign key for points</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DevicePrototypeDestroyByIdPointsWithHttpInfo (decimal? id, decimal? fk);
+        /// <summary>
+        /// Find a related item by id for notificationTriggers.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <returns>NotificationTrigger</returns>
+        NotificationTrigger DevicePrototypeFindByIdNotificationTriggers (decimal? id, decimal? fk);
+
+        /// <summary>
+        /// Find a related item by id for notificationTriggers.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <returns>ApiResponse of NotificationTrigger</returns>
+        ApiResponse<NotificationTrigger> DevicePrototypeFindByIdNotificationTriggersWithHttpInfo (decimal? id, decimal? fk);
         /// <summary>
         /// Retrieve a specific point for a device
         /// </summary>
@@ -320,28 +366,30 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of Geofence</returns>
         ApiResponse<Geofence> DevicePrototypeSetSafeZoneWithHttpInfo (decimal? id, List<GeoPoint> data);
         /// <summary>
-        /// Send sleep instruction to device
+        /// Update an alert/notification trigger by id {fk} for device
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">device id</param>
-        /// <param name="duration"> (optional)</param>
-        /// <returns>Object</returns>
-        Object DevicePrototypeSleep (decimal? id, decimal? duration = null);
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>NotificationTrigger</returns>
+        NotificationTrigger DevicePrototypeUpdateByIdNotificationTriggers (decimal? id, decimal? fk, NotificationTrigger data = null);
 
         /// <summary>
-        /// Send sleep instruction to device
+        /// Update an alert/notification trigger by id {fk} for device
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">device id</param>
-        /// <param name="duration"> (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> DevicePrototypeSleepWithHttpInfo (decimal? id, decimal? duration = null);
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>ApiResponse of NotificationTrigger</returns>
+        ApiResponse<NotificationTrigger> DevicePrototypeUpdateByIdNotificationTriggersWithHttpInfo (decimal? id, decimal? fk, NotificationTrigger data = null);
         /// <summary>
         /// Update configuration for a device
         /// </summary>
@@ -365,29 +413,6 @@ namespace IO.Swagger.Api
         /// <param name="data">Body (JSON) (optional)</param>
         /// <returns>ApiResponse of DeviceConfig</returns>
         ApiResponse<DeviceConfig> DevicePrototypeUpdateConfigWithHttpInfo (decimal? id, DeviceConfig data = null);
-        /// <summary>
-        /// Send wake instruction to device
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">device id</param>
-        /// <param name="duration"> (optional)</param>
-        /// <returns>Object</returns>
-        Object DevicePrototypeWakeUp (decimal? id, decimal? duration = null);
-
-        /// <summary>
-        /// Send wake instruction to device
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">device id</param>
-        /// <param name="duration"> (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> DevicePrototypeWakeUpWithHttpInfo (decimal? id, decimal? duration = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -458,6 +483,29 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDeleteNotificationTriggersAsyncWithHttpInfo (decimal? id);
         /// <summary>
+        /// Remove alert/notification trigger by id {fk} for device
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DevicePrototypeDestroyByIdNotificationTriggersAsync (decimal? id, decimal? fk);
+
+        /// <summary>
+        /// Remove alert/notification trigger by id {fk} for device
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDestroyByIdNotificationTriggersAsyncWithHttpInfo (decimal? id, decimal? fk);
+        /// <summary>
         /// Delete a specific point for a device
         /// </summary>
         /// <remarks>
@@ -480,6 +528,29 @@ namespace IO.Swagger.Api
         /// <param name="fk">Foreign key for points</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDestroyByIdPointsAsyncWithHttpInfo (decimal? id, decimal? fk);
+        /// <summary>
+        /// Find a related item by id for notificationTriggers.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <returns>Task of NotificationTrigger</returns>
+        System.Threading.Tasks.Task<NotificationTrigger> DevicePrototypeFindByIdNotificationTriggersAsync (decimal? id, decimal? fk);
+
+        /// <summary>
+        /// Find a related item by id for notificationTriggers.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <returns>Task of ApiResponse (NotificationTrigger)</returns>
+        System.Threading.Tasks.Task<ApiResponse<NotificationTrigger>> DevicePrototypeFindByIdNotificationTriggersAsyncWithHttpInfo (decimal? id, decimal? fk);
         /// <summary>
         /// Retrieve a specific point for a device
         /// </summary>
@@ -686,28 +757,30 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse (Geofence)</returns>
         System.Threading.Tasks.Task<ApiResponse<Geofence>> DevicePrototypeSetSafeZoneAsyncWithHttpInfo (decimal? id, List<GeoPoint> data);
         /// <summary>
-        /// Send sleep instruction to device
+        /// Update an alert/notification trigger by id {fk} for device
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">device id</param>
-        /// <param name="duration"> (optional)</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> DevicePrototypeSleepAsync (decimal? id, decimal? duration = null);
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of NotificationTrigger</returns>
+        System.Threading.Tasks.Task<NotificationTrigger> DevicePrototypeUpdateByIdNotificationTriggersAsync (decimal? id, decimal? fk, NotificationTrigger data = null);
 
         /// <summary>
-        /// Send sleep instruction to device
+        /// Update an alert/notification trigger by id {fk} for device
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">device id</param>
-        /// <param name="duration"> (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeSleepAsyncWithHttpInfo (decimal? id, decimal? duration = null);
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of ApiResponse (NotificationTrigger)</returns>
+        System.Threading.Tasks.Task<ApiResponse<NotificationTrigger>> DevicePrototypeUpdateByIdNotificationTriggersAsyncWithHttpInfo (decimal? id, decimal? fk, NotificationTrigger data = null);
         /// <summary>
         /// Update configuration for a device
         /// </summary>
@@ -731,29 +804,6 @@ namespace IO.Swagger.Api
         /// <param name="data">Body (JSON) (optional)</param>
         /// <returns>Task of ApiResponse (DeviceConfig)</returns>
         System.Threading.Tasks.Task<ApiResponse<DeviceConfig>> DevicePrototypeUpdateConfigAsyncWithHttpInfo (decimal? id, DeviceConfig data = null);
-        /// <summary>
-        /// Send wake instruction to device
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">device id</param>
-        /// <param name="duration"> (optional)</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> DevicePrototypeWakeUpAsync (decimal? id, decimal? duration = null);
-
-        /// <summary>
-        /// Send wake instruction to device
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">device id</param>
-        /// <param name="duration"> (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeWakeUpAsyncWithHttpInfo (decimal? id, decimal? duration = null);
         #endregion Asynchronous Operations
     }
 
@@ -1326,6 +1376,165 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        /// Remove alert/notification trigger by id {fk} for device 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <returns></returns>
+        public void DevicePrototypeDestroyByIdNotificationTriggers (decimal? id, decimal? fk)
+        {
+             DevicePrototypeDestroyByIdNotificationTriggersWithHttpInfo(id, fk);
+        }
+
+        /// <summary>
+        /// Remove alert/notification trigger by id {fk} for device 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DevicePrototypeDestroyByIdNotificationTriggersWithHttpInfo (decimal? id, decimal? fk)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeDestroyByIdNotificationTriggers");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeDestroyByIdNotificationTriggers");
+
+            var localVarPath = "/devices/{id}/notificationTriggers/{fk}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeDestroyByIdNotificationTriggers", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Remove alert/notification trigger by id {fk} for device 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DevicePrototypeDestroyByIdNotificationTriggersAsync (decimal? id, decimal? fk)
+        {
+             await DevicePrototypeDestroyByIdNotificationTriggersAsyncWithHttpInfo(id, fk);
+
+        }
+
+        /// <summary>
+        /// Remove alert/notification trigger by id {fk} for device 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDestroyByIdNotificationTriggersAsyncWithHttpInfo (decimal? id, decimal? fk)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeDestroyByIdNotificationTriggers");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeDestroyByIdNotificationTriggers");
+
+            var localVarPath = "/devices/{id}/notificationTriggers/{fk}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeDestroyByIdNotificationTriggers", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
         /// Delete a specific point for a device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1482,6 +1691,167 @@ namespace IO.Swagger.Api
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
+        }
+
+        /// <summary>
+        /// Find a related item by id for notificationTriggers. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <returns>NotificationTrigger</returns>
+        public NotificationTrigger DevicePrototypeFindByIdNotificationTriggers (decimal? id, decimal? fk)
+        {
+             ApiResponse<NotificationTrigger> localVarResponse = DevicePrototypeFindByIdNotificationTriggersWithHttpInfo(id, fk);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Find a related item by id for notificationTriggers. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <returns>ApiResponse of NotificationTrigger</returns>
+        public ApiResponse< NotificationTrigger > DevicePrototypeFindByIdNotificationTriggersWithHttpInfo (decimal? id, decimal? fk)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeFindByIdNotificationTriggers");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeFindByIdNotificationTriggers");
+
+            var localVarPath = "/devices/{id}/notificationTriggers/{fk}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeFindByIdNotificationTriggers", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<NotificationTrigger>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (NotificationTrigger) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotificationTrigger)));
+        }
+
+        /// <summary>
+        /// Find a related item by id for notificationTriggers. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <returns>Task of NotificationTrigger</returns>
+        public async System.Threading.Tasks.Task<NotificationTrigger> DevicePrototypeFindByIdNotificationTriggersAsync (decimal? id, decimal? fk)
+        {
+             ApiResponse<NotificationTrigger> localVarResponse = await DevicePrototypeFindByIdNotificationTriggersAsyncWithHttpInfo(id, fk);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Find a related item by id for notificationTriggers. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <returns>Task of ApiResponse (NotificationTrigger)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<NotificationTrigger>> DevicePrototypeFindByIdNotificationTriggersAsyncWithHttpInfo (decimal? id, decimal? fk)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeFindByIdNotificationTriggers");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeFindByIdNotificationTriggers");
+
+            var localVarPath = "/devices/{id}/notificationTriggers/{fk}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeFindByIdNotificationTriggers", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<NotificationTrigger>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (NotificationTrigger) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotificationTrigger)));
         }
 
         /// <summary>
@@ -2912,32 +3282,37 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Send sleep instruction to device 
+        /// Update an alert/notification trigger by id {fk} for device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">device id</param>
-        /// <param name="duration"> (optional)</param>
-        /// <returns>Object</returns>
-        public Object DevicePrototypeSleep (decimal? id, decimal? duration = null)
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>NotificationTrigger</returns>
+        public NotificationTrigger DevicePrototypeUpdateByIdNotificationTriggers (decimal? id, decimal? fk, NotificationTrigger data = null)
         {
-             ApiResponse<Object> localVarResponse = DevicePrototypeSleepWithHttpInfo(id, duration);
+             ApiResponse<NotificationTrigger> localVarResponse = DevicePrototypeUpdateByIdNotificationTriggersWithHttpInfo(id, fk, data);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Send sleep instruction to device 
+        /// Update an alert/notification trigger by id {fk} for device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">device id</param>
-        /// <param name="duration"> (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > DevicePrototypeSleepWithHttpInfo (decimal? id, decimal? duration = null)
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>ApiResponse of NotificationTrigger</returns>
+        public ApiResponse< NotificationTrigger > DevicePrototypeUpdateByIdNotificationTriggersWithHttpInfo (decimal? id, decimal? fk, NotificationTrigger data = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeSleep");
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeUpdateByIdNotificationTriggers");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeUpdateByIdNotificationTriggers");
 
-            var localVarPath = "/devices/{id}/sleep";
+            var localVarPath = "/devices/{id}/notificationTriggers/{fk}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -2967,55 +3342,68 @@ namespace IO.Swagger.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (duration != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "duration", duration)); // query parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+            if (data != null && data.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(data); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = data; // byte array
+            }
 
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("DevicePrototypeSleep", localVarResponse);
+                Exception exception = ExceptionFactory("DevicePrototypeUpdateByIdNotificationTriggers", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<NotificationTrigger>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (NotificationTrigger) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotificationTrigger)));
         }
 
         /// <summary>
-        /// Send sleep instruction to device 
+        /// Update an alert/notification trigger by id {fk} for device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">device id</param>
-        /// <param name="duration"> (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> DevicePrototypeSleepAsync (decimal? id, decimal? duration = null)
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of NotificationTrigger</returns>
+        public async System.Threading.Tasks.Task<NotificationTrigger> DevicePrototypeUpdateByIdNotificationTriggersAsync (decimal? id, decimal? fk, NotificationTrigger data = null)
         {
-             ApiResponse<Object> localVarResponse = await DevicePrototypeSleepAsyncWithHttpInfo(id, duration);
+             ApiResponse<NotificationTrigger> localVarResponse = await DevicePrototypeUpdateByIdNotificationTriggersAsyncWithHttpInfo(id, fk, data);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Send sleep instruction to device 
+        /// Update an alert/notification trigger by id {fk} for device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">device id</param>
-        /// <param name="duration"> (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeSleepAsyncWithHttpInfo (decimal? id, decimal? duration = null)
+        /// <param name="fk">Foreign key for notificationTriggers</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of ApiResponse (NotificationTrigger)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<NotificationTrigger>> DevicePrototypeUpdateByIdNotificationTriggersAsyncWithHttpInfo (decimal? id, decimal? fk, NotificationTrigger data = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeSleep");
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeUpdateByIdNotificationTriggers");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeUpdateByIdNotificationTriggers");
 
-            var localVarPath = "/devices/{id}/sleep";
+            var localVarPath = "/devices/{id}/notificationTriggers/{fk}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -3045,25 +3433,33 @@ namespace IO.Swagger.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (duration != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "duration", duration)); // query parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+            if (data != null && data.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(data); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = data; // byte array
+            }
 
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("DevicePrototypeSleep", localVarResponse);
+                Exception exception = ExceptionFactory("DevicePrototypeUpdateByIdNotificationTriggers", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<NotificationTrigger>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (NotificationTrigger) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotificationTrigger)));
         }
 
         /// <summary>
@@ -3233,161 +3629,6 @@ namespace IO.Swagger.Api
             return new ApiResponse<DeviceConfig>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (DeviceConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeviceConfig)));
-        }
-
-        /// <summary>
-        /// Send wake instruction to device 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">device id</param>
-        /// <param name="duration"> (optional)</param>
-        /// <returns>Object</returns>
-        public Object DevicePrototypeWakeUp (decimal? id, decimal? duration = null)
-        {
-             ApiResponse<Object> localVarResponse = DevicePrototypeWakeUpWithHttpInfo(id, duration);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Send wake instruction to device 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">device id</param>
-        /// <param name="duration"> (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > DevicePrototypeWakeUpWithHttpInfo (decimal? id, decimal? duration = null)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeWakeUp");
-
-            var localVarPath = "/devices/{id}/wakeUp";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
-                "application/x-www-form-urlencoded", 
-                "application/xml", 
-                "text/xml"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json",
-                "application/xml",
-                "text/xml",
-                "application/javascript",
-                "text/javascript"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (duration != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "duration", duration)); // query parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DevicePrototypeWakeUp", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
-        }
-
-        /// <summary>
-        /// Send wake instruction to device 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">device id</param>
-        /// <param name="duration"> (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> DevicePrototypeWakeUpAsync (decimal? id, decimal? duration = null)
-        {
-             ApiResponse<Object> localVarResponse = await DevicePrototypeWakeUpAsyncWithHttpInfo(id, duration);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Send wake instruction to device 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">device id</param>
-        /// <param name="duration"> (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeWakeUpAsyncWithHttpInfo (decimal? id, decimal? duration = null)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeWakeUp");
-
-            var localVarPath = "/devices/{id}/wakeUp";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
-                "application/x-www-form-urlencoded", 
-                "application/xml", 
-                "text/xml"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json",
-                "application/xml",
-                "text/xml",
-                "application/javascript",
-                "text/javascript"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (duration != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "duration", duration)); // query parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DevicePrototypeWakeUp", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
     }

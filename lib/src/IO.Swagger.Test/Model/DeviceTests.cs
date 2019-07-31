@@ -83,6 +83,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Iccid'
         }
         /// <summary>
+        /// Test the property 'LoraId'
+        /// </summary>
+        [Test]
+        public void LoraIdTest()
+        {
+            // TODO unit test for the property 'LoraId'
+        }
+        /// <summary>
         /// Test the property 'Imsi'
         /// </summary>
         [Test]
@@ -99,12 +107,28 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'BtMacAddress'
         }
         /// <summary>
+        /// Test the property 'Serial'
+        /// </summary>
+        [Test]
+        public void SerialTest()
+        {
+            // TODO unit test for the property 'Serial'
+        }
+        /// <summary>
         /// Test the property 'Type'
         /// </summary>
         [Test]
         public void TypeTest()
         {
             // TODO unit test for the property 'Type'
+        }
+        /// <summary>
+        /// Test the property 'Expires'
+        /// </summary>
+        [Test]
+        public void ExpiresTest()
+        {
+            // TODO unit test for the property 'Expires'
         }
         /// <summary>
         /// Test the property 'LastConnection'
@@ -187,14 +211,6 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'SaveToWeb'
         }
         /// <summary>
-        /// Test the property 'Expires'
-        /// </summary>
-        [Test]
-        public void ExpiresTest()
-        {
-            // TODO unit test for the property 'Expires'
-        }
-        /// <summary>
         /// Test the property 'Active'
         /// </summary>
         [Test]
@@ -219,6 +235,30 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Simstate'
         }
         /// <summary>
+        /// Test the property 'StripeSubscription'
+        /// </summary>
+        [Test]
+        public void StripeSubscriptionTest()
+        {
+            // TODO unit test for the property 'StripeSubscription'
+        }
+        /// <summary>
+        /// Test the property 'SubscriptionType'
+        /// </summary>
+        [Test]
+        public void SubscriptionTypeTest()
+        {
+            // TODO unit test for the property 'SubscriptionType'
+        }
+        /// <summary>
+        /// Test the property 'Meta'
+        /// </summary>
+        [Test]
+        public void MetaTest()
+        {
+            // TODO unit test for the property 'Meta'
+        }
+        /// <summary>
         /// Test the property 'Id'
         /// </summary>
         [Test]
@@ -241,6 +281,22 @@ namespace IO.Swagger.Test
         public void SecurePhoneIdTest()
         {
             // TODO unit test for the property 'SecurePhoneId'
+        }
+        /// <summary>
+        /// Test the property 'ResellerId'
+        /// </summary>
+        [Test]
+        public void ResellerIdTest()
+        {
+            // TODO unit test for the property 'ResellerId'
+        }
+        /// <summary>
+        /// Test the property 'ResellerPlanId'
+        /// </summary>
+        [Test]
+        public void ResellerPlanIdTest()
+        {
+            // TODO unit test for the property 'ResellerPlanId'
         }
 
     }

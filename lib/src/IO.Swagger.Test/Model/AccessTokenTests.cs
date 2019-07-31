@@ -83,6 +83,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Ttl'
         }
         /// <summary>
+        /// Test the property 'Scopes'
+        /// </summary>
+        [Test]
+        public void ScopesTest()
+        {
+            // TODO unit test for the property 'Scopes'
+        }
+        /// <summary>
         /// Test the property 'Created'
         /// </summary>
         [Test]

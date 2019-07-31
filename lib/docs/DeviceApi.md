@@ -1,24 +1,26 @@
 # IO.Swagger.Api.DeviceApi
 
-All URIs are relative to *https://cp.remotethings.co.uk/api*
+All URIs are relative to *https://api.thelightbug.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeviceFindById**](DeviceApi.md#devicefindbyid) | **GET** /devices/{id} | Find a model instance by {{id}} from the data source.
 [**DevicePrototypeCreateNotificationTriggers**](DeviceApi.md#deviceprototypecreatenotificationtriggers) | **POST** /devices/{id}/notificationTriggers | Create alert/notification trigger for device
 [**DevicePrototypeDeleteNotificationTriggers**](DeviceApi.md#deviceprototypedeletenotificationtriggers) | **DELETE** /devices/{id}/notificationTriggers | Remove all alert/notification trigger for device
+[**DevicePrototypeDestroyByIdNotificationTriggers**](DeviceApi.md#deviceprototypedestroybyidnotificationtriggers) | **DELETE** /devices/{id}/notificationTriggers/{fk} | Remove alert/notification trigger by id {fk} for device
 [**DevicePrototypeDestroyByIdPoints**](DeviceApi.md#deviceprototypedestroybyidpoints) | **DELETE** /devices/{id}/points/{fk} | Delete a specific point for a device
+[**DevicePrototypeFindByIdNotificationTriggers**](DeviceApi.md#deviceprototypefindbyidnotificationtriggers) | **GET** /devices/{id}/notificationTriggers/{fk} | Find a related item by id for notificationTriggers.
 [**DevicePrototypeFindByIdPoints**](DeviceApi.md#deviceprototypefindbyidpoints) | **GET** /devices/{id}/points/{fk} | Retrieve a specific point for a device
 [**DevicePrototypeFindByIdReadings**](DeviceApi.md#deviceprototypefindbyidreadings) | **GET** /devices/{id}/readings/{fk} | Retrieve a specific reading for a device
+[**DevicePrototypeFlightMode**](DeviceApi.md#deviceprototypeflightmode) | **GET** /devices/{id}/flightMode | 
 [**DevicePrototypeGetConfig**](DeviceApi.md#deviceprototypegetconfig) | **GET** /devices/{id}/config | Retrieve configuration for a device
 [**DevicePrototypeGetNotificationTriggers**](DeviceApi.md#deviceprototypegetnotificationtriggers) | **GET** /devices/{id}/notificationTriggers | Get alerts for device
 [**DevicePrototypeGetPoints**](DeviceApi.md#deviceprototypegetpoints) | **GET** /devices/{id}/points | Retrieve points for a device
 [**DevicePrototypeGetReadings**](DeviceApi.md#deviceprototypegetreadings) | **GET** /devices/{id}/readings | Retrieve readings for a device
 [**DevicePrototypeGetSafeZone**](DeviceApi.md#deviceprototypegetsafezone) | **GET** /devices/{id}/getSafeZone | Get safe-zone for device
 [**DevicePrototypeSetSafeZone**](DeviceApi.md#deviceprototypesetsafezone) | **POST** /devices/{id}/setSafeZone | Update safe-zone for device
-[**DevicePrototypeSleep**](DeviceApi.md#deviceprototypesleep) | **GET** /devices/{id}/sleep | Send sleep instruction to device
+[**DevicePrototypeUpdateByIdNotificationTriggers**](DeviceApi.md#deviceprototypeupdatebyidnotificationtriggers) | **PUT** /devices/{id}/notificationTriggers/{fk} | Update an alert/notification trigger by id {fk} for device
 [**DevicePrototypeUpdateConfig**](DeviceApi.md#deviceprototypeupdateconfig) | **PUT** /devices/{id}/config | Update configuration for a device
-[**DevicePrototypeWakeUp**](DeviceApi.md#deviceprototypewakeup) | **GET** /devices/{id}/wakeUp | Send wake instruction to device
 
 
 <a name="devicefindbyid"></a>
@@ -201,9 +203,69 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="deviceprototypedestroybyidnotificationtriggers"></a>
+# **DevicePrototypeDestroyByIdNotificationTriggers**
+> void DevicePrototypeDestroyByIdNotificationTriggers (decimal? id, decimal? fk)
+
+Remove alert/notification trigger by id {fk} for device
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeDestroyByIdNotificationTriggersExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+            var fk = 8.14;  // decimal? | Foreign key for notificationTriggers
+
+            try
+            {
+                // Remove alert/notification trigger by id {fk} for device
+                apiInstance.DevicePrototypeDestroyByIdNotificationTriggers(id, fk);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeDestroyByIdNotificationTriggers: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+ **fk** | **decimal?**| Foreign key for notificationTriggers | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="deviceprototypedestroybyidpoints"></a>
 # **DevicePrototypeDestroyByIdPoints**
-> void DevicePrototypeDestroyByIdPoints (decimal? fk, decimal? id)
+> void DevicePrototypeDestroyByIdPoints (decimal? id, decimal? fk)
 
 Delete a specific point for a device
 
@@ -222,13 +284,13 @@ namespace Example
         public void main()
         {
             var apiInstance = new DeviceApi();
-            var fk = 8.14;  // decimal? | Foreign key for points
             var id = 8.14;  // decimal? | device id
+            var fk = 8.14;  // decimal? | Foreign key for points
 
             try
             {
                 // Delete a specific point for a device
-                apiInstance.DevicePrototypeDestroyByIdPoints(fk, id);
+                apiInstance.DevicePrototypeDestroyByIdPoints(id, fk);
             }
             catch (Exception e)
             {
@@ -243,8 +305,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **decimal?**| Foreign key for points | 
  **id** | **decimal?**| device id | 
+ **fk** | **decimal?**| Foreign key for points | 
 
 ### Return type
 
@@ -261,9 +323,70 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="deviceprototypefindbyidnotificationtriggers"></a>
+# **DevicePrototypeFindByIdNotificationTriggers**
+> NotificationTrigger DevicePrototypeFindByIdNotificationTriggers (decimal? id, decimal? fk)
+
+Find a related item by id for notificationTriggers.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeFindByIdNotificationTriggersExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+            var fk = 8.14;  // decimal? | Foreign key for notificationTriggers
+
+            try
+            {
+                // Find a related item by id for notificationTriggers.
+                NotificationTrigger result = apiInstance.DevicePrototypeFindByIdNotificationTriggers(id, fk);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeFindByIdNotificationTriggers: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+ **fk** | **decimal?**| Foreign key for notificationTriggers | 
+
+### Return type
+
+[**NotificationTrigger**](NotificationTrigger.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="deviceprototypefindbyidpoints"></a>
 # **DevicePrototypeFindByIdPoints**
-> Datapoint DevicePrototypeFindByIdPoints (decimal? fk, decimal? id)
+> Datapoint DevicePrototypeFindByIdPoints (decimal? id, decimal? fk)
 
 Retrieve a specific point for a device
 
@@ -282,13 +405,13 @@ namespace Example
         public void main()
         {
             var apiInstance = new DeviceApi();
-            var fk = 8.14;  // decimal? | Foreign key for points
             var id = 8.14;  // decimal? | device id
+            var fk = 8.14;  // decimal? | Foreign key for points
 
             try
             {
                 // Retrieve a specific point for a device
-                Datapoint result = apiInstance.DevicePrototypeFindByIdPoints(fk, id);
+                Datapoint result = apiInstance.DevicePrototypeFindByIdPoints(id, fk);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -304,8 +427,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **decimal?**| Foreign key for points | 
  **id** | **decimal?**| device id | 
+ **fk** | **decimal?**| Foreign key for points | 
 
 ### Return type
 
@@ -324,7 +447,7 @@ No authorization required
 
 <a name="deviceprototypefindbyidreadings"></a>
 # **DevicePrototypeFindByIdReadings**
-> SensorReading DevicePrototypeFindByIdReadings (decimal? fk, decimal? id)
+> SensorReading DevicePrototypeFindByIdReadings (decimal? id, decimal? fk)
 
 Retrieve a specific reading for a device
 
@@ -343,13 +466,13 @@ namespace Example
         public void main()
         {
             var apiInstance = new DeviceApi();
-            var fk = 8.14;  // decimal? | Foreign key for readings
             var id = 8.14;  // decimal? | device id
+            var fk = 8.14;  // decimal? | Foreign key for readings
 
             try
             {
                 // Retrieve a specific reading for a device
-                SensorReading result = apiInstance.DevicePrototypeFindByIdReadings(fk, id);
+                SensorReading result = apiInstance.DevicePrototypeFindByIdReadings(id, fk);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -365,12 +488,72 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **decimal?**| Foreign key for readings | 
  **id** | **decimal?**| device id | 
+ **fk** | **decimal?**| Foreign key for readings | 
 
 ### Return type
 
 [**SensorReading**](SensorReading.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deviceprototypeflightmode"></a>
+# **DevicePrototypeFlightMode**
+> Object DevicePrototypeFlightMode (decimal? id, decimal? duration)
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeFlightModeExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+            var duration = 8.14;  // decimal? | How long to go into flightMode, in minutes
+
+            try
+            {
+                Object result = apiInstance.DevicePrototypeFlightMode(id, duration);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeFlightMode: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+ **duration** | **decimal?**| How long to go into flightMode, in minutes | 
+
+### Return type
+
+**Object**
 
 ### Authorization
 
@@ -688,7 +871,7 @@ No authorization required
 
 <a name="deviceprototypesetsafezone"></a>
 # **DevicePrototypeSetSafeZone**
-> Geofence DevicePrototypeSetSafeZone (List<GeoPoint> data, decimal? id)
+> Geofence DevicePrototypeSetSafeZone (decimal? id, List<GeoPoint> data)
 
 Update safe-zone for device
 
@@ -707,13 +890,13 @@ namespace Example
         public void main()
         {
             var apiInstance = new DeviceApi();
-            var data = new List<GeoPoint>(); // List<GeoPoint> | Array of {lat:x,lng:y} points denoting the vertices of the safe-zone
             var id = 8.14;  // decimal? | device id
+            var data = new List<GeoPoint>(); // List<GeoPoint> | Array of {lat:x,lng:y} points denoting the vertices of the safe-zone
 
             try
             {
                 // Update safe-zone for device
-                Geofence result = apiInstance.DevicePrototypeSetSafeZone(data, id);
+                Geofence result = apiInstance.DevicePrototypeSetSafeZone(id, data);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -729,8 +912,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**List&lt;GeoPoint&gt;**](GeoPoint.md)| Array of {lat:x,lng:y} points denoting the vertices of the safe-zone | 
  **id** | **decimal?**| device id | 
+ **data** | [**List&lt;GeoPoint&gt;**](GeoPoint.md)| Array of {lat:x,lng:y} points denoting the vertices of the safe-zone | 
 
 ### Return type
 
@@ -747,11 +930,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deviceprototypesleep"></a>
-# **DevicePrototypeSleep**
-> Object DevicePrototypeSleep (decimal? id, decimal? duration = null)
+<a name="deviceprototypeupdatebyidnotificationtriggers"></a>
+# **DevicePrototypeUpdateByIdNotificationTriggers**
+> NotificationTrigger DevicePrototypeUpdateByIdNotificationTriggers (decimal? id, decimal? fk, NotificationTrigger data = null)
 
-Send sleep instruction to device
+Update an alert/notification trigger by id {fk} for device
 
 ### Example
 ```csharp
@@ -763,23 +946,24 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class DevicePrototypeSleepExample
+    public class DevicePrototypeUpdateByIdNotificationTriggersExample
     {
         public void main()
         {
             var apiInstance = new DeviceApi();
             var id = 8.14;  // decimal? | device id
-            var duration = 8.14;  // decimal? |  (optional) 
+            var fk = 8.14;  // decimal? | Foreign key for notificationTriggers
+            var data = new NotificationTrigger(); // NotificationTrigger | Body (JSON) (optional) 
 
             try
             {
-                // Send sleep instruction to device
-                Object result = apiInstance.DevicePrototypeSleep(id, duration);
+                // Update an alert/notification trigger by id {fk} for device
+                NotificationTrigger result = apiInstance.DevicePrototypeUpdateByIdNotificationTriggers(id, fk, data);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DeviceApi.DevicePrototypeSleep: " + e.Message );
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeUpdateByIdNotificationTriggers: " + e.Message );
             }
         }
     }
@@ -791,11 +975,12 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **decimal?**| device id | 
- **duration** | **decimal?**|  | [optional] 
+ **fk** | **decimal?**| Foreign key for notificationTriggers | 
+ **data** | [**NotificationTrigger**](NotificationTrigger.md)| Body (JSON) | [optional] 
 
 ### Return type
 
-**Object**
+[**NotificationTrigger**](NotificationTrigger.md)
 
 ### Authorization
 
@@ -857,67 +1042,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DeviceConfig**](DeviceConfig.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="deviceprototypewakeup"></a>
-# **DevicePrototypeWakeUp**
-> Object DevicePrototypeWakeUp (decimal? id, decimal? duration = null)
-
-Send wake instruction to device
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class DevicePrototypeWakeUpExample
-    {
-        public void main()
-        {
-            var apiInstance = new DeviceApi();
-            var id = 8.14;  // decimal? | device id
-            var duration = 8.14;  // decimal? |  (optional) 
-
-            try
-            {
-                // Send wake instruction to device
-                Object result = apiInstance.DevicePrototypeWakeUp(id, duration);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling DeviceApi.DevicePrototypeWakeUp: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **decimal?**| device id | 
- **duration** | **decimal?**|  | [optional] 
-
-### Return type
-
-**Object**
 
 ### Authorization
 

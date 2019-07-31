@@ -28,7 +28,7 @@ namespace IO.Swagger.Model
     /// DeviceConfig
     /// </summary>
     [DataContract]
-    public partial class DeviceConfig :  IEquatable<DeviceConfig>, IValidatableObject
+    public partial class DeviceConfig : Dictionary<String, Object>,  IEquatable<DeviceConfig>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeviceConfig" /> class.
@@ -42,7 +42,7 @@ namespace IO.Swagger.Model
         /// <param name="otaFW">Pending Firmware version. If non null, the unit will be told to upgrade to this version when it next transmits in sleep mode..</param>
         /// <param name="interval">The wake mode interval in seconds. The unit will connect to the server this often when awake. (required).</param>
         /// <param name="sleepInterval">Sleep mode interval in seconds. The unit will try to connect this often to the server when asleep (required).</param>
-        /// <param name="checkInInterval">Internal Use. A failsafe to ensure the unit connects to the server at least this often. (required).</param>
+        /// <param name="checkInInterval">DEPRECATED A failsafe to ensure the unit connects to the server at least this often..</param>
         /// <param name="packing">The number of GPS points to send with each transmission. A packing setting of 3 with an &#39;interval&#39; of 60s will result in points recorded approximately every 20s, but they will only be sent together. This increases the time you have to wait for locations to come through to the server but improves battery life (required).</param>
         /// <param name="movementSensitivity">Deprecated. See debounce..</param>
         /// <param name="debounce">Movement sensitivity on a scale of 1 to 10, with 1 being the most sensitive. It is correlated to the number of consecutive milliseconds the acceleration needs to exceed the movementSensitivity threshold.</param>
@@ -54,7 +54,7 @@ namespace IO.Swagger.Model
         /// <param name="gpsStabilize">How long to let the GPS stabilise in seconds once a lock is achieved before sending the position. Higher values may increase accuracy..</param>
         /// <param name="gpsCheckInterval">If a safe-zone is used, how often to check the wifi &amp; gps to see if its still inside it (only applies when motion is detected).</param>
         /// <param name="stopTimeout">The total amount of time in seconds the unit has to be stationary for before deeming the journey over and switching to sleep mode.</param>
-        /// <param name="tolerancePercentage">Reserved for internal use..</param>
+        /// <param name="tolerancePercentage">Power budget in mAh per location update. Default 10, do not set lower than 5..</param>
         /// <param name="reasonsToWake">reasonsToWake.</param>
         /// <param name="modified">Set to any non null date to indicate the configuration should be pushed to the device when it next connects.</param>
         /// <param name="forceFw">Internal use.   Used with otaFW. Set to true to force the unit to upgrade on next connection (rather than waiting for a sleep connection (default to false).</param>
@@ -63,13 +63,13 @@ namespace IO.Swagger.Model
         /// <param name="flashTryCount">Internal use. Set to 0 when changing otaFW.</param>
         /// <param name="homeWifiNetwork">WiFi network name to use as a Safe-zone. When this network is visible, stay asleep.</param>
         /// <param name="homeWifiPassword">WiFi network paswword. If set enables transmission over WiFi..</param>
-        /// <param name="wakeAction">What to do when the unit wakes up (ie is moved and not in a safe-zone). Options are &#39;available&#39; (lost and found), and &#39;normal&#39; (tracking) (required) (default to &quot;normal&quot;).</param>
+        /// <param name="wakeAction">Internal Use Only. What to do when the unit wakes up (ie is moved and not in a safe-zone). Options are &#39;available&#39; (lost and found), and &#39;normal&#39; (tracking) (required) (default to &quot;normal&quot;).</param>
         /// <param name="onDemandTime">Deprecated (required).</param>
         /// <param name="alertAction">What to do when the button is pressed or the unit is dropped. Options are &#39;available&#39; (stay registered on the mobile network), &#39;nothing&#39; (one transmission) and  &#39;lockOn&#39; (keep transmitting at &#39;interval&#39; until instructed otherwise (required) (default to &quot;nothing&quot;).</param>
         /// <param name="id">id.</param>
         /// <param name="deviceId">deviceId.</param>
         /// <param name="safeZoneId">safeZoneId.</param>
-        public DeviceConfig(string currentFW = default(string), string otaFW = default(string), decimal? interval = default(decimal?), decimal? sleepInterval = default(decimal?), decimal? checkInInterval = default(decimal?), decimal? packing = default(decimal?), decimal? movementSensitivity = default(decimal?), decimal? debounce = default(decimal?), decimal? movementSensitivity2 = default(decimal?), decimal? behavior = default(decimal?), decimal? modeControl = default(decimal?), decimal? gpsTimeout = default(decimal?), decimal? transmitTimeout = default(decimal?), decimal? gpsStabilize = default(decimal?), decimal? gpsCheckInterval = default(decimal?), decimal? stopTimeout = default(decimal?), decimal? tolerancePercentage = default(decimal?), List<Object> reasonsToWake = default(List<Object>), DateTime? modified = default(DateTime?), bool? forceFw = false, DateTime? receivedAt = default(DateTime?), decimal? reset = default(decimal?), decimal? flashTryCount = default(decimal?), string homeWifiNetwork = default(string), string homeWifiPassword = default(string), string wakeAction = "normal", decimal? onDemandTime = default(decimal?), string alertAction = "nothing", decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? safeZoneId = default(decimal?))
+        public DeviceConfig(string currentFW = default(string), string otaFW = default(string), decimal? interval = default(decimal?), decimal? sleepInterval = default(decimal?), decimal? checkInInterval = default(decimal?), decimal? packing = default(decimal?), decimal? movementSensitivity = default(decimal?), decimal? debounce = default(decimal?), decimal? movementSensitivity2 = default(decimal?), decimal? behavior = default(decimal?), decimal? modeControl = default(decimal?), decimal? gpsTimeout = default(decimal?), decimal? transmitTimeout = default(decimal?), decimal? gpsStabilize = default(decimal?), decimal? gpsCheckInterval = default(decimal?), decimal? stopTimeout = default(decimal?), decimal? tolerancePercentage = default(decimal?), List<Object> reasonsToWake = default(List<Object>), DateTime? modified = default(DateTime?), bool? forceFw = false, DateTime? receivedAt = default(DateTime?), decimal? reset = default(decimal?), decimal? flashTryCount = default(decimal?), string homeWifiNetwork = default(string), string homeWifiPassword = default(string), string wakeAction = "normal", decimal? onDemandTime = default(decimal?), string alertAction = "nothing", decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? safeZoneId = default(decimal?)) : base()
         {
             // to ensure "interval" is required (not null)
             if (interval == null)
@@ -88,15 +88,6 @@ namespace IO.Swagger.Model
             else
             {
                 this.SleepInterval = sleepInterval;
-            }
-            // to ensure "checkInInterval" is required (not null)
-            if (checkInInterval == null)
-            {
-                throw new InvalidDataException("checkInInterval is a required property for DeviceConfig and cannot be null");
-            }
-            else
-            {
-                this.CheckInInterval = checkInInterval;
             }
             // to ensure "packing" is required (not null)
             if (packing == null)
@@ -136,6 +127,7 @@ namespace IO.Swagger.Model
             }
             this.CurrentFW = currentFW;
             this.OtaFW = otaFW;
+            this.CheckInInterval = checkInInterval;
             this.MovementSensitivity = movementSensitivity;
             this.Debounce = debounce;
             this.MovementSensitivity2 = movementSensitivity2;
@@ -197,9 +189,9 @@ namespace IO.Swagger.Model
         public decimal? SleepInterval { get; set; }
 
         /// <summary>
-        /// Internal Use. A failsafe to ensure the unit connects to the server at least this often.
+        /// DEPRECATED A failsafe to ensure the unit connects to the server at least this often.
         /// </summary>
-        /// <value>Internal Use. A failsafe to ensure the unit connects to the server at least this often.</value>
+        /// <value>DEPRECATED A failsafe to ensure the unit connects to the server at least this often.</value>
         [DataMember(Name="checkInInterval", EmitDefaultValue=false)]
         public decimal? CheckInInterval { get; set; }
 
@@ -281,9 +273,9 @@ namespace IO.Swagger.Model
         public decimal? StopTimeout { get; set; }
 
         /// <summary>
-        /// Reserved for internal use.
+        /// Power budget in mAh per location update. Default 10, do not set lower than 5.
         /// </summary>
-        /// <value>Reserved for internal use.</value>
+        /// <value>Power budget in mAh per location update. Default 10, do not set lower than 5.</value>
         [DataMember(Name="tolerancePercentage", EmitDefaultValue=false)]
         public decimal? TolerancePercentage { get; set; }
 
@@ -343,9 +335,9 @@ namespace IO.Swagger.Model
         public string HomeWifiPassword { get; set; }
 
         /// <summary>
-        /// What to do when the unit wakes up (ie is moved and not in a safe-zone). Options are &#39;available&#39; (lost and found), and &#39;normal&#39; (tracking)
+        /// Internal Use Only. What to do when the unit wakes up (ie is moved and not in a safe-zone). Options are &#39;available&#39; (lost and found), and &#39;normal&#39; (tracking)
         /// </summary>
-        /// <value>What to do when the unit wakes up (ie is moved and not in a safe-zone). Options are &#39;available&#39; (lost and found), and &#39;normal&#39; (tracking)</value>
+        /// <value>Internal Use Only. What to do when the unit wakes up (ie is moved and not in a safe-zone). Options are &#39;available&#39; (lost and found), and &#39;normal&#39; (tracking)</value>
         [DataMember(Name="wakeAction", EmitDefaultValue=false)]
         public string WakeAction { get; set; }
 
@@ -389,6 +381,7 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DeviceConfig {\n");
+            sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  CurrentFW: ").Append(CurrentFW).Append("\n");
             sb.Append("  OtaFW: ").Append(OtaFW).Append("\n");
             sb.Append("  Interval: ").Append(Interval).Append("\n");
@@ -428,7 +421,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public virtual string ToJson()
+        public override string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -453,157 +446,157 @@ namespace IO.Swagger.Model
             if (input == null)
                 return false;
 
-            return 
+            return base.Equals(input) && 
                 (
                     this.CurrentFW == input.CurrentFW ||
                     (this.CurrentFW != null &&
                     this.CurrentFW.Equals(input.CurrentFW))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.OtaFW == input.OtaFW ||
                     (this.OtaFW != null &&
                     this.OtaFW.Equals(input.OtaFW))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Interval == input.Interval ||
                     (this.Interval != null &&
                     this.Interval.Equals(input.Interval))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.SleepInterval == input.SleepInterval ||
                     (this.SleepInterval != null &&
                     this.SleepInterval.Equals(input.SleepInterval))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.CheckInInterval == input.CheckInInterval ||
                     (this.CheckInInterval != null &&
                     this.CheckInInterval.Equals(input.CheckInInterval))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Packing == input.Packing ||
                     (this.Packing != null &&
                     this.Packing.Equals(input.Packing))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.MovementSensitivity == input.MovementSensitivity ||
                     (this.MovementSensitivity != null &&
                     this.MovementSensitivity.Equals(input.MovementSensitivity))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Debounce == input.Debounce ||
                     (this.Debounce != null &&
                     this.Debounce.Equals(input.Debounce))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.MovementSensitivity2 == input.MovementSensitivity2 ||
                     (this.MovementSensitivity2 != null &&
                     this.MovementSensitivity2.Equals(input.MovementSensitivity2))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Behavior == input.Behavior ||
                     (this.Behavior != null &&
                     this.Behavior.Equals(input.Behavior))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.ModeControl == input.ModeControl ||
                     (this.ModeControl != null &&
                     this.ModeControl.Equals(input.ModeControl))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.GpsTimeout == input.GpsTimeout ||
                     (this.GpsTimeout != null &&
                     this.GpsTimeout.Equals(input.GpsTimeout))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.TransmitTimeout == input.TransmitTimeout ||
                     (this.TransmitTimeout != null &&
                     this.TransmitTimeout.Equals(input.TransmitTimeout))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.GpsStabilize == input.GpsStabilize ||
                     (this.GpsStabilize != null &&
                     this.GpsStabilize.Equals(input.GpsStabilize))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.GpsCheckInterval == input.GpsCheckInterval ||
                     (this.GpsCheckInterval != null &&
                     this.GpsCheckInterval.Equals(input.GpsCheckInterval))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.StopTimeout == input.StopTimeout ||
                     (this.StopTimeout != null &&
                     this.StopTimeout.Equals(input.StopTimeout))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.TolerancePercentage == input.TolerancePercentage ||
                     (this.TolerancePercentage != null &&
                     this.TolerancePercentage.Equals(input.TolerancePercentage))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.ReasonsToWake == input.ReasonsToWake ||
                     this.ReasonsToWake != null &&
                     this.ReasonsToWake.SequenceEqual(input.ReasonsToWake)
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Modified == input.Modified ||
                     (this.Modified != null &&
                     this.Modified.Equals(input.Modified))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.ForceFw == input.ForceFw ||
                     (this.ForceFw != null &&
                     this.ForceFw.Equals(input.ForceFw))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.ReceivedAt == input.ReceivedAt ||
                     (this.ReceivedAt != null &&
                     this.ReceivedAt.Equals(input.ReceivedAt))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Reset == input.Reset ||
                     (this.Reset != null &&
                     this.Reset.Equals(input.Reset))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.FlashTryCount == input.FlashTryCount ||
                     (this.FlashTryCount != null &&
                     this.FlashTryCount.Equals(input.FlashTryCount))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.HomeWifiNetwork == input.HomeWifiNetwork ||
                     (this.HomeWifiNetwork != null &&
                     this.HomeWifiNetwork.Equals(input.HomeWifiNetwork))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.HomeWifiPassword == input.HomeWifiPassword ||
                     (this.HomeWifiPassword != null &&
                     this.HomeWifiPassword.Equals(input.HomeWifiPassword))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.WakeAction == input.WakeAction ||
                     (this.WakeAction != null &&
                     this.WakeAction.Equals(input.WakeAction))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.OnDemandTime == input.OnDemandTime ||
                     (this.OnDemandTime != null &&
                     this.OnDemandTime.Equals(input.OnDemandTime))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.AlertAction == input.AlertAction ||
                     (this.AlertAction != null &&
                     this.AlertAction.Equals(input.AlertAction))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.DeviceId == input.DeviceId ||
                     (this.DeviceId != null &&
                     this.DeviceId.Equals(input.DeviceId))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.SafeZoneId == input.SafeZoneId ||
                     (this.SafeZoneId != null &&
@@ -619,7 +612,7 @@ namespace IO.Swagger.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hashCode = base.GetHashCode();
                 if (this.CurrentFW != null)
                     hashCode = hashCode * 59 + this.CurrentFW.GetHashCode();
                 if (this.OtaFW != null)
@@ -693,6 +686,7 @@ namespace IO.Swagger.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            foreach(var x in BaseValidate(validationContext)) yield return x;
             // HomeWifiNetwork (string) maxLength
             if(this.HomeWifiNetwork != null && this.HomeWifiNetwork.Length > 127)
             {

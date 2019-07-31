@@ -75,6 +75,22 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Outline'
         }
         /// <summary>
+        /// Test the property 'Center'
+        /// </summary>
+        [Test]
+        public void CenterTest()
+        {
+            // TODO unit test for the property 'Center'
+        }
+        /// <summary>
+        /// Test the property 'Radius'
+        /// </summary>
+        [Test]
+        public void RadiusTest()
+        {
+            // TODO unit test for the property 'Radius'
+        }
+        /// <summary>
         /// Test the property 'Type'
         /// </summary>
         [Test]

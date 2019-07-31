@@ -28,7 +28,7 @@ namespace IO.Swagger.Model
     /// AccessToken
     /// </summary>
     [DataContract]
-    public partial class AccessToken :  IEquatable<AccessToken>, IValidatableObject
+    public partial class AccessToken : Dictionary<String, Object>,  IEquatable<AccessToken>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AccessToken" /> class.
@@ -43,7 +43,7 @@ namespace IO.Swagger.Model
         /// <param name="scopes">Array of scopes granted to this access token..</param>
         /// <param name="created">created.</param>
         /// <param name="userId">userId.</param>
-        public AccessToken(string id = default(string), decimal? ttl = default(decimal?), List<string> scopes = default(List<string>), DateTime? created = default(DateTime?), decimal? userId = default(decimal?))
+        public AccessToken(string id = default(string), decimal? ttl = default(decimal?), List<string> scopes = default(List<string>), DateTime? created = default(DateTime?), decimal? userId = default(decimal?)) : base()
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -100,6 +100,7 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AccessToken {\n");
+            sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Ttl: ").Append(Ttl).Append("\n");
             sb.Append("  Scopes: ").Append(Scopes).Append("\n");
@@ -113,7 +114,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public virtual string ToJson()
+        public override string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -138,27 +139,27 @@ namespace IO.Swagger.Model
             if (input == null)
                 return false;
 
-            return 
+            return base.Equals(input) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Ttl == input.Ttl ||
                     (this.Ttl != null &&
                     this.Ttl.Equals(input.Ttl))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Scopes == input.Scopes ||
                     this.Scopes != null &&
                     this.Scopes.SequenceEqual(input.Scopes)
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Created == input.Created ||
                     (this.Created != null &&
                     this.Created.Equals(input.Created))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.UserId == input.UserId ||
                     (this.UserId != null &&
@@ -174,7 +175,7 @@ namespace IO.Swagger.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hashCode = base.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Ttl != null)
@@ -196,6 +197,7 @@ namespace IO.Swagger.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

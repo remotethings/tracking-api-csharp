@@ -28,7 +28,7 @@ namespace IO.Swagger.Model
     /// SensorReading
     /// </summary>
     [DataContract]
-    public partial class SensorReading :  IEquatable<SensorReading>, IValidatableObject
+    public partial class SensorReading : Dictionary<String, Object>,  IEquatable<SensorReading>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SensorReading" /> class.
@@ -43,12 +43,13 @@ namespace IO.Swagger.Model
         /// <param name="type">Sensor type: &#39;ultra&#39; (fill level), &#39;temp&#39; (temperature), ... (required).</param>
         /// <param name="value">JSON value (required).</param>
         /// <param name="meta">JSON metadata.</param>
+        /// <param name="relatedId">LoraId of another (ie for signal strength).</param>
         /// <param name="id">id.</param>
         /// <param name="gatewayId">gatewayId.</param>
         /// <param name="deviceId">deviceId.</param>
         /// <param name="sensorDeviceId">sensorDeviceId.</param>
         /// <param name="datapointId">datapointId.</param>
-        public SensorReading(DateTime? timestamp = default(DateTime?), DateTime? created = default(DateTime?), string type = default(string), Object value = default(Object), Object meta = default(Object), decimal? id = default(decimal?), decimal? gatewayId = default(decimal?), decimal? deviceId = default(decimal?), string sensorDeviceId = default(string), decimal? datapointId = default(decimal?))
+        public SensorReading(DateTime? timestamp = default(DateTime?), DateTime? created = default(DateTime?), string type = default(string), Object value = default(Object), Object meta = default(Object), decimal? relatedId = default(decimal?), decimal? id = default(decimal?), decimal? gatewayId = default(decimal?), decimal? deviceId = default(decimal?), string sensorDeviceId = default(string), decimal? datapointId = default(decimal?)) : base()
         {
             // to ensure "timestamp" is required (not null)
             if (timestamp == null)
@@ -87,6 +88,7 @@ namespace IO.Swagger.Model
                 this.Value = value;
             }
             this.Meta = meta;
+            this.RelatedId = relatedId;
             this.Id = id;
             this.GatewayId = gatewayId;
             this.DeviceId = deviceId;
@@ -130,6 +132,13 @@ namespace IO.Swagger.Model
         public Object Meta { get; set; }
 
         /// <summary>
+        /// LoraId of another (ie for signal strength)
+        /// </summary>
+        /// <value>LoraId of another (ie for signal strength)</value>
+        [DataMember(Name="relatedId", EmitDefaultValue=false)]
+        public decimal? RelatedId { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name="id", EmitDefaultValue=false)]
@@ -167,11 +176,13 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SensorReading {\n");
+            sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("  Created: ").Append(Created).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  Meta: ").Append(Meta).Append("\n");
+            sb.Append("  RelatedId: ").Append(RelatedId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  GatewayId: ").Append(GatewayId).Append("\n");
             sb.Append("  DeviceId: ").Append(DeviceId).Append("\n");
@@ -185,7 +196,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public virtual string ToJson()
+        public override string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -210,52 +221,57 @@ namespace IO.Swagger.Model
             if (input == null)
                 return false;
 
-            return 
+            return base.Equals(input) && 
                 (
                     this.Timestamp == input.Timestamp ||
                     (this.Timestamp != null &&
                     this.Timestamp.Equals(input.Timestamp))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Created == input.Created ||
                     (this.Created != null &&
                     this.Created.Equals(input.Created))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Meta == input.Meta ||
                     (this.Meta != null &&
                     this.Meta.Equals(input.Meta))
-                ) && 
+                ) && base.Equals(input) && 
+                (
+                    this.RelatedId == input.RelatedId ||
+                    (this.RelatedId != null &&
+                    this.RelatedId.Equals(input.RelatedId))
+                ) && base.Equals(input) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.GatewayId == input.GatewayId ||
                     (this.GatewayId != null &&
                     this.GatewayId.Equals(input.GatewayId))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.DeviceId == input.DeviceId ||
                     (this.DeviceId != null &&
                     this.DeviceId.Equals(input.DeviceId))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.SensorDeviceId == input.SensorDeviceId ||
                     (this.SensorDeviceId != null &&
                     this.SensorDeviceId.Equals(input.SensorDeviceId))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.DatapointId == input.DatapointId ||
                     (this.DatapointId != null &&
@@ -271,7 +287,7 @@ namespace IO.Swagger.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hashCode = base.GetHashCode();
                 if (this.Timestamp != null)
                     hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 if (this.Created != null)
@@ -282,6 +298,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Value.GetHashCode();
                 if (this.Meta != null)
                     hashCode = hashCode * 59 + this.Meta.GetHashCode();
+                if (this.RelatedId != null)
+                    hashCode = hashCode * 59 + this.RelatedId.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.GatewayId != null)
@@ -303,6 +321,7 @@ namespace IO.Swagger.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

@@ -109,9 +109,9 @@ namespace IO.Swagger.Test
         public void UserPrototypeDestroyByIdGeofencesTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //decimal? fk = null;
             //string id = null;
-            //instance.UserPrototypeDestroyByIdGeofences(fk, id);
+            //decimal? fk = null;
+            //instance.UserPrototypeDestroyByIdGeofences(id, fk);
             
         }
         
@@ -122,9 +122,9 @@ namespace IO.Swagger.Test
         public void UserPrototypeFindByIdGeofencesTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //decimal? fk = null;
             //string id = null;
-            //var response = instance.UserPrototypeFindByIdGeofences(fk, id);
+            //decimal? fk = null;
+            //var response = instance.UserPrototypeFindByIdGeofences(id, fk);
             //Assert.IsInstanceOf<Geofence> (response, "response is Geofence");
         }
         
@@ -155,16 +155,28 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test UserPrototypeGetMqttCredentials
+        /// </summary>
+        [Test]
+        public void UserPrototypeGetMqttCredentialsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //var response = instance.UserPrototypeGetMqttCredentials(id);
+            //Assert.IsInstanceOf<InlineResponse200> (response, "response is InlineResponse200");
+        }
+        
+        /// <summary>
         /// Test UserPrototypeUpdateByIdGeofences
         /// </summary>
         [Test]
         public void UserPrototypeUpdateByIdGeofencesTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //decimal? fk = null;
             //string id = null;
+            //decimal? fk = null;
             //Geofence data = null;
-            //var response = instance.UserPrototypeUpdateByIdGeofences(fk, id, data);
+            //var response = instance.UserPrototypeUpdateByIdGeofences(id, fk, data);
             //Assert.IsInstanceOf<Geofence> (response, "response is Geofence");
         }
         

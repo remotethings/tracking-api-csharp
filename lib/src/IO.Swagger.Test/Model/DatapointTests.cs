@@ -203,6 +203,22 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'AlertType'
         }
         /// <summary>
+        /// Test the property 'CurrentUsed'
+        /// </summary>
+        [Test]
+        public void CurrentUsedTest()
+        {
+            // TODO unit test for the property 'CurrentUsed'
+        }
+        /// <summary>
+        /// Test the property 'GsmSignal'
+        /// </summary>
+        [Test]
+        public void GsmSignalTest()
+        {
+            // TODO unit test for the property 'GsmSignal'
+        }
+        /// <summary>
         /// Test the property 'Id'
         /// </summary>
         [Test]

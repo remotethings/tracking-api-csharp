@@ -259,6 +259,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'HomeWifiNetwork'
         }
         /// <summary>
+        /// Test the property 'HomeWifiPassword'
+        /// </summary>
+        [Test]
+        public void HomeWifiPasswordTest()
+        {
+            // TODO unit test for the property 'HomeWifiPassword'
+        }
+        /// <summary>
         /// Test the property 'WakeAction'
         /// </summary>
         [Test]

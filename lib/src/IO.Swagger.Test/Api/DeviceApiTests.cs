@@ -103,16 +103,42 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test DevicePrototypeDestroyByIdNotificationTriggers
+        /// </summary>
+        [Test]
+        public void DevicePrototypeDestroyByIdNotificationTriggersTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //decimal? fk = null;
+            //instance.DevicePrototypeDestroyByIdNotificationTriggers(id, fk);
+            
+        }
+        
+        /// <summary>
         /// Test DevicePrototypeDestroyByIdPoints
         /// </summary>
         [Test]
         public void DevicePrototypeDestroyByIdPointsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //decimal? fk = null;
             //decimal? id = null;
-            //instance.DevicePrototypeDestroyByIdPoints(fk, id);
+            //decimal? fk = null;
+            //instance.DevicePrototypeDestroyByIdPoints(id, fk);
             
+        }
+        
+        /// <summary>
+        /// Test DevicePrototypeFindByIdNotificationTriggers
+        /// </summary>
+        [Test]
+        public void DevicePrototypeFindByIdNotificationTriggersTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //decimal? fk = null;
+            //var response = instance.DevicePrototypeFindByIdNotificationTriggers(id, fk);
+            //Assert.IsInstanceOf<NotificationTrigger> (response, "response is NotificationTrigger");
         }
         
         /// <summary>
@@ -122,9 +148,9 @@ namespace IO.Swagger.Test
         public void DevicePrototypeFindByIdPointsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //decimal? fk = null;
             //decimal? id = null;
-            //var response = instance.DevicePrototypeFindByIdPoints(fk, id);
+            //decimal? fk = null;
+            //var response = instance.DevicePrototypeFindByIdPoints(id, fk);
             //Assert.IsInstanceOf<Datapoint> (response, "response is Datapoint");
         }
         
@@ -135,10 +161,23 @@ namespace IO.Swagger.Test
         public void DevicePrototypeFindByIdReadingsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //decimal? fk = null;
             //decimal? id = null;
-            //var response = instance.DevicePrototypeFindByIdReadings(fk, id);
+            //decimal? fk = null;
+            //var response = instance.DevicePrototypeFindByIdReadings(id, fk);
             //Assert.IsInstanceOf<SensorReading> (response, "response is SensorReading");
+        }
+        
+        /// <summary>
+        /// Test DevicePrototypeFlightMode
+        /// </summary>
+        [Test]
+        public void DevicePrototypeFlightModeTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //decimal? duration = null;
+            //var response = instance.DevicePrototypeFlightMode(id, duration);
+            //Assert.IsInstanceOf<Object> (response, "response is Object");
         }
         
         /// <summary>
@@ -212,23 +251,24 @@ namespace IO.Swagger.Test
         public void DevicePrototypeSetSafeZoneTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //List<GeoPoint> data = null;
             //decimal? id = null;
-            //var response = instance.DevicePrototypeSetSafeZone(data, id);
+            //List<GeoPoint> data = null;
+            //var response = instance.DevicePrototypeSetSafeZone(id, data);
             //Assert.IsInstanceOf<Geofence> (response, "response is Geofence");
         }
         
         /// <summary>
-        /// Test DevicePrototypeSleep
+        /// Test DevicePrototypeUpdateByIdNotificationTriggers
         /// </summary>
         [Test]
-        public void DevicePrototypeSleepTest()
+        public void DevicePrototypeUpdateByIdNotificationTriggersTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //decimal? id = null;
-            //decimal? duration = null;
-            //var response = instance.DevicePrototypeSleep(id, duration);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
+            //decimal? fk = null;
+            //NotificationTrigger data = null;
+            //var response = instance.DevicePrototypeUpdateByIdNotificationTriggers(id, fk, data);
+            //Assert.IsInstanceOf<NotificationTrigger> (response, "response is NotificationTrigger");
         }
         
         /// <summary>
@@ -242,19 +282,6 @@ namespace IO.Swagger.Test
             //DeviceConfig data = null;
             //var response = instance.DevicePrototypeUpdateConfig(id, data);
             //Assert.IsInstanceOf<DeviceConfig> (response, "response is DeviceConfig");
-        }
-        
-        /// <summary>
-        /// Test DevicePrototypeWakeUp
-        /// </summary>
-        [Test]
-        public void DevicePrototypeWakeUpTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //decimal? id = null;
-            //decimal? duration = null;
-            //var response = instance.DevicePrototypeWakeUp(id, duration);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
         }
         
     }

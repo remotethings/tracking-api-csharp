@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **Created** | **DateTime?** | Timestamp for when the datapoint was received and processed by the server | 
 **Address** | **string** | A reverse geocode result for the point | [optional] 
 **AlertType** | **decimal?** | Bitfield indicating what alerts where active at transmission time   Bit1(1): Freefall / Drop detected,    Bit2(2): Rotation detected,    Bit3(4): GSM jamming detected,    Bit4(8): Button was pressed,    Bit5(16): Generic Alert  | [optional] 
+**CurrentUsed** | **decimal?** | Current Used to send this location in microAmp Hours | [optional] 
+**GsmSignal** | **decimal?** | GSM CSQ value | [optional] 
 **Id** | **decimal?** |  | [optional] 
 **DeviceId** | **decimal?** |  | [optional] 
 
