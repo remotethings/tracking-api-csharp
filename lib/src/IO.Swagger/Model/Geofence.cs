@@ -28,7 +28,7 @@ namespace IO.Swagger.Model
     /// Geofence
     /// </summary>
     [DataContract]
-    public partial class Geofence : Dictionary<String, Object>,  IEquatable<Geofence>, IValidatableObject
+    public partial class Geofence :  IEquatable<Geofence>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Geofence" /> class.
@@ -45,7 +45,7 @@ namespace IO.Swagger.Model
         /// <param name="deviceId">deviceId.</param>
         /// <param name="configId">configId.</param>
         /// <param name="userId">userId.</param>
-        public Geofence(List<Object> outline = default(List<Object>), GeoPoint center = default(GeoPoint), decimal? radius = default(decimal?), string type = default(string), string name = default(string), bool? wasInside = false, DateTime? lastChecked = default(DateTime?), bool? modified = false, decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? configId = default(decimal?), decimal? userId = default(decimal?)) : base()
+        public Geofence(List<Object> outline = default(List<Object>), GeoPoint center = default(GeoPoint), decimal? radius = default(decimal?), string type = default(string), string name = default(string), bool? wasInside = false, DateTime? lastChecked = default(DateTime?), bool? modified = false, decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? configId = default(decimal?), decimal? userId = default(decimal?))
         {
             this.Outline = outline;
             this.Center = center;
@@ -163,7 +163,6 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Geofence {\n");
-            sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  Outline: ").Append(Outline).Append("\n");
             sb.Append("  Center: ").Append(Center).Append("\n");
             sb.Append("  Radius: ").Append(Radius).Append("\n");
@@ -184,7 +183,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public override string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -209,62 +208,62 @@ namespace IO.Swagger.Model
             if (input == null)
                 return false;
 
-            return base.Equals(input) && 
+            return 
                 (
                     this.Outline == input.Outline ||
                     this.Outline != null &&
                     this.Outline.SequenceEqual(input.Outline)
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Center == input.Center ||
                     (this.Center != null &&
                     this.Center.Equals(input.Center))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Radius == input.Radius ||
                     (this.Radius != null &&
                     this.Radius.Equals(input.Radius))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.WasInside == input.WasInside ||
                     (this.WasInside != null &&
                     this.WasInside.Equals(input.WasInside))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.LastChecked == input.LastChecked ||
                     (this.LastChecked != null &&
                     this.LastChecked.Equals(input.LastChecked))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Modified == input.Modified ||
                     (this.Modified != null &&
                     this.Modified.Equals(input.Modified))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.DeviceId == input.DeviceId ||
                     (this.DeviceId != null &&
                     this.DeviceId.Equals(input.DeviceId))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.ConfigId == input.ConfigId ||
                     (this.ConfigId != null &&
                     this.ConfigId.Equals(input.ConfigId))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.UserId == input.UserId ||
                     (this.UserId != null &&
@@ -280,7 +279,7 @@ namespace IO.Swagger.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = base.GetHashCode();
+                int hashCode = 41;
                 if (this.Outline != null)
                     hashCode = hashCode * 59 + this.Outline.GetHashCode();
                 if (this.Center != null)
@@ -316,7 +315,6 @@ namespace IO.Swagger.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

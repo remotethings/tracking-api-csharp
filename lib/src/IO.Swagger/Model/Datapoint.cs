@@ -28,7 +28,7 @@ namespace IO.Swagger.Model
     /// Datapoint
     /// </summary>
     [DataContract]
-    public partial class Datapoint : Dictionary<String, Object>,  IEquatable<Datapoint>, IValidatableObject
+    public partial class Datapoint :  IEquatable<Datapoint>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Datapoint" /> class.
@@ -59,7 +59,7 @@ namespace IO.Swagger.Model
         /// <param name="gsmSignal">GSM CSQ value.</param>
         /// <param name="id">id.</param>
         /// <param name="deviceId">deviceId.</param>
-        public Datapoint(GeoPoint location = default(GeoPoint), DateTime? timestamp = default(DateTime?), decimal? speed = default(decimal?), decimal? altitude = default(decimal?), decimal? course = default(decimal?), string numValue = default(string), string stringValue = default(string), decimal? sendReason = default(decimal?), decimal? sats = default(decimal?), decimal? hdop = default(decimal?), decimal? accuracy = default(decimal?), string locationType = "gps", decimal? batteryVoltage = default(decimal?), decimal? averageCharge = default(decimal?), DateTime? created = default(DateTime?), string address = default(string), decimal? alertType = default(decimal?), decimal? currentUsed = default(decimal?), decimal? gsmSignal = default(decimal?), decimal? id = default(decimal?), decimal? deviceId = default(decimal?)) : base()
+        public Datapoint(GeoPoint location = default(GeoPoint), DateTime? timestamp = default(DateTime?), decimal? speed = default(decimal?), decimal? altitude = default(decimal?), decimal? course = default(decimal?), string numValue = default(string), string stringValue = default(string), decimal? sendReason = default(decimal?), decimal? sats = default(decimal?), decimal? hdop = default(decimal?), decimal? accuracy = default(decimal?), string locationType = "gps", decimal? batteryVoltage = default(decimal?), decimal? averageCharge = default(decimal?), DateTime? created = default(DateTime?), string address = default(string), decimal? alertType = default(decimal?), decimal? currentUsed = default(decimal?), decimal? gsmSignal = default(decimal?), decimal? id = default(decimal?), decimal? deviceId = default(decimal?))
         {
             // to ensure "timestamp" is required (not null)
             if (timestamp == null)
@@ -260,7 +260,6 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Datapoint {\n");
-            sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  Location: ").Append(Location).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("  Speed: ").Append(Speed).Append("\n");
@@ -290,7 +289,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public override string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -315,107 +314,107 @@ namespace IO.Swagger.Model
             if (input == null)
                 return false;
 
-            return base.Equals(input) && 
+            return 
                 (
                     this.Location == input.Location ||
                     (this.Location != null &&
                     this.Location.Equals(input.Location))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Timestamp == input.Timestamp ||
                     (this.Timestamp != null &&
                     this.Timestamp.Equals(input.Timestamp))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Speed == input.Speed ||
                     (this.Speed != null &&
                     this.Speed.Equals(input.Speed))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Altitude == input.Altitude ||
                     (this.Altitude != null &&
                     this.Altitude.Equals(input.Altitude))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Course == input.Course ||
                     (this.Course != null &&
                     this.Course.Equals(input.Course))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.NumValue == input.NumValue ||
                     (this.NumValue != null &&
                     this.NumValue.Equals(input.NumValue))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.StringValue == input.StringValue ||
                     (this.StringValue != null &&
                     this.StringValue.Equals(input.StringValue))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.SendReason == input.SendReason ||
                     (this.SendReason != null &&
                     this.SendReason.Equals(input.SendReason))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Sats == input.Sats ||
                     (this.Sats != null &&
                     this.Sats.Equals(input.Sats))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Hdop == input.Hdop ||
                     (this.Hdop != null &&
                     this.Hdop.Equals(input.Hdop))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Accuracy == input.Accuracy ||
                     (this.Accuracy != null &&
                     this.Accuracy.Equals(input.Accuracy))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.LocationType == input.LocationType ||
                     (this.LocationType != null &&
                     this.LocationType.Equals(input.LocationType))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.BatteryVoltage == input.BatteryVoltage ||
                     (this.BatteryVoltage != null &&
                     this.BatteryVoltage.Equals(input.BatteryVoltage))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.AverageCharge == input.AverageCharge ||
                     (this.AverageCharge != null &&
                     this.AverageCharge.Equals(input.AverageCharge))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Created == input.Created ||
                     (this.Created != null &&
                     this.Created.Equals(input.Created))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Address == input.Address ||
                     (this.Address != null &&
                     this.Address.Equals(input.Address))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.AlertType == input.AlertType ||
                     (this.AlertType != null &&
                     this.AlertType.Equals(input.AlertType))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.CurrentUsed == input.CurrentUsed ||
                     (this.CurrentUsed != null &&
                     this.CurrentUsed.Equals(input.CurrentUsed))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.GsmSignal == input.GsmSignal ||
                     (this.GsmSignal != null &&
                     this.GsmSignal.Equals(input.GsmSignal))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.DeviceId == input.DeviceId ||
                     (this.DeviceId != null &&
@@ -431,7 +430,7 @@ namespace IO.Swagger.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = base.GetHashCode();
+                int hashCode = 41;
                 if (this.Location != null)
                     hashCode = hashCode * 59 + this.Location.GetHashCode();
                 if (this.Timestamp != null)
@@ -485,7 +484,6 @@ namespace IO.Swagger.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

@@ -28,7 +28,7 @@ namespace IO.Swagger.Model
     /// DeviceConfig
     /// </summary>
     [DataContract]
-    public partial class DeviceConfig : Dictionary<String, Object>,  IEquatable<DeviceConfig>, IValidatableObject
+    public partial class DeviceConfig :  IEquatable<DeviceConfig>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeviceConfig" /> class.
@@ -69,7 +69,7 @@ namespace IO.Swagger.Model
         /// <param name="id">id.</param>
         /// <param name="deviceId">deviceId.</param>
         /// <param name="safeZoneId">safeZoneId.</param>
-        public DeviceConfig(string currentFW = default(string), string otaFW = default(string), decimal? interval = default(decimal?), decimal? sleepInterval = default(decimal?), decimal? checkInInterval = default(decimal?), decimal? packing = default(decimal?), decimal? movementSensitivity = default(decimal?), decimal? debounce = default(decimal?), decimal? movementSensitivity2 = default(decimal?), decimal? behavior = default(decimal?), decimal? modeControl = default(decimal?), decimal? gpsTimeout = default(decimal?), decimal? transmitTimeout = default(decimal?), decimal? gpsStabilize = default(decimal?), decimal? gpsCheckInterval = default(decimal?), decimal? stopTimeout = default(decimal?), decimal? tolerancePercentage = default(decimal?), List<Object> reasonsToWake = default(List<Object>), DateTime? modified = default(DateTime?), bool? forceFw = false, DateTime? receivedAt = default(DateTime?), decimal? reset = default(decimal?), decimal? flashTryCount = default(decimal?), string homeWifiNetwork = default(string), string homeWifiPassword = default(string), string wakeAction = "normal", decimal? onDemandTime = default(decimal?), string alertAction = "nothing", decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? safeZoneId = default(decimal?)) : base()
+        public DeviceConfig(string currentFW = default(string), string otaFW = default(string), decimal? interval = default(decimal?), decimal? sleepInterval = default(decimal?), decimal? checkInInterval = default(decimal?), decimal? packing = default(decimal?), decimal? movementSensitivity = default(decimal?), decimal? debounce = default(decimal?), decimal? movementSensitivity2 = default(decimal?), decimal? behavior = default(decimal?), decimal? modeControl = default(decimal?), decimal? gpsTimeout = default(decimal?), decimal? transmitTimeout = default(decimal?), decimal? gpsStabilize = default(decimal?), decimal? gpsCheckInterval = default(decimal?), decimal? stopTimeout = default(decimal?), decimal? tolerancePercentage = default(decimal?), List<Object> reasonsToWake = default(List<Object>), DateTime? modified = default(DateTime?), bool? forceFw = false, DateTime? receivedAt = default(DateTime?), decimal? reset = default(decimal?), decimal? flashTryCount = default(decimal?), string homeWifiNetwork = default(string), string homeWifiPassword = default(string), string wakeAction = "normal", decimal? onDemandTime = default(decimal?), string alertAction = "nothing", decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? safeZoneId = default(decimal?))
         {
             // to ensure "interval" is required (not null)
             if (interval == null)
@@ -381,7 +381,6 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DeviceConfig {\n");
-            sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  CurrentFW: ").Append(CurrentFW).Append("\n");
             sb.Append("  OtaFW: ").Append(OtaFW).Append("\n");
             sb.Append("  Interval: ").Append(Interval).Append("\n");
@@ -421,7 +420,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public override string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -446,157 +445,157 @@ namespace IO.Swagger.Model
             if (input == null)
                 return false;
 
-            return base.Equals(input) && 
+            return 
                 (
                     this.CurrentFW == input.CurrentFW ||
                     (this.CurrentFW != null &&
                     this.CurrentFW.Equals(input.CurrentFW))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.OtaFW == input.OtaFW ||
                     (this.OtaFW != null &&
                     this.OtaFW.Equals(input.OtaFW))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Interval == input.Interval ||
                     (this.Interval != null &&
                     this.Interval.Equals(input.Interval))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.SleepInterval == input.SleepInterval ||
                     (this.SleepInterval != null &&
                     this.SleepInterval.Equals(input.SleepInterval))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.CheckInInterval == input.CheckInInterval ||
                     (this.CheckInInterval != null &&
                     this.CheckInInterval.Equals(input.CheckInInterval))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Packing == input.Packing ||
                     (this.Packing != null &&
                     this.Packing.Equals(input.Packing))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.MovementSensitivity == input.MovementSensitivity ||
                     (this.MovementSensitivity != null &&
                     this.MovementSensitivity.Equals(input.MovementSensitivity))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Debounce == input.Debounce ||
                     (this.Debounce != null &&
                     this.Debounce.Equals(input.Debounce))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.MovementSensitivity2 == input.MovementSensitivity2 ||
                     (this.MovementSensitivity2 != null &&
                     this.MovementSensitivity2.Equals(input.MovementSensitivity2))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Behavior == input.Behavior ||
                     (this.Behavior != null &&
                     this.Behavior.Equals(input.Behavior))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.ModeControl == input.ModeControl ||
                     (this.ModeControl != null &&
                     this.ModeControl.Equals(input.ModeControl))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.GpsTimeout == input.GpsTimeout ||
                     (this.GpsTimeout != null &&
                     this.GpsTimeout.Equals(input.GpsTimeout))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.TransmitTimeout == input.TransmitTimeout ||
                     (this.TransmitTimeout != null &&
                     this.TransmitTimeout.Equals(input.TransmitTimeout))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.GpsStabilize == input.GpsStabilize ||
                     (this.GpsStabilize != null &&
                     this.GpsStabilize.Equals(input.GpsStabilize))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.GpsCheckInterval == input.GpsCheckInterval ||
                     (this.GpsCheckInterval != null &&
                     this.GpsCheckInterval.Equals(input.GpsCheckInterval))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.StopTimeout == input.StopTimeout ||
                     (this.StopTimeout != null &&
                     this.StopTimeout.Equals(input.StopTimeout))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.TolerancePercentage == input.TolerancePercentage ||
                     (this.TolerancePercentage != null &&
                     this.TolerancePercentage.Equals(input.TolerancePercentage))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.ReasonsToWake == input.ReasonsToWake ||
                     this.ReasonsToWake != null &&
                     this.ReasonsToWake.SequenceEqual(input.ReasonsToWake)
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Modified == input.Modified ||
                     (this.Modified != null &&
                     this.Modified.Equals(input.Modified))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.ForceFw == input.ForceFw ||
                     (this.ForceFw != null &&
                     this.ForceFw.Equals(input.ForceFw))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.ReceivedAt == input.ReceivedAt ||
                     (this.ReceivedAt != null &&
                     this.ReceivedAt.Equals(input.ReceivedAt))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Reset == input.Reset ||
                     (this.Reset != null &&
                     this.Reset.Equals(input.Reset))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.FlashTryCount == input.FlashTryCount ||
                     (this.FlashTryCount != null &&
                     this.FlashTryCount.Equals(input.FlashTryCount))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.HomeWifiNetwork == input.HomeWifiNetwork ||
                     (this.HomeWifiNetwork != null &&
                     this.HomeWifiNetwork.Equals(input.HomeWifiNetwork))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.HomeWifiPassword == input.HomeWifiPassword ||
                     (this.HomeWifiPassword != null &&
                     this.HomeWifiPassword.Equals(input.HomeWifiPassword))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.WakeAction == input.WakeAction ||
                     (this.WakeAction != null &&
                     this.WakeAction.Equals(input.WakeAction))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.OnDemandTime == input.OnDemandTime ||
                     (this.OnDemandTime != null &&
                     this.OnDemandTime.Equals(input.OnDemandTime))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.AlertAction == input.AlertAction ||
                     (this.AlertAction != null &&
                     this.AlertAction.Equals(input.AlertAction))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.DeviceId == input.DeviceId ||
                     (this.DeviceId != null &&
                     this.DeviceId.Equals(input.DeviceId))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.SafeZoneId == input.SafeZoneId ||
                     (this.SafeZoneId != null &&
@@ -612,7 +611,7 @@ namespace IO.Swagger.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = base.GetHashCode();
+                int hashCode = 41;
                 if (this.CurrentFW != null)
                     hashCode = hashCode * 59 + this.CurrentFW.GetHashCode();
                 if (this.OtaFW != null)
@@ -686,7 +685,6 @@ namespace IO.Swagger.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            foreach(var x in BaseValidate(validationContext)) yield return x;
             // HomeWifiNetwork (string) maxLength
             if(this.HomeWifiNetwork != null && this.HomeWifiNetwork.Length > 127)
             {
