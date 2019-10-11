@@ -138,6 +138,29 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DevicePrototypeDestroyByIdPointsWithHttpInfo (decimal? id, decimal? fk);
         /// <summary>
+        /// Delete a related item by id for transients.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <returns></returns>
+        void DevicePrototypeDestroyByIdTransients (decimal? id, decimal? fk);
+
+        /// <summary>
+        /// Delete a related item by id for transients.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DevicePrototypeDestroyByIdTransientsWithHttpInfo (decimal? id, decimal? fk);
+        /// <summary>
         /// Find a related item by id for notificationTriggers.
         /// </summary>
         /// <remarks>
@@ -206,6 +229,29 @@ namespace IO.Swagger.Api
         /// <param name="fk">Foreign key for readings</param>
         /// <returns>ApiResponse of SensorReading</returns>
         ApiResponse<SensorReading> DevicePrototypeFindByIdReadingsWithHttpInfo (decimal? id, decimal? fk);
+        /// <summary>
+        /// Find a related item by id for transients.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <returns>DeviceTransient</returns>
+        DeviceTransient DevicePrototypeFindByIdTransients (decimal? id, decimal? fk);
+
+        /// <summary>
+        /// Find a related item by id for transients.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <returns>ApiResponse of DeviceTransient</returns>
+        ApiResponse<DeviceTransient> DevicePrototypeFindByIdTransientsWithHttpInfo (decimal? id, decimal? fk);
         /// <summary>
         /// 
         /// </summary>
@@ -343,6 +389,29 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of Geofence</returns>
         ApiResponse<Geofence> DevicePrototypeGetSafeZoneWithHttpInfo (decimal? id);
         /// <summary>
+        /// Queries transients of device.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>List&lt;DeviceTransient&gt;</returns>
+        List<DeviceTransient> DevicePrototypeGetTransients (decimal? id, string filter = null);
+
+        /// <summary>
+        /// Queries transients of device.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>ApiResponse of List&lt;DeviceTransient&gt;</returns>
+        ApiResponse<List<DeviceTransient>> DevicePrototypeGetTransientsWithHttpInfo (decimal? id, string filter = null);
+        /// <summary>
         /// Update safe-zone for device
         /// </summary>
         /// <remarks>
@@ -390,6 +459,31 @@ namespace IO.Swagger.Api
         /// <param name="data">Body (JSON) (optional)</param>
         /// <returns>ApiResponse of NotificationTrigger</returns>
         ApiResponse<NotificationTrigger> DevicePrototypeUpdateByIdNotificationTriggersWithHttpInfo (decimal? id, decimal? fk, NotificationTrigger data = null);
+        /// <summary>
+        /// Update a related item by id for transients.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>DeviceTransient</returns>
+        DeviceTransient DevicePrototypeUpdateByIdTransients (decimal? id, decimal? fk, DeviceTransient data = null);
+
+        /// <summary>
+        /// Update a related item by id for transients.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>ApiResponse of DeviceTransient</returns>
+        ApiResponse<DeviceTransient> DevicePrototypeUpdateByIdTransientsWithHttpInfo (decimal? id, decimal? fk, DeviceTransient data = null);
         /// <summary>
         /// Update configuration for a device
         /// </summary>
@@ -529,6 +623,29 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDestroyByIdPointsAsyncWithHttpInfo (decimal? id, decimal? fk);
         /// <summary>
+        /// Delete a related item by id for transients.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DevicePrototypeDestroyByIdTransientsAsync (decimal? id, decimal? fk);
+
+        /// <summary>
+        /// Delete a related item by id for transients.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDestroyByIdTransientsAsyncWithHttpInfo (decimal? id, decimal? fk);
+        /// <summary>
         /// Find a related item by id for notificationTriggers.
         /// </summary>
         /// <remarks>
@@ -597,6 +714,29 @@ namespace IO.Swagger.Api
         /// <param name="fk">Foreign key for readings</param>
         /// <returns>Task of ApiResponse (SensorReading)</returns>
         System.Threading.Tasks.Task<ApiResponse<SensorReading>> DevicePrototypeFindByIdReadingsAsyncWithHttpInfo (decimal? id, decimal? fk);
+        /// <summary>
+        /// Find a related item by id for transients.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <returns>Task of DeviceTransient</returns>
+        System.Threading.Tasks.Task<DeviceTransient> DevicePrototypeFindByIdTransientsAsync (decimal? id, decimal? fk);
+
+        /// <summary>
+        /// Find a related item by id for transients.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <returns>Task of ApiResponse (DeviceTransient)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DeviceTransient>> DevicePrototypeFindByIdTransientsAsyncWithHttpInfo (decimal? id, decimal? fk);
         /// <summary>
         /// 
         /// </summary>
@@ -734,6 +874,29 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse (Geofence)</returns>
         System.Threading.Tasks.Task<ApiResponse<Geofence>> DevicePrototypeGetSafeZoneAsyncWithHttpInfo (decimal? id);
         /// <summary>
+        /// Queries transients of device.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>Task of List&lt;DeviceTransient&gt;</returns>
+        System.Threading.Tasks.Task<List<DeviceTransient>> DevicePrototypeGetTransientsAsync (decimal? id, string filter = null);
+
+        /// <summary>
+        /// Queries transients of device.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;DeviceTransient&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<DeviceTransient>>> DevicePrototypeGetTransientsAsyncWithHttpInfo (decimal? id, string filter = null);
+        /// <summary>
         /// Update safe-zone for device
         /// </summary>
         /// <remarks>
@@ -781,6 +944,31 @@ namespace IO.Swagger.Api
         /// <param name="data">Body (JSON) (optional)</param>
         /// <returns>Task of ApiResponse (NotificationTrigger)</returns>
         System.Threading.Tasks.Task<ApiResponse<NotificationTrigger>> DevicePrototypeUpdateByIdNotificationTriggersAsyncWithHttpInfo (decimal? id, decimal? fk, NotificationTrigger data = null);
+        /// <summary>
+        /// Update a related item by id for transients.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of DeviceTransient</returns>
+        System.Threading.Tasks.Task<DeviceTransient> DevicePrototypeUpdateByIdTransientsAsync (decimal? id, decimal? fk, DeviceTransient data = null);
+
+        /// <summary>
+        /// Update a related item by id for transients.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of ApiResponse (DeviceTransient)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DeviceTransient>> DevicePrototypeUpdateByIdTransientsAsyncWithHttpInfo (decimal? id, decimal? fk, DeviceTransient data = null);
         /// <summary>
         /// Update configuration for a device
         /// </summary>
@@ -1694,6 +1882,165 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        /// Delete a related item by id for transients. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <returns></returns>
+        public void DevicePrototypeDestroyByIdTransients (decimal? id, decimal? fk)
+        {
+             DevicePrototypeDestroyByIdTransientsWithHttpInfo(id, fk);
+        }
+
+        /// <summary>
+        /// Delete a related item by id for transients. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DevicePrototypeDestroyByIdTransientsWithHttpInfo (decimal? id, decimal? fk)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeDestroyByIdTransients");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeDestroyByIdTransients");
+
+            var localVarPath = "/devices/{id}/transients/{fk}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeDestroyByIdTransients", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Delete a related item by id for transients. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DevicePrototypeDestroyByIdTransientsAsync (decimal? id, decimal? fk)
+        {
+             await DevicePrototypeDestroyByIdTransientsAsyncWithHttpInfo(id, fk);
+
+        }
+
+        /// <summary>
+        /// Delete a related item by id for transients. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDestroyByIdTransientsAsyncWithHttpInfo (decimal? id, decimal? fk)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeDestroyByIdTransients");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeDestroyByIdTransients");
+
+            var localVarPath = "/devices/{id}/transients/{fk}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeDestroyByIdTransients", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
         /// Find a related item by id for notificationTriggers. 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -2174,6 +2521,167 @@ namespace IO.Swagger.Api
             return new ApiResponse<SensorReading>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (SensorReading) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SensorReading)));
+        }
+
+        /// <summary>
+        /// Find a related item by id for transients. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <returns>DeviceTransient</returns>
+        public DeviceTransient DevicePrototypeFindByIdTransients (decimal? id, decimal? fk)
+        {
+             ApiResponse<DeviceTransient> localVarResponse = DevicePrototypeFindByIdTransientsWithHttpInfo(id, fk);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Find a related item by id for transients. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <returns>ApiResponse of DeviceTransient</returns>
+        public ApiResponse< DeviceTransient > DevicePrototypeFindByIdTransientsWithHttpInfo (decimal? id, decimal? fk)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeFindByIdTransients");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeFindByIdTransients");
+
+            var localVarPath = "/devices/{id}/transients/{fk}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeFindByIdTransients", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DeviceTransient>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (DeviceTransient) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeviceTransient)));
+        }
+
+        /// <summary>
+        /// Find a related item by id for transients. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <returns>Task of DeviceTransient</returns>
+        public async System.Threading.Tasks.Task<DeviceTransient> DevicePrototypeFindByIdTransientsAsync (decimal? id, decimal? fk)
+        {
+             ApiResponse<DeviceTransient> localVarResponse = await DevicePrototypeFindByIdTransientsAsyncWithHttpInfo(id, fk);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Find a related item by id for transients. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <returns>Task of ApiResponse (DeviceTransient)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<DeviceTransient>> DevicePrototypeFindByIdTransientsAsyncWithHttpInfo (decimal? id, decimal? fk)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeFindByIdTransients");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeFindByIdTransients");
+
+            var localVarPath = "/devices/{id}/transients/{fk}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeFindByIdTransients", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DeviceTransient>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (DeviceTransient) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeviceTransient)));
         }
 
         /// <summary>
@@ -3107,6 +3615,161 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        /// Queries transients of device. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>List&lt;DeviceTransient&gt;</returns>
+        public List<DeviceTransient> DevicePrototypeGetTransients (decimal? id, string filter = null)
+        {
+             ApiResponse<List<DeviceTransient>> localVarResponse = DevicePrototypeGetTransientsWithHttpInfo(id, filter);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Queries transients of device. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>ApiResponse of List&lt;DeviceTransient&gt;</returns>
+        public ApiResponse< List<DeviceTransient> > DevicePrototypeGetTransientsWithHttpInfo (decimal? id, string filter = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeGetTransients");
+
+            var localVarPath = "/devices/{id}/transients";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeGetTransients", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<DeviceTransient>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<DeviceTransient>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DeviceTransient>)));
+        }
+
+        /// <summary>
+        /// Queries transients of device. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>Task of List&lt;DeviceTransient&gt;</returns>
+        public async System.Threading.Tasks.Task<List<DeviceTransient>> DevicePrototypeGetTransientsAsync (decimal? id, string filter = null)
+        {
+             ApiResponse<List<DeviceTransient>> localVarResponse = await DevicePrototypeGetTransientsAsyncWithHttpInfo(id, filter);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Queries transients of device. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;DeviceTransient&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<DeviceTransient>>> DevicePrototypeGetTransientsAsyncWithHttpInfo (decimal? id, string filter = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeGetTransients");
+
+            var localVarPath = "/devices/{id}/transients";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeGetTransients", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<DeviceTransient>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<DeviceTransient>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DeviceTransient>)));
+        }
+
+        /// <summary>
         /// Update safe-zone for device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3460,6 +4123,187 @@ namespace IO.Swagger.Api
             return new ApiResponse<NotificationTrigger>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (NotificationTrigger) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotificationTrigger)));
+        }
+
+        /// <summary>
+        /// Update a related item by id for transients. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>DeviceTransient</returns>
+        public DeviceTransient DevicePrototypeUpdateByIdTransients (decimal? id, decimal? fk, DeviceTransient data = null)
+        {
+             ApiResponse<DeviceTransient> localVarResponse = DevicePrototypeUpdateByIdTransientsWithHttpInfo(id, fk, data);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update a related item by id for transients. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>ApiResponse of DeviceTransient</returns>
+        public ApiResponse< DeviceTransient > DevicePrototypeUpdateByIdTransientsWithHttpInfo (decimal? id, decimal? fk, DeviceTransient data = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeUpdateByIdTransients");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeUpdateByIdTransients");
+
+            var localVarPath = "/devices/{id}/transients/{fk}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+            if (data != null && data.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(data); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = data; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeUpdateByIdTransients", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DeviceTransient>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (DeviceTransient) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeviceTransient)));
+        }
+
+        /// <summary>
+        /// Update a related item by id for transients. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of DeviceTransient</returns>
+        public async System.Threading.Tasks.Task<DeviceTransient> DevicePrototypeUpdateByIdTransientsAsync (decimal? id, decimal? fk, DeviceTransient data = null)
+        {
+             ApiResponse<DeviceTransient> localVarResponse = await DevicePrototypeUpdateByIdTransientsAsyncWithHttpInfo(id, fk, data);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update a related item by id for transients. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for transients</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of ApiResponse (DeviceTransient)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<DeviceTransient>> DevicePrototypeUpdateByIdTransientsAsyncWithHttpInfo (decimal? id, decimal? fk, DeviceTransient data = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeUpdateByIdTransients");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeUpdateByIdTransients");
+
+            var localVarPath = "/devices/{id}/transients/{fk}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+            if (data != null && data.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(data); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = data; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeUpdateByIdTransients", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DeviceTransient>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (DeviceTransient) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeviceTransient)));
         }
 
         /// <summary>

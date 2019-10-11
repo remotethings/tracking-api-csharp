@@ -93,8 +93,9 @@ namespace tracking_example
         void enterFlightMode(Decimal deviceId, UInt16 minutes)
         {
             this.deviceApi.DevicePrototypeFlightMode(deviceId, (decimal)minutes);
+            // Query transients to check if it's been sent
+           //this.deviceApi.DevicePrototypeGetTransients(deviceId, "{\"where\": {\"sent\":null},\"order\":\"triggeredAt DESC\", \"limit\": 1}");
         }
-
 
 
         // Setup forwarding of datapoints to SQS for all devices on account
