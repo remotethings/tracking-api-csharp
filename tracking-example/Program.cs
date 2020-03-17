@@ -224,8 +224,8 @@ namespace tracking_example
 
             example.printLastLocations();
 
-            var wait = example.listenForNewData();
-            while (!wait.IsCompleted) ;
+            example.listenForNewData().Wait();
+
 
         }
     }

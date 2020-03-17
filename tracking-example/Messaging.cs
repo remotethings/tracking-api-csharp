@@ -58,11 +58,8 @@ namespace tracking_example
             client.ConnectionClosed += handleDisconnect;
 
             connected = true;
-            await Task.Run(() =>
-            {
-                while (connected) ;
-                return;
-            });
+            
+            while (connected) await Task.Delay(1000);            
         }
 
         private void handleDisconnect(object sender, EventArgs e)
