@@ -42,6 +42,7 @@ namespace IO.Swagger.Model
         /// <param name="created">Timestamp for the writing to db (required).</param>
         /// <param name="type">Sensor type: &#39;ultra&#39; (fill level), &#39;temp&#39; (temperature), ... (required).</param>
         /// <param name="value">JSON value (required).</param>
+        /// <param name="rssi">RSSI if from secondary wireless device.</param>
         /// <param name="meta">JSON metadata.</param>
         /// <param name="relatedId">LoraId of another (ie for signal strength).</param>
         /// <param name="id">id.</param>
@@ -49,7 +50,7 @@ namespace IO.Swagger.Model
         /// <param name="deviceId">deviceId.</param>
         /// <param name="sensorDeviceId">sensorDeviceId.</param>
         /// <param name="datapointId">datapointId.</param>
-        public SensorReading(DateTime? timestamp = default(DateTime?), DateTime? created = default(DateTime?), string type = default(string), Object value = default(Object), Object meta = default(Object), decimal? relatedId = default(decimal?), decimal? id = default(decimal?), decimal? gatewayId = default(decimal?), decimal? deviceId = default(decimal?), string sensorDeviceId = default(string), decimal? datapointId = default(decimal?))
+        public SensorReading(DateTime? timestamp = default(DateTime?), DateTime? created = default(DateTime?), string type = default(string), Object value = default(Object), decimal? rssi = default(decimal?), Object meta = default(Object), decimal? relatedId = default(decimal?), decimal? id = default(decimal?), decimal? gatewayId = default(decimal?), decimal? deviceId = default(decimal?), string sensorDeviceId = default(string), decimal? datapointId = default(decimal?))
         {
             // to ensure "timestamp" is required (not null)
             if (timestamp == null)
@@ -87,6 +88,7 @@ namespace IO.Swagger.Model
             {
                 this.Value = value;
             }
+            this.Rssi = rssi;
             this.Meta = meta;
             this.RelatedId = relatedId;
             this.Id = id;
@@ -123,6 +125,13 @@ namespace IO.Swagger.Model
         /// <value>JSON value</value>
         [DataMember(Name="value", EmitDefaultValue=false)]
         public Object Value { get; set; }
+
+        /// <summary>
+        /// RSSI if from secondary wireless device
+        /// </summary>
+        /// <value>RSSI if from secondary wireless device</value>
+        [DataMember(Name="rssi", EmitDefaultValue=false)]
+        public decimal? Rssi { get; set; }
 
         /// <summary>
         /// JSON metadata
@@ -180,6 +189,7 @@ namespace IO.Swagger.Model
             sb.Append("  Created: ").Append(Created).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  Rssi: ").Append(Rssi).Append("\n");
             sb.Append("  Meta: ").Append(Meta).Append("\n");
             sb.Append("  RelatedId: ").Append(RelatedId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
@@ -242,6 +252,11 @@ namespace IO.Swagger.Model
                     this.Value.Equals(input.Value))
                 ) && 
                 (
+                    this.Rssi == input.Rssi ||
+                    (this.Rssi != null &&
+                    this.Rssi.Equals(input.Rssi))
+                ) && 
+                (
                     this.Meta == input.Meta ||
                     (this.Meta != null &&
                     this.Meta.Equals(input.Meta))
@@ -295,6 +310,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Value != null)
                     hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.Rssi != null)
+                    hashCode = hashCode * 59 + this.Rssi.GetHashCode();
                 if (this.Meta != null)
                     hashCode = hashCode * 59 + this.Meta.GetHashCode();
                 if (this.RelatedId != null)

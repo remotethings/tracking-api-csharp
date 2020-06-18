@@ -48,6 +48,29 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of Device</returns>
         ApiResponse<Device> DeviceFindByIdWithHttpInfo (string id, string filter = null);
         /// <summary>
+        /// Creates a new instance in messages of this model.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>DeviceMessage</returns>
+        DeviceMessage DevicePrototypeCreateMessages (decimal? id, DeviceMessage data = null);
+
+        /// <summary>
+        /// Creates a new instance in messages of this model.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>ApiResponse of DeviceMessage</returns>
+        ApiResponse<DeviceMessage> DevicePrototypeCreateMessagesWithHttpInfo (decimal? id, DeviceMessage data = null);
+        /// <summary>
         /// Create alert/notification trigger for device
         /// </summary>
         /// <remarks>
@@ -70,6 +93,27 @@ namespace IO.Swagger.Api
         /// <param name="data">Body (JSON) (optional)</param>
         /// <returns>ApiResponse of NotificationTrigger</returns>
         ApiResponse<NotificationTrigger> DevicePrototypeCreateNotificationTriggersWithHttpInfo (decimal? id, NotificationTrigger data = null);
+        /// <summary>
+        /// Deletes all messages of this model.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <returns></returns>
+        void DevicePrototypeDeleteMessages (decimal? id);
+
+        /// <summary>
+        /// Deletes all messages of this model.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DevicePrototypeDeleteMessagesWithHttpInfo (decimal? id);
         /// <summary>
         /// Remove all alert/notification trigger for device
         /// </summary>
@@ -298,6 +342,29 @@ namespace IO.Swagger.Api
         /// <param name="refresh">unused (optional)</param>
         /// <returns>ApiResponse of DeviceConfig</returns>
         ApiResponse<DeviceConfig> DevicePrototypeGetConfigWithHttpInfo (decimal? id, bool? refresh = null);
+        /// <summary>
+        /// Queries messages of device.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>List&lt;DeviceMessage&gt;</returns>
+        List<DeviceMessage> DevicePrototypeGetMessages (decimal? id, string filter = null);
+
+        /// <summary>
+        /// Queries messages of device.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>ApiResponse of List&lt;DeviceMessage&gt;</returns>
+        ApiResponse<List<DeviceMessage>> DevicePrototypeGetMessagesWithHttpInfo (decimal? id, string filter = null);
         /// <summary>
         /// Get alerts for device
         /// </summary>
@@ -533,6 +600,29 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse (Device)</returns>
         System.Threading.Tasks.Task<ApiResponse<Device>> DeviceFindByIdAsyncWithHttpInfo (string id, string filter = null);
         /// <summary>
+        /// Creates a new instance in messages of this model.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of DeviceMessage</returns>
+        System.Threading.Tasks.Task<DeviceMessage> DevicePrototypeCreateMessagesAsync (decimal? id, DeviceMessage data = null);
+
+        /// <summary>
+        /// Creates a new instance in messages of this model.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of ApiResponse (DeviceMessage)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DeviceMessage>> DevicePrototypeCreateMessagesAsyncWithHttpInfo (decimal? id, DeviceMessage data = null);
+        /// <summary>
         /// Create alert/notification trigger for device
         /// </summary>
         /// <remarks>
@@ -555,6 +645,27 @@ namespace IO.Swagger.Api
         /// <param name="data">Body (JSON) (optional)</param>
         /// <returns>Task of ApiResponse (NotificationTrigger)</returns>
         System.Threading.Tasks.Task<ApiResponse<NotificationTrigger>> DevicePrototypeCreateNotificationTriggersAsyncWithHttpInfo (decimal? id, NotificationTrigger data = null);
+        /// <summary>
+        /// Deletes all messages of this model.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DevicePrototypeDeleteMessagesAsync (decimal? id);
+
+        /// <summary>
+        /// Deletes all messages of this model.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDeleteMessagesAsyncWithHttpInfo (decimal? id);
         /// <summary>
         /// Remove all alert/notification trigger for device
         /// </summary>
@@ -783,6 +894,29 @@ namespace IO.Swagger.Api
         /// <param name="refresh">unused (optional)</param>
         /// <returns>Task of ApiResponse (DeviceConfig)</returns>
         System.Threading.Tasks.Task<ApiResponse<DeviceConfig>> DevicePrototypeGetConfigAsyncWithHttpInfo (decimal? id, bool? refresh = null);
+        /// <summary>
+        /// Queries messages of device.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>Task of List&lt;DeviceMessage&gt;</returns>
+        System.Threading.Tasks.Task<List<DeviceMessage>> DevicePrototypeGetMessagesAsync (decimal? id, string filter = null);
+
+        /// <summary>
+        /// Queries messages of device.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;DeviceMessage&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<DeviceMessage>>> DevicePrototypeGetMessagesAsyncWithHttpInfo (decimal? id, string filter = null);
         /// <summary>
         /// Get alerts for device
         /// </summary>
@@ -1248,6 +1382,175 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        /// Creates a new instance in messages of this model. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>DeviceMessage</returns>
+        public DeviceMessage DevicePrototypeCreateMessages (decimal? id, DeviceMessage data = null)
+        {
+             ApiResponse<DeviceMessage> localVarResponse = DevicePrototypeCreateMessagesWithHttpInfo(id, data);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Creates a new instance in messages of this model. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>ApiResponse of DeviceMessage</returns>
+        public ApiResponse< DeviceMessage > DevicePrototypeCreateMessagesWithHttpInfo (decimal? id, DeviceMessage data = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeCreateMessages");
+
+            var localVarPath = "/devices/{id}/messages";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (data != null && data.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(data); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = data; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeCreateMessages", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DeviceMessage>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (DeviceMessage) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeviceMessage)));
+        }
+
+        /// <summary>
+        /// Creates a new instance in messages of this model. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of DeviceMessage</returns>
+        public async System.Threading.Tasks.Task<DeviceMessage> DevicePrototypeCreateMessagesAsync (decimal? id, DeviceMessage data = null)
+        {
+             ApiResponse<DeviceMessage> localVarResponse = await DevicePrototypeCreateMessagesAsyncWithHttpInfo(id, data);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Creates a new instance in messages of this model. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of ApiResponse (DeviceMessage)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<DeviceMessage>> DevicePrototypeCreateMessagesAsyncWithHttpInfo (decimal? id, DeviceMessage data = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeCreateMessages");
+
+            var localVarPath = "/devices/{id}/messages";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (data != null && data.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(data); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = data; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeCreateMessages", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DeviceMessage>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (DeviceMessage) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeviceMessage)));
+        }
+
+        /// <summary>
         /// Create alert/notification trigger for device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1414,6 +1717,153 @@ namespace IO.Swagger.Api
             return new ApiResponse<NotificationTrigger>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (NotificationTrigger) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotificationTrigger)));
+        }
+
+        /// <summary>
+        /// Deletes all messages of this model. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <returns></returns>
+        public void DevicePrototypeDeleteMessages (decimal? id)
+        {
+             DevicePrototypeDeleteMessagesWithHttpInfo(id);
+        }
+
+        /// <summary>
+        /// Deletes all messages of this model. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DevicePrototypeDeleteMessagesWithHttpInfo (decimal? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeDeleteMessages");
+
+            var localVarPath = "/devices/{id}/messages";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeDeleteMessages", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Deletes all messages of this model. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DevicePrototypeDeleteMessagesAsync (decimal? id)
+        {
+             await DevicePrototypeDeleteMessagesAsyncWithHttpInfo(id);
+
+        }
+
+        /// <summary>
+        /// Deletes all messages of this model. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDeleteMessagesAsyncWithHttpInfo (decimal? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeDeleteMessages");
+
+            var localVarPath = "/devices/{id}/messages";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeDeleteMessages", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
         }
 
         /// <summary>
@@ -2998,6 +3448,161 @@ namespace IO.Swagger.Api
             return new ApiResponse<DeviceConfig>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (DeviceConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeviceConfig)));
+        }
+
+        /// <summary>
+        /// Queries messages of device. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>List&lt;DeviceMessage&gt;</returns>
+        public List<DeviceMessage> DevicePrototypeGetMessages (decimal? id, string filter = null)
+        {
+             ApiResponse<List<DeviceMessage>> localVarResponse = DevicePrototypeGetMessagesWithHttpInfo(id, filter);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Queries messages of device. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>ApiResponse of List&lt;DeviceMessage&gt;</returns>
+        public ApiResponse< List<DeviceMessage> > DevicePrototypeGetMessagesWithHttpInfo (decimal? id, string filter = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeGetMessages");
+
+            var localVarPath = "/devices/{id}/messages";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeGetMessages", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<DeviceMessage>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<DeviceMessage>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DeviceMessage>)));
+        }
+
+        /// <summary>
+        /// Queries messages of device. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>Task of List&lt;DeviceMessage&gt;</returns>
+        public async System.Threading.Tasks.Task<List<DeviceMessage>> DevicePrototypeGetMessagesAsync (decimal? id, string filter = null)
+        {
+             ApiResponse<List<DeviceMessage>> localVarResponse = await DevicePrototypeGetMessagesAsyncWithHttpInfo(id, filter);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Queries messages of device. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;DeviceMessage&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<DeviceMessage>>> DevicePrototypeGetMessagesAsyncWithHttpInfo (decimal? id, string filter = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeGetMessages");
+
+            var localVarPath = "/devices/{id}/messages";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeGetMessages", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<DeviceMessage>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<DeviceMessage>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DeviceMessage>)));
         }
 
         /// <summary>

@@ -155,6 +155,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'ModeControl'
         }
         /// <summary>
+        /// Test the property 'ModeControl2'
+        /// </summary>
+        [Test]
+        public void ModeControl2Test()
+        {
+            // TODO unit test for the property 'ModeControl2'
+        }
+        /// <summary>
         /// Test the property 'GpsTimeout'
         /// </summary>
         [Test]

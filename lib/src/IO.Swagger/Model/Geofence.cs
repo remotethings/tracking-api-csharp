@@ -36,7 +36,7 @@ namespace IO.Swagger.Model
         /// <param name="outline">Array of {lat:x,lng:y} objects representing the vertices of the polygon. Do not use with center and radius..</param>
         /// <param name="center">For circular geofences, the center. Property is ignored if outline !&#x3D; null..</param>
         /// <param name="radius">For circular geofences, the radius of the circle in meters. Property is ignored if outline !&#x3D; null..</param>
-        /// <param name="type">&#39;inside&#39;, &#39;outside&#39; or &#39;cross&#39;. For device safe-zone the value is ignored (always &#39;outside&#39;).</param>
+        /// <param name="type">Grouping value.</param>
         /// <param name="name">name.</param>
         /// <param name="wasInside">If the last point received was inside the geofence. Only updated for notifications (not the safe-zone as that is evaluated on the device) (default to false).</param>
         /// <param name="lastChecked">When the geofence was last evaluated. Only updated for notifications (not the safe-zone as that is evaluated on the device).</param>
@@ -99,9 +99,9 @@ namespace IO.Swagger.Model
         public decimal? Radius { get; set; }
 
         /// <summary>
-        /// &#39;inside&#39;, &#39;outside&#39; or &#39;cross&#39;. For device safe-zone the value is ignored (always &#39;outside&#39;)
+        /// Grouping value
         /// </summary>
-        /// <value>&#39;inside&#39;, &#39;outside&#39; or &#39;cross&#39;. For device safe-zone the value is ignored (always &#39;outside&#39;)</value>
+        /// <value>Grouping value</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
 

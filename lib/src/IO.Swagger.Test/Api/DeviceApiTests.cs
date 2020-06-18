@@ -78,6 +78,19 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test DevicePrototypeCreateMessages
+        /// </summary>
+        [Test]
+        public void DevicePrototypeCreateMessagesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //DeviceMessage data = null;
+            //var response = instance.DevicePrototypeCreateMessages(id, data);
+            //Assert.IsInstanceOf<DeviceMessage> (response, "response is DeviceMessage");
+        }
+        
+        /// <summary>
         /// Test DevicePrototypeCreateNotificationTriggers
         /// </summary>
         [Test]
@@ -88,6 +101,18 @@ namespace IO.Swagger.Test
             //NotificationTrigger data = null;
             //var response = instance.DevicePrototypeCreateNotificationTriggers(id, data);
             //Assert.IsInstanceOf<NotificationTrigger> (response, "response is NotificationTrigger");
+        }
+        
+        /// <summary>
+        /// Test DevicePrototypeDeleteMessages
+        /// </summary>
+        [Test]
+        public void DevicePrototypeDeleteMessagesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //instance.DevicePrototypeDeleteMessages(id);
+            
         }
         
         /// <summary>
@@ -125,6 +150,19 @@ namespace IO.Swagger.Test
             //decimal? id = null;
             //decimal? fk = null;
             //instance.DevicePrototypeDestroyByIdPoints(id, fk);
+            
+        }
+        
+        /// <summary>
+        /// Test DevicePrototypeDestroyByIdTransients
+        /// </summary>
+        [Test]
+        public void DevicePrototypeDestroyByIdTransientsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //decimal? fk = null;
+            //instance.DevicePrototypeDestroyByIdTransients(id, fk);
             
         }
         
@@ -168,6 +206,19 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test DevicePrototypeFindByIdTransients
+        /// </summary>
+        [Test]
+        public void DevicePrototypeFindByIdTransientsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //decimal? fk = null;
+            //var response = instance.DevicePrototypeFindByIdTransients(id, fk);
+            //Assert.IsInstanceOf<DeviceTransient> (response, "response is DeviceTransient");
+        }
+        
+        /// <summary>
         /// Test DevicePrototypeFlightMode
         /// </summary>
         [Test]
@@ -191,6 +242,19 @@ namespace IO.Swagger.Test
             //bool? refresh = null;
             //var response = instance.DevicePrototypeGetConfig(id, refresh);
             //Assert.IsInstanceOf<DeviceConfig> (response, "response is DeviceConfig");
+        }
+        
+        /// <summary>
+        /// Test DevicePrototypeGetMessages
+        /// </summary>
+        [Test]
+        public void DevicePrototypeGetMessagesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //string filter = null;
+            //var response = instance.DevicePrototypeGetMessages(id, filter);
+            //Assert.IsInstanceOf<List<DeviceMessage>> (response, "response is List<DeviceMessage>");
         }
         
         /// <summary>
@@ -245,6 +309,19 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test DevicePrototypeGetTransients
+        /// </summary>
+        [Test]
+        public void DevicePrototypeGetTransientsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //string filter = null;
+            //var response = instance.DevicePrototypeGetTransients(id, filter);
+            //Assert.IsInstanceOf<List<DeviceTransient>> (response, "response is List<DeviceTransient>");
+        }
+        
+        /// <summary>
         /// Test DevicePrototypeSetSafeZone
         /// </summary>
         [Test]
@@ -269,6 +346,20 @@ namespace IO.Swagger.Test
             //NotificationTrigger data = null;
             //var response = instance.DevicePrototypeUpdateByIdNotificationTriggers(id, fk, data);
             //Assert.IsInstanceOf<NotificationTrigger> (response, "response is NotificationTrigger");
+        }
+        
+        /// <summary>
+        /// Test DevicePrototypeUpdateByIdTransients
+        /// </summary>
+        [Test]
+        public void DevicePrototypeUpdateByIdTransientsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //decimal? fk = null;
+            //DeviceTransient data = null;
+            //var response = instance.DevicePrototypeUpdateByIdTransients(id, fk, data);
+            //Assert.IsInstanceOf<DeviceTransient> (response, "response is DeviceTransient");
         }
         
         /// <summary>

@@ -42,7 +42,8 @@ namespace IO.Swagger.Model
         /// <param name="iccid">iccid.</param>
         /// <param name="loraId">loraId.</param>
         /// <param name="imsi">imsi.</param>
-        /// <param name="btMacAddress">btMacAddress.</param>
+        /// <param name="btMac">Bluetooth MAC Address as 48bit number.</param>
+        /// <param name="btMacAddress">Bluetooth MAC Address in standard format.</param>
         /// <param name="serial">serial.</param>
         /// <param name="type">type.</param>
         /// <param name="expires">expires.</param>
@@ -67,7 +68,7 @@ namespace IO.Swagger.Model
         /// <param name="securePhoneId">securePhoneId.</param>
         /// <param name="resellerId">resellerId.</param>
         /// <param name="resellerPlanId">resellerPlanId.</param>
-        public Device(string imei = default(string), string iccid = default(string), decimal? loraId = default(decimal?), string imsi = default(string), string btMacAddress = default(string), string serial = default(string), string type = default(string), DateTime? expires = default(DateTime?), DateTime? lastConnection = default(DateTime?), DateTime? firstSeen = default(DateTime?), string mode = "default", string name = default(string), decimal? batteryVoltage = default(decimal?), string batteryType = "LIO", List<string> tags = default(List<string>), decimal? currentMode = default(decimal?), string color = "fc7c3d", bool? saveToWeb = false, bool? active = false, bool? deepSleep = false, string simstate = "active", string stripeSubscription = default(string), string subscriptionType = default(string), Object meta = default(Object), decimal? id = default(decimal?), decimal? ownerId = default(decimal?), decimal? securePhoneId = default(decimal?), decimal? resellerId = default(decimal?), decimal? resellerPlanId = default(decimal?))
+        public Device(string imei = default(string), string iccid = default(string), decimal? loraId = default(decimal?), string imsi = default(string), decimal? btMac = default(decimal?), string btMacAddress = default(string), string serial = default(string), string type = default(string), DateTime? expires = default(DateTime?), DateTime? lastConnection = default(DateTime?), DateTime? firstSeen = default(DateTime?), string mode = "default", string name = default(string), decimal? batteryVoltage = default(decimal?), string batteryType = "LIO", List<string> tags = default(List<string>), decimal? currentMode = default(decimal?), string color = "fc7c3d", bool? saveToWeb = false, bool? active = false, bool? deepSleep = false, string simstate = "active", string stripeSubscription = default(string), string subscriptionType = default(string), Object meta = default(Object), decimal? id = default(decimal?), decimal? ownerId = default(decimal?), decimal? securePhoneId = default(decimal?), decimal? resellerId = default(decimal?), decimal? resellerPlanId = default(decimal?))
         {
             // to ensure "firstSeen" is required (not null)
             if (firstSeen == null)
@@ -82,6 +83,7 @@ namespace IO.Swagger.Model
             this.Iccid = iccid;
             this.LoraId = loraId;
             this.Imsi = imsi;
+            this.BtMac = btMac;
             this.BtMacAddress = btMacAddress;
             this.Serial = serial;
             this.Type = type;
@@ -189,8 +191,16 @@ namespace IO.Swagger.Model
         public string Imsi { get; set; }
 
         /// <summary>
-        /// Gets or Sets BtMacAddress
+        /// Bluetooth MAC Address as 48bit number
         /// </summary>
+        /// <value>Bluetooth MAC Address as 48bit number</value>
+        [DataMember(Name="btMac", EmitDefaultValue=false)]
+        public decimal? BtMac { get; set; }
+
+        /// <summary>
+        /// Bluetooth MAC Address in standard format
+        /// </summary>
+        /// <value>Bluetooth MAC Address in standard format</value>
         [DataMember(Name="btMacAddress", EmitDefaultValue=false)]
         public string BtMacAddress { get; set; }
 
@@ -351,6 +361,7 @@ namespace IO.Swagger.Model
             sb.Append("  Iccid: ").Append(Iccid).Append("\n");
             sb.Append("  LoraId: ").Append(LoraId).Append("\n");
             sb.Append("  Imsi: ").Append(Imsi).Append("\n");
+            sb.Append("  BtMac: ").Append(BtMac).Append("\n");
             sb.Append("  BtMacAddress: ").Append(BtMacAddress).Append("\n");
             sb.Append("  Serial: ").Append(Serial).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
@@ -429,6 +440,11 @@ namespace IO.Swagger.Model
                     this.Imsi == input.Imsi ||
                     (this.Imsi != null &&
                     this.Imsi.Equals(input.Imsi))
+                ) && 
+                (
+                    this.BtMac == input.BtMac ||
+                    (this.BtMac != null &&
+                    this.BtMac.Equals(input.BtMac))
                 ) && 
                 (
                     this.BtMacAddress == input.BtMacAddress ||
@@ -574,6 +590,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.LoraId.GetHashCode();
                 if (this.Imsi != null)
                     hashCode = hashCode * 59 + this.Imsi.GetHashCode();
+                if (this.BtMac != null)
+                    hashCode = hashCode * 59 + this.BtMac.GetHashCode();
                 if (this.BtMacAddress != null)
                     hashCode = hashCode * 59 + this.BtMacAddress.GetHashCode();
                 if (this.Serial != null)

@@ -99,6 +99,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Imsi'
         }
         /// <summary>
+        /// Test the property 'BtMac'
+        /// </summary>
+        [Test]
+        public void BtMacTest()
+        {
+            // TODO unit test for the property 'BtMac'
+        }
+        /// <summary>
         /// Test the property 'BtMacAddress'
         /// </summary>
         [Test]

@@ -188,6 +188,33 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of List&lt;Device&gt;</returns>
         ApiResponse<List<Device>> UserPrototypeGetDevicesWithHttpInfo (string id, string filter = null);
         /// <summary>
+        /// Retrieve a list of devices in any given zone or group of zones.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">user id</param>
+        /// <param name="zoneId">ID of geofence to search. zoneId or zoneType required. (optional)</param>
+        /// <param name="zoneType">Type of zones to search. Ignored if zoneId is specified. zoneId or zoneType required. (optional)</param>
+        /// <param name="includeApprox">Include GSM / poor accuracy locations. Default to false. (optional)</param>
+        /// <returns>List&lt;Object&gt;</returns>
+        List<Object> UserPrototypeGetDevicesInZone (string id, string zoneId = null, string zoneType = null, string includeApprox = null);
+
+        /// <summary>
+        /// Retrieve a list of devices in any given zone or group of zones.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">user id</param>
+        /// <param name="zoneId">ID of geofence to search. zoneId or zoneType required. (optional)</param>
+        /// <param name="zoneType">Type of zones to search. Ignored if zoneId is specified. zoneId or zoneType required. (optional)</param>
+        /// <param name="includeApprox">Include GSM / poor accuracy locations. Default to false. (optional)</param>
+        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
+        ApiResponse<List<Object>> UserPrototypeGetDevicesInZoneWithHttpInfo (string id, string zoneId = null, string zoneType = null, string includeApprox = null);
+        /// <summary>
         /// Queries geofences of user.
         /// </summary>
         /// <remarks>
@@ -421,6 +448,33 @@ namespace IO.Swagger.Api
         /// <param name="filter">JSON Filter object (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;Device&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Device>>> UserPrototypeGetDevicesAsyncWithHttpInfo (string id, string filter = null);
+        /// <summary>
+        /// Retrieve a list of devices in any given zone or group of zones.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">user id</param>
+        /// <param name="zoneId">ID of geofence to search. zoneId or zoneType required. (optional)</param>
+        /// <param name="zoneType">Type of zones to search. Ignored if zoneId is specified. zoneId or zoneType required. (optional)</param>
+        /// <param name="includeApprox">Include GSM / poor accuracy locations. Default to false. (optional)</param>
+        /// <returns>Task of List&lt;Object&gt;</returns>
+        System.Threading.Tasks.Task<List<Object>> UserPrototypeGetDevicesInZoneAsync (string id, string zoneId = null, string zoneType = null, string includeApprox = null);
+
+        /// <summary>
+        /// Retrieve a list of devices in any given zone or group of zones.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">user id</param>
+        /// <param name="zoneId">ID of geofence to search. zoneId or zoneType required. (optional)</param>
+        /// <param name="zoneType">Type of zones to search. Ignored if zoneId is specified. zoneId or zoneType required. (optional)</param>
+        /// <param name="includeApprox">Include GSM / poor accuracy locations. Default to false. (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Object>>> UserPrototypeGetDevicesInZoneAsyncWithHttpInfo (string id, string zoneId = null, string zoneType = null, string includeApprox = null);
         /// <summary>
         /// Queries geofences of user.
         /// </summary>
@@ -1715,6 +1769,173 @@ namespace IO.Swagger.Api
             return new ApiResponse<List<Device>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<Device>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Device>)));
+        }
+
+        /// <summary>
+        /// Retrieve a list of devices in any given zone or group of zones. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">user id</param>
+        /// <param name="zoneId">ID of geofence to search. zoneId or zoneType required. (optional)</param>
+        /// <param name="zoneType">Type of zones to search. Ignored if zoneId is specified. zoneId or zoneType required. (optional)</param>
+        /// <param name="includeApprox">Include GSM / poor accuracy locations. Default to false. (optional)</param>
+        /// <returns>List&lt;Object&gt;</returns>
+        public List<Object> UserPrototypeGetDevicesInZone (string id, string zoneId = null, string zoneType = null, string includeApprox = null)
+        {
+             ApiResponse<List<Object>> localVarResponse = UserPrototypeGetDevicesInZoneWithHttpInfo(id, zoneId, zoneType, includeApprox);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieve a list of devices in any given zone or group of zones. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">user id</param>
+        /// <param name="zoneId">ID of geofence to search. zoneId or zoneType required. (optional)</param>
+        /// <param name="zoneType">Type of zones to search. Ignored if zoneId is specified. zoneId or zoneType required. (optional)</param>
+        /// <param name="includeApprox">Include GSM / poor accuracy locations. Default to false. (optional)</param>
+        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
+        public ApiResponse< List<Object> > UserPrototypeGetDevicesInZoneWithHttpInfo (string id, string zoneId = null, string zoneType = null, string includeApprox = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling UserApi->UserPrototypeGetDevicesInZone");
+
+            var localVarPath = "/users/{id}/getDevicesInZone";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (zoneId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "zoneId", zoneId)); // query parameter
+            if (zoneType != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "zoneType", zoneType)); // query parameter
+            if (includeApprox != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "includeApprox", includeApprox)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UserPrototypeGetDevicesInZone", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Object>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Object>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Object>)));
+        }
+
+        /// <summary>
+        /// Retrieve a list of devices in any given zone or group of zones. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">user id</param>
+        /// <param name="zoneId">ID of geofence to search. zoneId or zoneType required. (optional)</param>
+        /// <param name="zoneType">Type of zones to search. Ignored if zoneId is specified. zoneId or zoneType required. (optional)</param>
+        /// <param name="includeApprox">Include GSM / poor accuracy locations. Default to false. (optional)</param>
+        /// <returns>Task of List&lt;Object&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Object>> UserPrototypeGetDevicesInZoneAsync (string id, string zoneId = null, string zoneType = null, string includeApprox = null)
+        {
+             ApiResponse<List<Object>> localVarResponse = await UserPrototypeGetDevicesInZoneAsyncWithHttpInfo(id, zoneId, zoneType, includeApprox);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Retrieve a list of devices in any given zone or group of zones. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">user id</param>
+        /// <param name="zoneId">ID of geofence to search. zoneId or zoneType required. (optional)</param>
+        /// <param name="zoneType">Type of zones to search. Ignored if zoneId is specified. zoneId or zoneType required. (optional)</param>
+        /// <param name="includeApprox">Include GSM / poor accuracy locations. Default to false. (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<Object>>> UserPrototypeGetDevicesInZoneAsyncWithHttpInfo (string id, string zoneId = null, string zoneType = null, string includeApprox = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling UserApi->UserPrototypeGetDevicesInZone");
+
+            var localVarPath = "/users/{id}/getDevicesInZone";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (zoneId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "zoneId", zoneId)); // query parameter
+            if (zoneType != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "zoneType", zoneType)); // query parameter
+            if (includeApprox != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "includeApprox", includeApprox)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UserPrototypeGetDevicesInZone", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Object>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Object>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Object>)));
         }
 
         /// <summary>

@@ -49,6 +49,7 @@ namespace IO.Swagger.Model
         /// <param name="movementSensitivity2">A secondary debounce value. Typically this value is lower or equal to debounce, representing increased sensitivity to movement once the device is already moving..</param>
         /// <param name="behavior">Char Bitfield with various flags. Advanced use only.  DisableBluetooth:32 |  Encrypt:128 |  GsmOnWhenAwake:1 |  GsmOnWhenAsleep:2 |  GpsOnWhenAwake:4 |  DisableWifiAccuracyAssist:8 |  RepeatSleep:16 |  DisableWifi:64.</param>
         /// <param name="modeControl">Char Bitfield with various flags. Advanced use only.  StartStopOnly:1 |  LockAwakeOnAlert:2 |  SendSleepLocAfterBtDisconnect:4 | .</param>
+        /// <param name="modeControl2">Char Bitfield with various flags. Advanced use only. FW &gt;&#x3D; 69.  SendStopImmediately:1 |  StopTimeoutIsInMinutes:2 |  HarshPowerBudget:4 |  Lock2G: 8.</param>
         /// <param name="gpsTimeout">How long to let the GPS searches for a lock in seconds before giving up. Max 255s..</param>
         /// <param name="transmitTimeout">When the unit first wakes up from sleep, how long to wait before trying to transmit in multiples of 30 seconds. 0 &#x3D; instant, 1 &#x3D; 30s, 2 &#x3D; 60s...   Useful to avoid detection or draining battery inside shielded buildings..</param>
         /// <param name="gpsStabilize">How long to let the GPS stabilise in seconds once a lock is achieved before sending the position. Higher values may increase accuracy..</param>
@@ -69,7 +70,7 @@ namespace IO.Swagger.Model
         /// <param name="id">id.</param>
         /// <param name="deviceId">deviceId.</param>
         /// <param name="safeZoneId">safeZoneId.</param>
-        public DeviceConfig(string currentFW = default(string), string otaFW = default(string), decimal? interval = default(decimal?), decimal? sleepInterval = default(decimal?), decimal? checkInInterval = default(decimal?), decimal? packing = default(decimal?), decimal? movementSensitivity = default(decimal?), decimal? debounce = default(decimal?), decimal? movementSensitivity2 = default(decimal?), decimal? behavior = default(decimal?), decimal? modeControl = default(decimal?), decimal? gpsTimeout = default(decimal?), decimal? transmitTimeout = default(decimal?), decimal? gpsStabilize = default(decimal?), decimal? gpsCheckInterval = default(decimal?), decimal? stopTimeout = default(decimal?), decimal? tolerancePercentage = default(decimal?), List<Object> reasonsToWake = default(List<Object>), DateTime? modified = default(DateTime?), bool? forceFw = false, DateTime? receivedAt = default(DateTime?), decimal? reset = default(decimal?), decimal? flashTryCount = default(decimal?), string homeWifiNetwork = default(string), string homeWifiPassword = default(string), string wakeAction = "normal", decimal? onDemandTime = default(decimal?), string alertAction = "nothing", decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? safeZoneId = default(decimal?))
+        public DeviceConfig(string currentFW = default(string), string otaFW = default(string), decimal? interval = default(decimal?), decimal? sleepInterval = default(decimal?), decimal? checkInInterval = default(decimal?), decimal? packing = default(decimal?), decimal? movementSensitivity = default(decimal?), decimal? debounce = default(decimal?), decimal? movementSensitivity2 = default(decimal?), decimal? behavior = default(decimal?), decimal? modeControl = default(decimal?), decimal? modeControl2 = default(decimal?), decimal? gpsTimeout = default(decimal?), decimal? transmitTimeout = default(decimal?), decimal? gpsStabilize = default(decimal?), decimal? gpsCheckInterval = default(decimal?), decimal? stopTimeout = default(decimal?), decimal? tolerancePercentage = default(decimal?), List<Object> reasonsToWake = default(List<Object>), DateTime? modified = default(DateTime?), bool? forceFw = false, DateTime? receivedAt = default(DateTime?), decimal? reset = default(decimal?), decimal? flashTryCount = default(decimal?), string homeWifiNetwork = default(string), string homeWifiPassword = default(string), string wakeAction = "normal", decimal? onDemandTime = default(decimal?), string alertAction = "nothing", decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? safeZoneId = default(decimal?))
         {
             // to ensure "interval" is required (not null)
             if (interval == null)
@@ -133,6 +134,7 @@ namespace IO.Swagger.Model
             this.MovementSensitivity2 = movementSensitivity2;
             this.Behavior = behavior;
             this.ModeControl = modeControl;
+            this.ModeControl2 = modeControl2;
             this.GpsTimeout = gpsTimeout;
             this.TransmitTimeout = transmitTimeout;
             this.GpsStabilize = gpsStabilize;
@@ -236,6 +238,13 @@ namespace IO.Swagger.Model
         /// <value>Char Bitfield with various flags. Advanced use only.  StartStopOnly:1 |  LockAwakeOnAlert:2 |  SendSleepLocAfterBtDisconnect:4 | </value>
         [DataMember(Name="modeControl", EmitDefaultValue=false)]
         public decimal? ModeControl { get; set; }
+
+        /// <summary>
+        /// Char Bitfield with various flags. Advanced use only. FW &gt;&#x3D; 69.  SendStopImmediately:1 |  StopTimeoutIsInMinutes:2 |  HarshPowerBudget:4 |  Lock2G: 8
+        /// </summary>
+        /// <value>Char Bitfield with various flags. Advanced use only. FW &gt;&#x3D; 69.  SendStopImmediately:1 |  StopTimeoutIsInMinutes:2 |  HarshPowerBudget:4 |  Lock2G: 8</value>
+        [DataMember(Name="modeControl2", EmitDefaultValue=false)]
+        public decimal? ModeControl2 { get; set; }
 
         /// <summary>
         /// How long to let the GPS searches for a lock in seconds before giving up. Max 255s.
@@ -392,6 +401,7 @@ namespace IO.Swagger.Model
             sb.Append("  MovementSensitivity2: ").Append(MovementSensitivity2).Append("\n");
             sb.Append("  Behavior: ").Append(Behavior).Append("\n");
             sb.Append("  ModeControl: ").Append(ModeControl).Append("\n");
+            sb.Append("  ModeControl2: ").Append(ModeControl2).Append("\n");
             sb.Append("  GpsTimeout: ").Append(GpsTimeout).Append("\n");
             sb.Append("  TransmitTimeout: ").Append(TransmitTimeout).Append("\n");
             sb.Append("  GpsStabilize: ").Append(GpsStabilize).Append("\n");
@@ -500,6 +510,11 @@ namespace IO.Swagger.Model
                     this.ModeControl == input.ModeControl ||
                     (this.ModeControl != null &&
                     this.ModeControl.Equals(input.ModeControl))
+                ) && 
+                (
+                    this.ModeControl2 == input.ModeControl2 ||
+                    (this.ModeControl2 != null &&
+                    this.ModeControl2.Equals(input.ModeControl2))
                 ) && 
                 (
                     this.GpsTimeout == input.GpsTimeout ||
@@ -634,6 +649,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Behavior.GetHashCode();
                 if (this.ModeControl != null)
                     hashCode = hashCode * 59 + this.ModeControl.GetHashCode();
+                if (this.ModeControl2 != null)
+                    hashCode = hashCode * 59 + this.ModeControl2.GetHashCode();
                 if (this.GpsTimeout != null)
                     hashCode = hashCode * 59 + this.GpsTimeout.GetHashCode();
                 if (this.TransmitTimeout != null)

@@ -129,6 +129,21 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test UserPrototypeGetDeviceSummary
+        /// </summary>
+        [Test]
+        public void UserPrototypeGetDeviceSummaryTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //string pointCount = null;
+            //string dateRange = null;
+            //string hideApprox = null;
+            //var response = instance.UserPrototypeGetDeviceSummary(id, pointCount, dateRange, hideApprox);
+            //Assert.IsInstanceOf<List<XAny>> (response, "response is List<XAny>");
+        }
+        
+        /// <summary>
         /// Test UserPrototypeGetDevices
         /// </summary>
         [Test]
@@ -139,6 +154,21 @@ namespace IO.Swagger.Test
             //string filter = null;
             //var response = instance.UserPrototypeGetDevices(id, filter);
             //Assert.IsInstanceOf<List<Device>> (response, "response is List<Device>");
+        }
+        
+        /// <summary>
+        /// Test UserPrototypeGetDevicesInZone
+        /// </summary>
+        [Test]
+        public void UserPrototypeGetDevicesInZoneTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //string zoneId = null;
+            //string zoneType = null;
+            //string includeApprox = null;
+            //var response = instance.UserPrototypeGetDevicesInZone(id, zoneId, zoneType, includeApprox);
+            //Assert.IsInstanceOf<List<XAny>> (response, "response is List<XAny>");
         }
         
         /// <summary>
