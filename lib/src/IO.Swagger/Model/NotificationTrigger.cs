@@ -44,10 +44,12 @@ namespace IO.Swagger.Model
         /// <param name="muteFor">muteFor (required).</param>
         /// <param name="lastTriggered">lastTriggered.</param>
         /// <param name="delivery">delivery (required).</param>
+        /// <param name="userListId">userListId.</param>
+        /// <param name="deviceListId">deviceListId.</param>
         /// <param name="id">id.</param>
         /// <param name="deviceId">deviceId.</param>
         /// <param name="userId">userId.</param>
-        public NotificationTrigger(string name = default(string), string type = default(string), Object parameters = default(Object), decimal? muteFor = default(decimal?), DateTime? lastTriggered = default(DateTime?), Object delivery = default(Object), decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? userId = default(decimal?))
+        public NotificationTrigger(string name = default(string), string type = default(string), Object parameters = default(Object), decimal? muteFor = default(decimal?), DateTime? lastTriggered = default(DateTime?), Object delivery = default(Object), decimal? userListId = default(decimal?), decimal? deviceListId = default(decimal?), decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? userId = default(decimal?))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -87,6 +89,8 @@ namespace IO.Swagger.Model
             }
             this.Parameters = parameters;
             this.LastTriggered = lastTriggered;
+            this.UserListId = userListId;
+            this.DeviceListId = deviceListId;
             this.Id = id;
             this.DeviceId = deviceId;
             this.UserId = userId;
@@ -129,6 +133,18 @@ namespace IO.Swagger.Model
         public Object Delivery { get; set; }
 
         /// <summary>
+        /// Gets or Sets UserListId
+        /// </summary>
+        [DataMember(Name="userListId", EmitDefaultValue=false)]
+        public decimal? UserListId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DeviceListId
+        /// </summary>
+        [DataMember(Name="deviceListId", EmitDefaultValue=false)]
+        public decimal? DeviceListId { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name="id", EmitDefaultValue=false)]
@@ -160,6 +176,8 @@ namespace IO.Swagger.Model
             sb.Append("  MuteFor: ").Append(MuteFor).Append("\n");
             sb.Append("  LastTriggered: ").Append(LastTriggered).Append("\n");
             sb.Append("  Delivery: ").Append(Delivery).Append("\n");
+            sb.Append("  UserListId: ").Append(UserListId).Append("\n");
+            sb.Append("  DeviceListId: ").Append(DeviceListId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DeviceId: ").Append(DeviceId).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
@@ -228,6 +246,16 @@ namespace IO.Swagger.Model
                     this.Delivery.Equals(input.Delivery))
                 ) && 
                 (
+                    this.UserListId == input.UserListId ||
+                    (this.UserListId != null &&
+                    this.UserListId.Equals(input.UserListId))
+                ) && 
+                (
+                    this.DeviceListId == input.DeviceListId ||
+                    (this.DeviceListId != null &&
+                    this.DeviceListId.Equals(input.DeviceListId))
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -265,6 +293,10 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.LastTriggered.GetHashCode();
                 if (this.Delivery != null)
                     hashCode = hashCode * 59 + this.Delivery.GetHashCode();
+                if (this.UserListId != null)
+                    hashCode = hashCode * 59 + this.UserListId.GetHashCode();
+                if (this.DeviceListId != null)
+                    hashCode = hashCode * 59 + this.DeviceListId.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.DeviceId != null)

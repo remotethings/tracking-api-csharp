@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **MovementSensitivity2** | **decimal?** | A secondary debounce value. Typically this value is lower or equal to debounce, representing increased sensitivity to movement once the device is already moving. | [optional] 
 **Behavior** | **decimal?** | Char Bitfield with various flags. Advanced use only.  DisableBluetooth:32 |  Encrypt:128 |  GsmOnWhenAwake:1 |  GsmOnWhenAsleep:2 |  GpsOnWhenAwake:4 |  DisableWifiAccuracyAssist:8 |  RepeatSleep:16 |  DisableWifi:64 | [optional] 
 **ModeControl** | **decimal?** | Char Bitfield with various flags. Advanced use only.  StartStopOnly:1 |  LockAwakeOnAlert:2 |  SendSleepLocAfterBtDisconnect:4 |  | [optional] 
+**ModeControl2** | **decimal?** | Char Bitfield with various flags. Advanced use only. FW &gt;&#x3D; 69.  SendStopImmediately:1 |  StopTimeoutIsInMinutes:2 |  HarshPowerBudget:4 |  Lock2G: 8 | [optional] 
 **GpsTimeout** | **decimal?** | How long to let the GPS searches for a lock in seconds before giving up. Max 255s. | [optional] 
 **TransmitTimeout** | **decimal?** | When the unit first wakes up from sleep, how long to wait before trying to transmit in multiples of 30 seconds. 0 &#x3D; instant, 1 &#x3D; 30s, 2 &#x3D; 60s...   Useful to avoid detection or draining battery inside shielded buildings. | [optional] 
 **GpsStabilize** | **decimal?** | How long to let the GPS stabilise in seconds once a lock is achieved before sending the position. Higher values may increase accuracy. | [optional] 

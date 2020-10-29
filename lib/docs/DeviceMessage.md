@@ -1,16 +1,13 @@
-# IO.Swagger.Model.NotificationTrigger
+# IO.Swagger.Model.DeviceMessage
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Type** | **string** |  | 
-**Parameters** | **Object** |  | [optional] 
-**MuteFor** | **decimal?** |  | 
-**LastTriggered** | **DateTime?** |  | [optional] 
-**Delivery** | **Object** |  | 
-**UserListId** | **decimal?** |  | [optional] 
-**DeviceListId** | **decimal?** |  | [optional] 
+**Config** | **byte[]** |  | [optional] 
+**Message** | **string** |  | [optional] 
+**MobileTerminated** | **bool?** |  | [optional] [default to true]
+**Created** | **DateTime?** |  | 
+**Sent** | **DateTime?** |  | [optional] 
 **Id** | **decimal?** |  | [optional] 
 **DeviceId** | **decimal?** |  | [optional] 
 **UserId** | **decimal?** |  | [optional] 

@@ -7,8 +7,10 @@ Name | Type | Description | Notes
 **Created** | **DateTime?** | Timestamp for the writing to db | 
 **Type** | **string** | Sensor type: &#39;ultra&#39; (fill level), &#39;temp&#39; (temperature), ... | 
 **Value** | **Object** | JSON value | 
+**Rssi** | **decimal?** | RSSI if from secondary wireless device | [optional] 
 **Meta** | **Object** | JSON metadata | [optional] 
 **RelatedId** | **decimal?** | LoraId of another (ie for signal strength) | [optional] 
+**CorrelationId** | **string** | Internal use - correlation identifier | [optional] 
 **Id** | **decimal?** |  | [optional] 
 **GatewayId** | **decimal?** |  | [optional] 
 **DeviceId** | **decimal?** |  | [optional] 

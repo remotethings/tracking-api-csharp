@@ -44,6 +44,7 @@ namespace IO.Swagger.Model
         /// <param name="imsi">imsi.</param>
         /// <param name="btMac">Bluetooth MAC Address as 48bit number.</param>
         /// <param name="btMacAddress">Bluetooth MAC Address in standard format.</param>
+        /// <param name="uwbId">UWB Address as 32bit number.</param>
         /// <param name="serial">serial.</param>
         /// <param name="type">type.</param>
         /// <param name="expires">expires.</param>
@@ -63,12 +64,12 @@ namespace IO.Swagger.Model
         /// <param name="stripeSubscription">stripeSubscription.</param>
         /// <param name="subscriptionType">subscriptionType.</param>
         /// <param name="meta">meta.</param>
+        /// <param name="resellerId">resellerId.</param>
+        /// <param name="resellerPlanId">resellerPlanId.</param>
         /// <param name="id">id.</param>
         /// <param name="ownerId">ownerId.</param>
         /// <param name="securePhoneId">securePhoneId.</param>
-        /// <param name="resellerId">resellerId.</param>
-        /// <param name="resellerPlanId">resellerPlanId.</param>
-        public Device(string imei = default(string), string iccid = default(string), decimal? loraId = default(decimal?), string imsi = default(string), decimal? btMac = default(decimal?), string btMacAddress = default(string), string serial = default(string), string type = default(string), DateTime? expires = default(DateTime?), DateTime? lastConnection = default(DateTime?), DateTime? firstSeen = default(DateTime?), string mode = "default", string name = default(string), decimal? batteryVoltage = default(decimal?), string batteryType = "LIO", List<string> tags = default(List<string>), decimal? currentMode = default(decimal?), string color = "fc7c3d", bool? saveToWeb = false, bool? active = false, bool? deepSleep = false, string simstate = "active", string stripeSubscription = default(string), string subscriptionType = default(string), Object meta = default(Object), decimal? id = default(decimal?), decimal? ownerId = default(decimal?), decimal? securePhoneId = default(decimal?), decimal? resellerId = default(decimal?), decimal? resellerPlanId = default(decimal?))
+        public Device(string imei = default(string), string iccid = default(string), decimal? loraId = default(decimal?), string imsi = default(string), decimal? btMac = default(decimal?), string btMacAddress = default(string), decimal? uwbId = default(decimal?), string serial = default(string), string type = default(string), DateTime? expires = default(DateTime?), DateTime? lastConnection = default(DateTime?), DateTime? firstSeen = default(DateTime?), string mode = "default", string name = default(string), decimal? batteryVoltage = default(decimal?), string batteryType = "LIO", List<string> tags = default(List<string>), decimal? currentMode = default(decimal?), string color = "fc7c3d", bool? saveToWeb = false, bool? active = false, bool? deepSleep = false, string simstate = "active", string stripeSubscription = default(string), string subscriptionType = default(string), Object meta = default(Object), decimal? resellerId = default(decimal?), decimal? resellerPlanId = default(decimal?), decimal? id = default(decimal?), decimal? ownerId = default(decimal?), decimal? securePhoneId = default(decimal?))
         {
             // to ensure "firstSeen" is required (not null)
             if (firstSeen == null)
@@ -85,6 +86,7 @@ namespace IO.Swagger.Model
             this.Imsi = imsi;
             this.BtMac = btMac;
             this.BtMacAddress = btMacAddress;
+            this.UwbId = uwbId;
             this.Serial = serial;
             this.Type = type;
             this.Expires = expires;
@@ -159,11 +161,11 @@ namespace IO.Swagger.Model
             this.StripeSubscription = stripeSubscription;
             this.SubscriptionType = subscriptionType;
             this.Meta = meta;
+            this.ResellerId = resellerId;
+            this.ResellerPlanId = resellerPlanId;
             this.Id = id;
             this.OwnerId = ownerId;
             this.SecurePhoneId = securePhoneId;
-            this.ResellerId = resellerId;
-            this.ResellerPlanId = resellerPlanId;
         }
         
         /// <summary>
@@ -203,6 +205,13 @@ namespace IO.Swagger.Model
         /// <value>Bluetooth MAC Address in standard format</value>
         [DataMember(Name="btMacAddress", EmitDefaultValue=false)]
         public string BtMacAddress { get; set; }
+
+        /// <summary>
+        /// UWB Address as 32bit number
+        /// </summary>
+        /// <value>UWB Address as 32bit number</value>
+        [DataMember(Name="uwbId", EmitDefaultValue=false)]
+        public decimal? UwbId { get; set; }
 
         /// <summary>
         /// Gets or Sets Serial
@@ -320,6 +329,18 @@ namespace IO.Swagger.Model
         public Object Meta { get; set; }
 
         /// <summary>
+        /// Gets or Sets ResellerId
+        /// </summary>
+        [DataMember(Name="resellerId", EmitDefaultValue=false)]
+        public decimal? ResellerId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ResellerPlanId
+        /// </summary>
+        [DataMember(Name="resellerPlanId", EmitDefaultValue=false)]
+        public decimal? ResellerPlanId { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name="id", EmitDefaultValue=false)]
@@ -338,18 +359,6 @@ namespace IO.Swagger.Model
         public decimal? SecurePhoneId { get; set; }
 
         /// <summary>
-        /// Gets or Sets ResellerId
-        /// </summary>
-        [DataMember(Name="resellerId", EmitDefaultValue=false)]
-        public decimal? ResellerId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ResellerPlanId
-        /// </summary>
-        [DataMember(Name="resellerPlanId", EmitDefaultValue=false)]
-        public decimal? ResellerPlanId { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -363,6 +372,7 @@ namespace IO.Swagger.Model
             sb.Append("  Imsi: ").Append(Imsi).Append("\n");
             sb.Append("  BtMac: ").Append(BtMac).Append("\n");
             sb.Append("  BtMacAddress: ").Append(BtMacAddress).Append("\n");
+            sb.Append("  UwbId: ").Append(UwbId).Append("\n");
             sb.Append("  Serial: ").Append(Serial).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Expires: ").Append(Expires).Append("\n");
@@ -382,11 +392,11 @@ namespace IO.Swagger.Model
             sb.Append("  StripeSubscription: ").Append(StripeSubscription).Append("\n");
             sb.Append("  SubscriptionType: ").Append(SubscriptionType).Append("\n");
             sb.Append("  Meta: ").Append(Meta).Append("\n");
+            sb.Append("  ResellerId: ").Append(ResellerId).Append("\n");
+            sb.Append("  ResellerPlanId: ").Append(ResellerPlanId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("  SecurePhoneId: ").Append(SecurePhoneId).Append("\n");
-            sb.Append("  ResellerId: ").Append(ResellerId).Append("\n");
-            sb.Append("  ResellerPlanId: ").Append(ResellerPlanId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -450,6 +460,11 @@ namespace IO.Swagger.Model
                     this.BtMacAddress == input.BtMacAddress ||
                     (this.BtMacAddress != null &&
                     this.BtMacAddress.Equals(input.BtMacAddress))
+                ) && 
+                (
+                    this.UwbId == input.UwbId ||
+                    (this.UwbId != null &&
+                    this.UwbId.Equals(input.UwbId))
                 ) && 
                 (
                     this.Serial == input.Serial ||
@@ -547,6 +562,16 @@ namespace IO.Swagger.Model
                     this.Meta.Equals(input.Meta))
                 ) && 
                 (
+                    this.ResellerId == input.ResellerId ||
+                    (this.ResellerId != null &&
+                    this.ResellerId.Equals(input.ResellerId))
+                ) && 
+                (
+                    this.ResellerPlanId == input.ResellerPlanId ||
+                    (this.ResellerPlanId != null &&
+                    this.ResellerPlanId.Equals(input.ResellerPlanId))
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -560,16 +585,6 @@ namespace IO.Swagger.Model
                     this.SecurePhoneId == input.SecurePhoneId ||
                     (this.SecurePhoneId != null &&
                     this.SecurePhoneId.Equals(input.SecurePhoneId))
-                ) && 
-                (
-                    this.ResellerId == input.ResellerId ||
-                    (this.ResellerId != null &&
-                    this.ResellerId.Equals(input.ResellerId))
-                ) && 
-                (
-                    this.ResellerPlanId == input.ResellerPlanId ||
-                    (this.ResellerPlanId != null &&
-                    this.ResellerPlanId.Equals(input.ResellerPlanId))
                 );
         }
 
@@ -594,6 +609,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.BtMac.GetHashCode();
                 if (this.BtMacAddress != null)
                     hashCode = hashCode * 59 + this.BtMacAddress.GetHashCode();
+                if (this.UwbId != null)
+                    hashCode = hashCode * 59 + this.UwbId.GetHashCode();
                 if (this.Serial != null)
                     hashCode = hashCode * 59 + this.Serial.GetHashCode();
                 if (this.Type != null)
@@ -632,16 +649,16 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.SubscriptionType.GetHashCode();
                 if (this.Meta != null)
                     hashCode = hashCode * 59 + this.Meta.GetHashCode();
+                if (this.ResellerId != null)
+                    hashCode = hashCode * 59 + this.ResellerId.GetHashCode();
+                if (this.ResellerPlanId != null)
+                    hashCode = hashCode * 59 + this.ResellerPlanId.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.OwnerId != null)
                     hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
                 if (this.SecurePhoneId != null)
                     hashCode = hashCode * 59 + this.SecurePhoneId.GetHashCode();
-                if (this.ResellerId != null)
-                    hashCode = hashCode * 59 + this.ResellerId.GetHashCode();
-                if (this.ResellerPlanId != null)
-                    hashCode = hashCode * 59 + this.ResellerPlanId.GetHashCode();
                 return hashCode;
             }
         }

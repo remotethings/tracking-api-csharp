@@ -5,21 +5,36 @@ All URIs are relative to *https://api.thelightbug.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeviceFindById**](DeviceApi.md#devicefindbyid) | **GET** /devices/{id} | Find a model instance by {{id}} from the data source.
+[**DevicePrototypeCreateGatewayReadings**](DeviceApi.md#deviceprototypecreategatewayreadings) | **POST** /devices/{id}/gatewayReadings | Creates a new instance in gatewayReadings of this model.
+[**DevicePrototypeCreateMessages**](DeviceApi.md#deviceprototypecreatemessages) | **POST** /devices/{id}/messages | Creates a new instance in messages of this model.
 [**DevicePrototypeCreateNotificationTriggers**](DeviceApi.md#deviceprototypecreatenotificationtriggers) | **POST** /devices/{id}/notificationTriggers | Create alert/notification trigger for device
+[**DevicePrototypeDeleteGatewayReadings**](DeviceApi.md#deviceprototypedeletegatewayreadings) | **DELETE** /devices/{id}/gatewayReadings | Deletes all gatewayReadings of this model.
+[**DevicePrototypeDeleteMessages**](DeviceApi.md#deviceprototypedeletemessages) | **DELETE** /devices/{id}/messages | Deletes all messages of this model.
 [**DevicePrototypeDeleteNotificationTriggers**](DeviceApi.md#deviceprototypedeletenotificationtriggers) | **DELETE** /devices/{id}/notificationTriggers | Remove all alert/notification trigger for device
+[**DevicePrototypeDestroyByIdGatewayReadings**](DeviceApi.md#deviceprototypedestroybyidgatewayreadings) | **DELETE** /devices/{id}/gatewayReadings/{fk} | Delete a related item by id for gatewayReadings.
 [**DevicePrototypeDestroyByIdNotificationTriggers**](DeviceApi.md#deviceprototypedestroybyidnotificationtriggers) | **DELETE** /devices/{id}/notificationTriggers/{fk} | Remove alert/notification trigger by id {fk} for device
 [**DevicePrototypeDestroyByIdPoints**](DeviceApi.md#deviceprototypedestroybyidpoints) | **DELETE** /devices/{id}/points/{fk} | Delete a specific point for a device
+[**DevicePrototypeDestroyByIdTransients**](DeviceApi.md#deviceprototypedestroybyidtransients) | **DELETE** /devices/{id}/transients/{fk} | Delete a related item by id for transients.
+[**DevicePrototypeFindByIdGatewayReadings**](DeviceApi.md#deviceprototypefindbyidgatewayreadings) | **GET** /devices/{id}/gatewayReadings/{fk} | Find a related item by id for gatewayReadings.
 [**DevicePrototypeFindByIdNotificationTriggers**](DeviceApi.md#deviceprototypefindbyidnotificationtriggers) | **GET** /devices/{id}/notificationTriggers/{fk} | Find a related item by id for notificationTriggers.
 [**DevicePrototypeFindByIdPoints**](DeviceApi.md#deviceprototypefindbyidpoints) | **GET** /devices/{id}/points/{fk} | Retrieve a specific point for a device
 [**DevicePrototypeFindByIdReadings**](DeviceApi.md#deviceprototypefindbyidreadings) | **GET** /devices/{id}/readings/{fk} | Retrieve a specific reading for a device
+[**DevicePrototypeFindByIdTransients**](DeviceApi.md#deviceprototypefindbyidtransients) | **GET** /devices/{id}/transients/{fk} | Find a related item by id for transients.
 [**DevicePrototypeFlightMode**](DeviceApi.md#deviceprototypeflightmode) | **GET** /devices/{id}/flightMode | 
 [**DevicePrototypeGetConfig**](DeviceApi.md#deviceprototypegetconfig) | **GET** /devices/{id}/config | Retrieve configuration for a device
+[**DevicePrototypeGetGatewayReadings**](DeviceApi.md#deviceprototypegetgatewayreadings) | **GET** /devices/{id}/gatewayReadings | Queries gatewayReadings of device.
+[**DevicePrototypeGetMessages**](DeviceApi.md#deviceprototypegetmessages) | **GET** /devices/{id}/messages | Queries messages of device.
 [**DevicePrototypeGetNotificationTriggers**](DeviceApi.md#deviceprototypegetnotificationtriggers) | **GET** /devices/{id}/notificationTriggers | Get alerts for device
 [**DevicePrototypeGetPoints**](DeviceApi.md#deviceprototypegetpoints) | **GET** /devices/{id}/points | Retrieve points for a device
 [**DevicePrototypeGetReadings**](DeviceApi.md#deviceprototypegetreadings) | **GET** /devices/{id}/readings | Retrieve readings for a device
 [**DevicePrototypeGetSafeZone**](DeviceApi.md#deviceprototypegetsafezone) | **GET** /devices/{id}/getSafeZone | Get safe-zone for device
+[**DevicePrototypeGetTransients**](DeviceApi.md#deviceprototypegettransients) | **GET** /devices/{id}/transients | Queries transients of device.
+[**DevicePrototypeNearbyDeviceData**](DeviceApi.md#deviceprototypenearbydevicedata) | **GET** /devices/{id}/nearbyDeviceData | 
+[**DevicePrototypeNearbyDevices**](DeviceApi.md#deviceprototypenearbydevices) | **GET** /devices/{id}/nearbyDevices | 
 [**DevicePrototypeSetSafeZone**](DeviceApi.md#deviceprototypesetsafezone) | **POST** /devices/{id}/setSafeZone | Update safe-zone for device
+[**DevicePrototypeUpdateByIdGatewayReadings**](DeviceApi.md#deviceprototypeupdatebyidgatewayreadings) | **PUT** /devices/{id}/gatewayReadings/{fk} | Update a related item by id for gatewayReadings.
 [**DevicePrototypeUpdateByIdNotificationTriggers**](DeviceApi.md#deviceprototypeupdatebyidnotificationtriggers) | **PUT** /devices/{id}/notificationTriggers/{fk} | Update an alert/notification trigger by id {fk} for device
+[**DevicePrototypeUpdateByIdTransients**](DeviceApi.md#deviceprototypeupdatebyidtransients) | **PUT** /devices/{id}/transients/{fk} | Update a related item by id for transients.
 [**DevicePrototypeUpdateConfig**](DeviceApi.md#deviceprototypeupdateconfig) | **PUT** /devices/{id}/config | Update configuration for a device
 
 
@@ -72,6 +87,128 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Device**](Device.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deviceprototypecreategatewayreadings"></a>
+# **DevicePrototypeCreateGatewayReadings**
+> SensorReading DevicePrototypeCreateGatewayReadings (decimal? id, SensorReading data = null)
+
+Creates a new instance in gatewayReadings of this model.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeCreateGatewayReadingsExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+            var data = new SensorReading(); // SensorReading | Body (JSON) (optional) 
+
+            try
+            {
+                // Creates a new instance in gatewayReadings of this model.
+                SensorReading result = apiInstance.DevicePrototypeCreateGatewayReadings(id, data);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeCreateGatewayReadings: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+ **data** | [**SensorReading**](SensorReading.md)| Body (JSON) | [optional] 
+
+### Return type
+
+[**SensorReading**](SensorReading.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deviceprototypecreatemessages"></a>
+# **DevicePrototypeCreateMessages**
+> DeviceMessage DevicePrototypeCreateMessages (decimal? id, DeviceMessage data = null)
+
+Creates a new instance in messages of this model.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeCreateMessagesExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+            var data = new DeviceMessage(); // DeviceMessage | Body (JSON) (optional) 
+
+            try
+            {
+                // Creates a new instance in messages of this model.
+                DeviceMessage result = apiInstance.DevicePrototypeCreateMessages(id, data);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeCreateMessages: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+ **data** | [**DeviceMessage**](DeviceMessage.md)| Body (JSON) | [optional] 
+
+### Return type
+
+[**DeviceMessage**](DeviceMessage.md)
 
 ### Authorization
 
@@ -145,6 +282,122 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="deviceprototypedeletegatewayreadings"></a>
+# **DevicePrototypeDeleteGatewayReadings**
+> void DevicePrototypeDeleteGatewayReadings (decimal? id)
+
+Deletes all gatewayReadings of this model.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeDeleteGatewayReadingsExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+
+            try
+            {
+                // Deletes all gatewayReadings of this model.
+                apiInstance.DevicePrototypeDeleteGatewayReadings(id);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeDeleteGatewayReadings: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deviceprototypedeletemessages"></a>
+# **DevicePrototypeDeleteMessages**
+> void DevicePrototypeDeleteMessages (decimal? id)
+
+Deletes all messages of this model.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeDeleteMessagesExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+
+            try
+            {
+                // Deletes all messages of this model.
+                apiInstance.DevicePrototypeDeleteMessages(id);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeDeleteMessages: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="deviceprototypedeletenotificationtriggers"></a>
 # **DevicePrototypeDeleteNotificationTriggers**
 > void DevicePrototypeDeleteNotificationTriggers (decimal? id)
@@ -187,6 +440,66 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **decimal?**| device id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deviceprototypedestroybyidgatewayreadings"></a>
+# **DevicePrototypeDestroyByIdGatewayReadings**
+> void DevicePrototypeDestroyByIdGatewayReadings (decimal? id, decimal? fk)
+
+Delete a related item by id for gatewayReadings.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeDestroyByIdGatewayReadingsExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+            var fk = 8.14;  // decimal? | Foreign key for gatewayReadings
+
+            try
+            {
+                // Delete a related item by id for gatewayReadings.
+                apiInstance.DevicePrototypeDestroyByIdGatewayReadings(id, fk);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeDestroyByIdGatewayReadings: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+ **fk** | **decimal?**| Foreign key for gatewayReadings | 
 
 ### Return type
 
@@ -311,6 +624,127 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deviceprototypedestroybyidtransients"></a>
+# **DevicePrototypeDestroyByIdTransients**
+> void DevicePrototypeDestroyByIdTransients (decimal? id, decimal? fk)
+
+Delete a related item by id for transients.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeDestroyByIdTransientsExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+            var fk = 8.14;  // decimal? | Foreign key for transients
+
+            try
+            {
+                // Delete a related item by id for transients.
+                apiInstance.DevicePrototypeDestroyByIdTransients(id, fk);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeDestroyByIdTransients: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+ **fk** | **decimal?**| Foreign key for transients | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deviceprototypefindbyidgatewayreadings"></a>
+# **DevicePrototypeFindByIdGatewayReadings**
+> SensorReading DevicePrototypeFindByIdGatewayReadings (decimal? id, decimal? fk)
+
+Find a related item by id for gatewayReadings.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeFindByIdGatewayReadingsExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+            var fk = 8.14;  // decimal? | Foreign key for gatewayReadings
+
+            try
+            {
+                // Find a related item by id for gatewayReadings.
+                SensorReading result = apiInstance.DevicePrototypeFindByIdGatewayReadings(id, fk);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeFindByIdGatewayReadings: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+ **fk** | **decimal?**| Foreign key for gatewayReadings | 
+
+### Return type
+
+[**SensorReading**](SensorReading.md)
 
 ### Authorization
 
@@ -506,6 +940,67 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="deviceprototypefindbyidtransients"></a>
+# **DevicePrototypeFindByIdTransients**
+> DeviceTransient DevicePrototypeFindByIdTransients (decimal? id, decimal? fk)
+
+Find a related item by id for transients.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeFindByIdTransientsExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+            var fk = 8.14;  // decimal? | Foreign key for transients
+
+            try
+            {
+                // Find a related item by id for transients.
+                DeviceTransient result = apiInstance.DevicePrototypeFindByIdTransients(id, fk);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeFindByIdTransients: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+ **fk** | **decimal?**| Foreign key for transients | 
+
+### Return type
+
+[**DeviceTransient**](DeviceTransient.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="deviceprototypeflightmode"></a>
 # **DevicePrototypeFlightMode**
 > Object DevicePrototypeFlightMode (decimal? id, decimal? duration)
@@ -615,6 +1110,128 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DeviceConfig**](DeviceConfig.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deviceprototypegetgatewayreadings"></a>
+# **DevicePrototypeGetGatewayReadings**
+> List<SensorReading> DevicePrototypeGetGatewayReadings (decimal? id, string filter = null)
+
+Queries gatewayReadings of device.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeGetGatewayReadingsExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+            var filter = filter_example;  // string | JSON Filter object (optional) 
+
+            try
+            {
+                // Queries gatewayReadings of device.
+                List&lt;SensorReading&gt; result = apiInstance.DevicePrototypeGetGatewayReadings(id, filter);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeGetGatewayReadings: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+ **filter** | **string**| JSON Filter object | [optional] 
+
+### Return type
+
+[**List<SensorReading>**](SensorReading.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deviceprototypegetmessages"></a>
+# **DevicePrototypeGetMessages**
+> List<DeviceMessage> DevicePrototypeGetMessages (decimal? id, string filter = null)
+
+Queries messages of device.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeGetMessagesExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+            var filter = filter_example;  // string | JSON Filter object (optional) 
+
+            try
+            {
+                // Queries messages of device.
+                List&lt;DeviceMessage&gt; result = apiInstance.DevicePrototypeGetMessages(id, filter);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeGetMessages: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+ **filter** | **string**| JSON Filter object | [optional] 
+
+### Return type
+
+[**List<DeviceMessage>**](DeviceMessage.md)
 
 ### Authorization
 
@@ -869,6 +1486,191 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="deviceprototypegettransients"></a>
+# **DevicePrototypeGetTransients**
+> List<DeviceTransient> DevicePrototypeGetTransients (decimal? id, string filter = null)
+
+Queries transients of device.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeGetTransientsExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+            var filter = filter_example;  // string | JSON Filter object (optional) 
+
+            try
+            {
+                // Queries transients of device.
+                List&lt;DeviceTransient&gt; result = apiInstance.DevicePrototypeGetTransients(id, filter);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeGetTransients: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+ **filter** | **string**| JSON Filter object | [optional] 
+
+### Return type
+
+[**List<DeviceTransient>**](DeviceTransient.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deviceprototypenearbydevicedata"></a>
+# **DevicePrototypeNearbyDeviceData**
+> Object DevicePrototypeNearbyDeviceData (decimal? id, string nearbyId, string dateRange)
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeNearbyDeviceDataExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+            var nearbyId = nearbyId_example;  // string | 
+            var dateRange = dateRange_example;  // string | 
+
+            try
+            {
+                Object result = apiInstance.DevicePrototypeNearbyDeviceData(id, nearbyId, dateRange);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeNearbyDeviceData: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+ **nearbyId** | **string**|  | 
+ **dateRange** | **string**|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deviceprototypenearbydevices"></a>
+# **DevicePrototypeNearbyDevices**
+> Object DevicePrototypeNearbyDevices (decimal? id, string dateRange = null, string correlationId = null)
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeNearbyDevicesExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+            var dateRange = dateRange_example;  // string |  (optional) 
+            var correlationId = correlationId_example;  // string |  (optional) 
+
+            try
+            {
+                Object result = apiInstance.DevicePrototypeNearbyDevices(id, dateRange, correlationId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeNearbyDevices: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+ **dateRange** | **string**|  | [optional] 
+ **correlationId** | **string**|  | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="deviceprototypesetsafezone"></a>
 # **DevicePrototypeSetSafeZone**
 > Geofence DevicePrototypeSetSafeZone (decimal? id, List<GeoPoint> data)
@@ -918,6 +1720,69 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Geofence**](Geofence.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deviceprototypeupdatebyidgatewayreadings"></a>
+# **DevicePrototypeUpdateByIdGatewayReadings**
+> SensorReading DevicePrototypeUpdateByIdGatewayReadings (decimal? id, decimal? fk, SensorReading data = null)
+
+Update a related item by id for gatewayReadings.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeUpdateByIdGatewayReadingsExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+            var fk = 8.14;  // decimal? | Foreign key for gatewayReadings
+            var data = new SensorReading(); // SensorReading | Body (JSON) (optional) 
+
+            try
+            {
+                // Update a related item by id for gatewayReadings.
+                SensorReading result = apiInstance.DevicePrototypeUpdateByIdGatewayReadings(id, fk, data);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeUpdateByIdGatewayReadings: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+ **fk** | **decimal?**| Foreign key for gatewayReadings | 
+ **data** | [**SensorReading**](SensorReading.md)| Body (JSON) | [optional] 
+
+### Return type
+
+[**SensorReading**](SensorReading.md)
 
 ### Authorization
 
@@ -981,6 +1846,69 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**NotificationTrigger**](NotificationTrigger.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deviceprototypeupdatebyidtransients"></a>
+# **DevicePrototypeUpdateByIdTransients**
+> DeviceTransient DevicePrototypeUpdateByIdTransients (decimal? id, decimal? fk, DeviceTransient data = null)
+
+Update a related item by id for transients.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DevicePrototypeUpdateByIdTransientsExample
+    {
+        public void main()
+        {
+            var apiInstance = new DeviceApi();
+            var id = 8.14;  // decimal? | device id
+            var fk = 8.14;  // decimal? | Foreign key for transients
+            var data = new DeviceTransient(); // DeviceTransient | Body (JSON) (optional) 
+
+            try
+            {
+                // Update a related item by id for transients.
+                DeviceTransient result = apiInstance.DevicePrototypeUpdateByIdTransients(id, fk, data);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DeviceApi.DevicePrototypeUpdateByIdTransients: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **decimal?**| device id | 
+ **fk** | **decimal?**| Foreign key for transients | 
+ **data** | [**DeviceTransient**](DeviceTransient.md)| Body (JSON) | [optional] 
+
+### Return type
+
+[**DeviceTransient**](DeviceTransient.md)
 
 ### Authorization
 

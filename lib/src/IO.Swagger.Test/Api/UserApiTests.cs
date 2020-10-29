@@ -140,7 +140,7 @@ namespace IO.Swagger.Test
             //string dateRange = null;
             //string hideApprox = null;
             //var response = instance.UserPrototypeGetDeviceSummary(id, pointCount, dateRange, hideApprox);
-            //Assert.IsInstanceOf<List<XAny>> (response, "response is List<XAny>");
+            //Assert.IsInstanceOf<List<Object>> (response, "response is List<Object>");
         }
         
         /// <summary>
@@ -168,7 +168,7 @@ namespace IO.Swagger.Test
             //string zoneType = null;
             //string includeApprox = null;
             //var response = instance.UserPrototypeGetDevicesInZone(id, zoneId, zoneType, includeApprox);
-            //Assert.IsInstanceOf<List<XAny>> (response, "response is List<XAny>");
+            //Assert.IsInstanceOf<List<Object>> (response, "response is List<Object>");
         }
         
         /// <summary>

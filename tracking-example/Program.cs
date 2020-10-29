@@ -10,6 +10,7 @@ using IO.Swagger.Client;
 using IO.Swagger.Model;
 using System.Web.Script.Serialization;
 using System.Dynamic;
+using Newtonsoft.Json.Linq;
 
 namespace tracking_example
 {
@@ -33,7 +34,7 @@ namespace tracking_example
                 this.userApi.Configuration.AddDefaultHeader("Authorization", token.Id);
                 this.deviceApi.Configuration.AddDefaultHeader("Authorization", token.Id);
             } 
-            catch(Exception e)
+            catch
             {
                 Debug.Print("Failed to login, please check credentials");
             }
@@ -159,22 +160,30 @@ namespace tracking_example
             Debug.Print("Got {0} devices for this account", this.devices.Count);
         }
 
-        static long dateToUnixMillis(DateTime date)
+        static long dateToMillis(DateTime date)
         {
             var timeSpan = (date - new DateTime(1970, 1, 1, 0, 0, 0));
             return (long)timeSpan.TotalSeconds*1000;
         }
 
-        void printLastLocations()
+        public static DateTime millisToDate(long jsTimeStamp)
+        {
+            // Unix timestamp is milliseconds past epoch
+            System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+            dtDateTime = dtDateTime.AddSeconds(jsTimeStamp / 1000).ToLocalTime();
+            return dtDateTime;
+        }
+
+        void printLastLocations(bool showNearbyBluetoothData = false)
         {
             var startDate = DateTime.UtcNow.AddDays(-1);
             var endDate = DateTime.UtcNow;
             var filter = new {
                 where = new {
-                    timestamp = new { between = new long[] { dateToUnixMillis(startDate), dateToUnixMillis(endDate) } }
+                    timestamp = new { between = new long[] { dateToMillis(startDate), dateToMillis(endDate) } }
                 },
                 order = "timestamp DESC",
-                //limit = 5
+                limit = 5
             };
             var jsonFilter = new JavaScriptSerializer().Serialize(filter);
             foreach (var device in this.devices)
@@ -186,9 +195,82 @@ namespace tracking_example
                     if(point.Location == null) continue;
                     if (point.Address == null) point.Address = "";
                     Debug.Print("Point for device {0}: {1},{2} at {3}, {4}", device.Id, point.Location.Lat, point.Location.Lng, point.Timestamp.ToString(), point.Address);
+                    if (showNearbyBluetoothData && point.CorrelationId != null)
+                    {
+                        PrintNearbyBluetoothDataForPoint((decimal)device.Id, point.CorrelationId);
+                    }
                 }
             }
             
+        }
+        
+        void printNearbyData()
+        {
+            var startDate = DateTime.UtcNow.AddDays(-1);
+            var endDate = DateTime.UtcNow;
+            var filter = new {
+                where = new {
+                    //type= "ble_seen", // optional type filter - ble_seen, temp, humidity...
+                    timestamp = new { between = new long[] { dateToMillis(startDate), dateToMillis(endDate) } }
+                },
+                order = "timestamp DESC",
+                //limit = 5
+            };
+            var jsonFilter = new JavaScriptSerializer().Serialize(filter);
+            foreach (var device in this.devices)
+            {
+                Debug.Print("Getting points in the last day for device {0}, id = {1}", device.Name, device.Id);
+                var readings = this.deviceApi.DevicePrototypeGetGatewayReadings(device.Id, jsonFilter);
+                foreach(var reading in readings)
+                {
+                    Debug.Print("Sensor Data collected by {0} for device {1}: {2},{3} at {4}", device.Id, reading.DeviceId, reading.Type, reading.Value, reading.Timestamp);
+                }
+            }
+            
+        }
+
+        private void PrintNearbyBluetoothDataForPoint(decimal deviceId, string correlationId)
+        {
+            var nearbyData = this.deviceApi.DevicePrototypeNearbyDevices(deviceId, correlationId: correlationId);
+            foreach (dynamic nearby in nearbyData)
+            {
+                Debug.Print("Device {0} was near BLE Device with MAC={1} [ID={2}] - sensor data collected: ", deviceId, (string)nearby.device.btMac, (int)nearby.device.id);
+                foreach (var reading in (JObject)nearby.readings)
+                {
+                    var data = reading.Value.ToObject<JObject>();
+                    Debug.Print("{4}[{0}] = {1} @ {2} with RSSI = {3}dBm", reading.Key, data["value"], millisToDate((long)data["timestamp"]), data["rssi"], (int)nearby.device.id);
+                }
+            }
+        }
+
+   
+
+        void getNearbyDeviceData()
+        {
+            var startDate = DateTime.UtcNow.AddDays(-1);
+            var endDate = DateTime.UtcNow;
+            var filter = new
+            {
+                where = new
+                {
+                    timestamp = new { between = new long[] { dateToMillis(startDate), dateToMillis(endDate) } }
+                },
+                order = "timestamp DESC",
+                //limit = 5
+            };
+            var jsonFilter = new JavaScriptSerializer().Serialize(filter);
+            foreach (var device in this.devices)
+            {
+                Debug.Print("Getting points in the last day for device {0}, id = {1}", device.Name, device.Id);
+                var points = this.deviceApi.DevicePrototypeGetPoints(device.Id, jsonFilter);
+                foreach (var point in points)
+                {
+                    if (point.Location == null) continue;
+                    if (point.Address == null) point.Address = "";
+                    Debug.Print("Point for device {0}: {1},{2} at {3}, {4}", device.Id, point.Location.Lat, point.Location.Lng, point.Timestamp.ToString(), point.Address);
+                }
+            }
+
         }
 
         async Task listenForNewData()
@@ -212,6 +294,7 @@ namespace tracking_example
 
             example.getDevices();
 
+
             //setup SQS push:
             //example.devices.ForEach(d => {
             //    if (d.Id != null) example.setupSqsPush((decimal)d.Id);
@@ -221,10 +304,16 @@ namespace tracking_example
             //example.enterFlightMode(deviceId, 60 * 24);
 
 
-
+            // Print last 5 locations today 
             example.printLastLocations();
+            // we could also print the data and fetch nearby  ble devices for each point (bluetooth enabled trackers only)
+            //example.printLastLocations(true);
 
-            example.listenForNewData().Wait();
+            // For bluetooth enabled devices, we can also perform a date search
+            // this is much faster than querying one point at a time using CorrelationId as in the above example (printLastLocations)
+            example.printNearbyData();
+
+            //  example.listenForNewData().Wait();
 
 
         }

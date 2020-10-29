@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **AlertType** | **decimal?** | Bitfield indicating what alerts where active at transmission time   Bit1(1): Freefall / Drop detected,    Bit2(2): Rotation detected,    Bit3(4): GSM jamming detected,    Bit4(8): Button was pressed,    Bit5(16): Generic Alert  | [optional] 
 **CurrentUsed** | **decimal?** | Current Used to send this location in microAmp Hours | [optional] 
 **GsmSignal** | **decimal?** | GSM CSQ value | [optional] 
+**CorrelationId** | **string** | Internal use - correlation identifier | [optional] 
 **Id** | **decimal?** |  | [optional] 
 **DeviceId** | **decimal?** |  | [optional] 
 

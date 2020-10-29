@@ -163,6 +163,16 @@ namespace tracking_example
             {
                 var newPoint = (Datapoint)JsonConvert.DeserializeObject(message, typeof(Datapoint), serializerSettings);
                 Debug.Print("Received new point from device {0}! {1},{2} alt:{3}m, speed:{4}km/h", deviceId, newPoint.Location.Lat, newPoint.Location.Lng, newPoint.Altitude, newPoint.Speed);
+
+                /* 
+                 * If we're expecting bluetooth data from this device, we can query the database for 
+                 * data that was transmitted with this point, using the correlationId as a reference
+                 *
+                if(bleDataExpected && newPoint.CorrelationId != null)
+                {
+                    PrintNearbyBluetoothDataForPoint(deviceId, newPoint.CorrelationId); // example given in program.CS
+                }
+                */
             }
             catch (Exception e)
             {

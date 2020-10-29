@@ -57,9 +57,10 @@ namespace IO.Swagger.Model
         /// <param name="alertType">Bitfield indicating what alerts where active at transmission time   Bit1(1): Freefall / Drop detected,    Bit2(2): Rotation detected,    Bit3(4): GSM jamming detected,    Bit4(8): Button was pressed,    Bit5(16): Generic Alert .</param>
         /// <param name="currentUsed">Current Used to send this location in microAmp Hours.</param>
         /// <param name="gsmSignal">GSM CSQ value.</param>
+        /// <param name="correlationId">Internal use - correlation identifier.</param>
         /// <param name="id">id.</param>
         /// <param name="deviceId">deviceId.</param>
-        public Datapoint(GeoPoint location = default(GeoPoint), DateTime? timestamp = default(DateTime?), decimal? speed = default(decimal?), decimal? altitude = default(decimal?), decimal? course = default(decimal?), string numValue = default(string), string stringValue = default(string), decimal? sendReason = default(decimal?), decimal? sats = default(decimal?), decimal? hdop = default(decimal?), decimal? accuracy = default(decimal?), string locationType = "gps", decimal? batteryVoltage = default(decimal?), decimal? averageCharge = default(decimal?), DateTime? created = default(DateTime?), string address = default(string), decimal? alertType = default(decimal?), decimal? currentUsed = default(decimal?), decimal? gsmSignal = default(decimal?), decimal? id = default(decimal?), decimal? deviceId = default(decimal?))
+        public Datapoint(GeoPoint location = default(GeoPoint), DateTime? timestamp = default(DateTime?), decimal? speed = default(decimal?), decimal? altitude = default(decimal?), decimal? course = default(decimal?), string numValue = default(string), string stringValue = default(string), decimal? sendReason = default(decimal?), decimal? sats = default(decimal?), decimal? hdop = default(decimal?), decimal? accuracy = default(decimal?), string locationType = "gps", decimal? batteryVoltage = default(decimal?), decimal? averageCharge = default(decimal?), DateTime? created = default(DateTime?), string address = default(string), decimal? alertType = default(decimal?), decimal? currentUsed = default(decimal?), decimal? gsmSignal = default(decimal?), string correlationId = default(string), decimal? id = default(decimal?), decimal? deviceId = default(decimal?))
         {
             // to ensure "timestamp" is required (not null)
             if (timestamp == null)
@@ -104,6 +105,7 @@ namespace IO.Swagger.Model
             this.AlertType = alertType;
             this.CurrentUsed = currentUsed;
             this.GsmSignal = gsmSignal;
+            this.CorrelationId = correlationId;
             this.Id = id;
             this.DeviceId = deviceId;
         }
@@ -241,6 +243,13 @@ namespace IO.Swagger.Model
         public decimal? GsmSignal { get; set; }
 
         /// <summary>
+        /// Internal use - correlation identifier
+        /// </summary>
+        /// <value>Internal use - correlation identifier</value>
+        [DataMember(Name="correlationId", EmitDefaultValue=false)]
+        public string CorrelationId { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name="id", EmitDefaultValue=false)]
@@ -279,6 +288,7 @@ namespace IO.Swagger.Model
             sb.Append("  AlertType: ").Append(AlertType).Append("\n");
             sb.Append("  CurrentUsed: ").Append(CurrentUsed).Append("\n");
             sb.Append("  GsmSignal: ").Append(GsmSignal).Append("\n");
+            sb.Append("  CorrelationId: ").Append(CorrelationId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DeviceId: ").Append(DeviceId).Append("\n");
             sb.Append("}\n");
@@ -411,6 +421,11 @@ namespace IO.Swagger.Model
                     this.GsmSignal.Equals(input.GsmSignal))
                 ) && 
                 (
+                    this.CorrelationId == input.CorrelationId ||
+                    (this.CorrelationId != null &&
+                    this.CorrelationId.Equals(input.CorrelationId))
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -469,6 +484,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.CurrentUsed.GetHashCode();
                 if (this.GsmSignal != null)
                     hashCode = hashCode * 59 + this.GsmSignal.GetHashCode();
+                if (this.CorrelationId != null)
+                    hashCode = hashCode * 59 + this.CorrelationId.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.DeviceId != null)

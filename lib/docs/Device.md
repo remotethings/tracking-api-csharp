@@ -7,7 +7,9 @@ Name | Type | Description | Notes
 **Iccid** | **string** |  | [optional] 
 **LoraId** | **decimal?** |  | [optional] 
 **Imsi** | **string** |  | [optional] 
-**BtMacAddress** | **string** |  | [optional] 
+**BtMac** | **decimal?** | Bluetooth MAC Address as 48bit number | [optional] 
+**BtMacAddress** | **string** | Bluetooth MAC Address in standard format | [optional] 
+**UwbId** | **decimal?** | UWB Address as 32bit number | [optional] 
 **Serial** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 
 **Expires** | **DateTime?** |  | [optional] 
@@ -27,11 +29,11 @@ Name | Type | Description | Notes
 **StripeSubscription** | **string** |  | [optional] 
 **SubscriptionType** | **string** |  | [optional] 
 **Meta** | **Object** |  | [optional] 
+**ResellerId** | **decimal?** |  | [optional] 
+**ResellerPlanId** | **decimal?** |  | [optional] 
 **Id** | **decimal?** |  | [optional] 
 **OwnerId** | **decimal?** |  | [optional] 
 **SecurePhoneId** | **decimal?** |  | [optional] 
-**ResellerId** | **decimal?** |  | [optional] 
-**ResellerPlanId** | **decimal?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

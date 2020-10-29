@@ -115,6 +115,22 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Delivery'
         }
         /// <summary>
+        /// Test the property 'UserListId'
+        /// </summary>
+        [Test]
+        public void UserListIdTest()
+        {
+            // TODO unit test for the property 'UserListId'
+        }
+        /// <summary>
+        /// Test the property 'DeviceListId'
+        /// </summary>
+        [Test]
+        public void DeviceListIdTest()
+        {
+            // TODO unit test for the property 'DeviceListId'
+        }
+        /// <summary>
         /// Test the property 'Id'
         /// </summary>
         [Test]

@@ -48,6 +48,29 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of Device</returns>
         ApiResponse<Device> DeviceFindByIdWithHttpInfo (string id, string filter = null);
         /// <summary>
+        /// Creates a new instance in gatewayReadings of this model.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>SensorReading</returns>
+        SensorReading DevicePrototypeCreateGatewayReadings (decimal? id, SensorReading data = null);
+
+        /// <summary>
+        /// Creates a new instance in gatewayReadings of this model.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>ApiResponse of SensorReading</returns>
+        ApiResponse<SensorReading> DevicePrototypeCreateGatewayReadingsWithHttpInfo (decimal? id, SensorReading data = null);
+        /// <summary>
         /// Creates a new instance in messages of this model.
         /// </summary>
         /// <remarks>
@@ -94,6 +117,27 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of NotificationTrigger</returns>
         ApiResponse<NotificationTrigger> DevicePrototypeCreateNotificationTriggersWithHttpInfo (decimal? id, NotificationTrigger data = null);
         /// <summary>
+        /// Deletes all gatewayReadings of this model.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <returns></returns>
+        void DevicePrototypeDeleteGatewayReadings (decimal? id);
+
+        /// <summary>
+        /// Deletes all gatewayReadings of this model.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DevicePrototypeDeleteGatewayReadingsWithHttpInfo (decimal? id);
+        /// <summary>
         /// Deletes all messages of this model.
         /// </summary>
         /// <remarks>
@@ -135,6 +179,29 @@ namespace IO.Swagger.Api
         /// <param name="id">device id</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DevicePrototypeDeleteNotificationTriggersWithHttpInfo (decimal? id);
+        /// <summary>
+        /// Delete a related item by id for gatewayReadings.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <returns></returns>
+        void DevicePrototypeDestroyByIdGatewayReadings (decimal? id, decimal? fk);
+
+        /// <summary>
+        /// Delete a related item by id for gatewayReadings.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DevicePrototypeDestroyByIdGatewayReadingsWithHttpInfo (decimal? id, decimal? fk);
         /// <summary>
         /// Remove alert/notification trigger by id {fk} for device
         /// </summary>
@@ -204,6 +271,29 @@ namespace IO.Swagger.Api
         /// <param name="fk">Foreign key for transients</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DevicePrototypeDestroyByIdTransientsWithHttpInfo (decimal? id, decimal? fk);
+        /// <summary>
+        /// Find a related item by id for gatewayReadings.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <returns>SensorReading</returns>
+        SensorReading DevicePrototypeFindByIdGatewayReadings (decimal? id, decimal? fk);
+
+        /// <summary>
+        /// Find a related item by id for gatewayReadings.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <returns>ApiResponse of SensorReading</returns>
+        ApiResponse<SensorReading> DevicePrototypeFindByIdGatewayReadingsWithHttpInfo (decimal? id, decimal? fk);
         /// <summary>
         /// Find a related item by id for notificationTriggers.
         /// </summary>
@@ -343,6 +433,29 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of DeviceConfig</returns>
         ApiResponse<DeviceConfig> DevicePrototypeGetConfigWithHttpInfo (decimal? id, bool? refresh = null);
         /// <summary>
+        /// Queries gatewayReadings of device.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>List&lt;SensorReading&gt;</returns>
+        List<SensorReading> DevicePrototypeGetGatewayReadings (decimal? id, string filter = null);
+
+        /// <summary>
+        /// Queries gatewayReadings of device.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>ApiResponse of List&lt;SensorReading&gt;</returns>
+        ApiResponse<List<SensorReading>> DevicePrototypeGetGatewayReadingsWithHttpInfo (decimal? id, string filter = null);
+        /// <summary>
         /// Queries messages of device.
         /// </summary>
         /// <remarks>
@@ -479,6 +592,56 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of List&lt;DeviceTransient&gt;</returns>
         ApiResponse<List<DeviceTransient>> DevicePrototypeGetTransientsWithHttpInfo (decimal? id, string filter = null);
         /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="nearbyId"></param>
+        /// <param name="dateRange"></param>
+        /// <returns>Object</returns>
+        List<Object> DevicePrototypeNearbyDeviceData (decimal? id, string nearbyId, string dateRange);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="nearbyId"></param>
+        /// <param name="dateRange"></param>
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<List<Object>> DevicePrototypeNearbyDeviceDataWithHttpInfo (decimal? id, string nearbyId, string dateRange);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="dateRange"> (optional)</param>
+        /// <param name="correlationId"> (optional)</param>
+        /// <returns>Object</returns>
+        List<Object> DevicePrototypeNearbyDevices (decimal? id, string dateRange = null, string correlationId = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="dateRange"> (optional)</param>
+        /// <param name="correlationId"> (optional)</param>
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<List<Object>> DevicePrototypeNearbyDevicesWithHttpInfo (decimal? id, string dateRange = null, string correlationId = null);
+        /// <summary>
         /// Update safe-zone for device
         /// </summary>
         /// <remarks>
@@ -501,6 +664,31 @@ namespace IO.Swagger.Api
         /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <returns>ApiResponse of Geofence</returns>
         ApiResponse<Geofence> DevicePrototypeSetSafeZoneWithHttpInfo (decimal? id, List<GeoPoint> data);
+        /// <summary>
+        /// Update a related item by id for gatewayReadings.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>SensorReading</returns>
+        SensorReading DevicePrototypeUpdateByIdGatewayReadings (decimal? id, decimal? fk, SensorReading data = null);
+
+        /// <summary>
+        /// Update a related item by id for gatewayReadings.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>ApiResponse of SensorReading</returns>
+        ApiResponse<SensorReading> DevicePrototypeUpdateByIdGatewayReadingsWithHttpInfo (decimal? id, decimal? fk, SensorReading data = null);
         /// <summary>
         /// Update an alert/notification trigger by id {fk} for device
         /// </summary>
@@ -600,6 +788,29 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse (Device)</returns>
         System.Threading.Tasks.Task<ApiResponse<Device>> DeviceFindByIdAsyncWithHttpInfo (string id, string filter = null);
         /// <summary>
+        /// Creates a new instance in gatewayReadings of this model.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of SensorReading</returns>
+        System.Threading.Tasks.Task<SensorReading> DevicePrototypeCreateGatewayReadingsAsync (decimal? id, SensorReading data = null);
+
+        /// <summary>
+        /// Creates a new instance in gatewayReadings of this model.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of ApiResponse (SensorReading)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SensorReading>> DevicePrototypeCreateGatewayReadingsAsyncWithHttpInfo (decimal? id, SensorReading data = null);
+        /// <summary>
         /// Creates a new instance in messages of this model.
         /// </summary>
         /// <remarks>
@@ -646,6 +857,27 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse (NotificationTrigger)</returns>
         System.Threading.Tasks.Task<ApiResponse<NotificationTrigger>> DevicePrototypeCreateNotificationTriggersAsyncWithHttpInfo (decimal? id, NotificationTrigger data = null);
         /// <summary>
+        /// Deletes all gatewayReadings of this model.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DevicePrototypeDeleteGatewayReadingsAsync (decimal? id);
+
+        /// <summary>
+        /// Deletes all gatewayReadings of this model.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDeleteGatewayReadingsAsyncWithHttpInfo (decimal? id);
+        /// <summary>
         /// Deletes all messages of this model.
         /// </summary>
         /// <remarks>
@@ -687,6 +919,29 @@ namespace IO.Swagger.Api
         /// <param name="id">device id</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDeleteNotificationTriggersAsyncWithHttpInfo (decimal? id);
+        /// <summary>
+        /// Delete a related item by id for gatewayReadings.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DevicePrototypeDestroyByIdGatewayReadingsAsync (decimal? id, decimal? fk);
+
+        /// <summary>
+        /// Delete a related item by id for gatewayReadings.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDestroyByIdGatewayReadingsAsyncWithHttpInfo (decimal? id, decimal? fk);
         /// <summary>
         /// Remove alert/notification trigger by id {fk} for device
         /// </summary>
@@ -756,6 +1011,29 @@ namespace IO.Swagger.Api
         /// <param name="fk">Foreign key for transients</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDestroyByIdTransientsAsyncWithHttpInfo (decimal? id, decimal? fk);
+        /// <summary>
+        /// Find a related item by id for gatewayReadings.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <returns>Task of SensorReading</returns>
+        System.Threading.Tasks.Task<SensorReading> DevicePrototypeFindByIdGatewayReadingsAsync (decimal? id, decimal? fk);
+
+        /// <summary>
+        /// Find a related item by id for gatewayReadings.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <returns>Task of ApiResponse (SensorReading)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SensorReading>> DevicePrototypeFindByIdGatewayReadingsAsyncWithHttpInfo (decimal? id, decimal? fk);
         /// <summary>
         /// Find a related item by id for notificationTriggers.
         /// </summary>
@@ -895,6 +1173,29 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse (DeviceConfig)</returns>
         System.Threading.Tasks.Task<ApiResponse<DeviceConfig>> DevicePrototypeGetConfigAsyncWithHttpInfo (decimal? id, bool? refresh = null);
         /// <summary>
+        /// Queries gatewayReadings of device.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>Task of List&lt;SensorReading&gt;</returns>
+        System.Threading.Tasks.Task<List<SensorReading>> DevicePrototypeGetGatewayReadingsAsync (decimal? id, string filter = null);
+
+        /// <summary>
+        /// Queries gatewayReadings of device.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;SensorReading&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<SensorReading>>> DevicePrototypeGetGatewayReadingsAsyncWithHttpInfo (decimal? id, string filter = null);
+        /// <summary>
         /// Queries messages of device.
         /// </summary>
         /// <remarks>
@@ -1031,6 +1332,56 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse (List&lt;DeviceTransient&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<DeviceTransient>>> DevicePrototypeGetTransientsAsyncWithHttpInfo (decimal? id, string filter = null);
         /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="nearbyId"></param>
+        /// <param name="dateRange"></param>
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> DevicePrototypeNearbyDeviceDataAsync (decimal? id, string nearbyId, string dateRange);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="nearbyId"></param>
+        /// <param name="dateRange"></param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeNearbyDeviceDataAsyncWithHttpInfo (decimal? id, string nearbyId, string dateRange);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="dateRange"> (optional)</param>
+        /// <param name="correlationId"> (optional)</param>
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<List<Object>> DevicePrototypeNearbyDevicesAsync (decimal? id, string dateRange = null, string correlationId = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="dateRange"> (optional)</param>
+        /// <param name="correlationId"> (optional)</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Object>>> DevicePrototypeNearbyDevicesAsyncWithHttpInfo (decimal? id, string dateRange = null, string correlationId = null);
+        /// <summary>
         /// Update safe-zone for device
         /// </summary>
         /// <remarks>
@@ -1053,6 +1404,31 @@ namespace IO.Swagger.Api
         /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <returns>Task of ApiResponse (Geofence)</returns>
         System.Threading.Tasks.Task<ApiResponse<Geofence>> DevicePrototypeSetSafeZoneAsyncWithHttpInfo (decimal? id, List<GeoPoint> data);
+        /// <summary>
+        /// Update a related item by id for gatewayReadings.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of SensorReading</returns>
+        System.Threading.Tasks.Task<SensorReading> DevicePrototypeUpdateByIdGatewayReadingsAsync (decimal? id, decimal? fk, SensorReading data = null);
+
+        /// <summary>
+        /// Update a related item by id for gatewayReadings.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of ApiResponse (SensorReading)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SensorReading>> DevicePrototypeUpdateByIdGatewayReadingsAsyncWithHttpInfo (decimal? id, decimal? fk, SensorReading data = null);
         /// <summary>
         /// Update an alert/notification trigger by id {fk} for device
         /// </summary>
@@ -1379,6 +1755,175 @@ namespace IO.Swagger.Api
             return new ApiResponse<Device>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Device) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
+        }
+
+        /// <summary>
+        /// Creates a new instance in gatewayReadings of this model. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>SensorReading</returns>
+        public SensorReading DevicePrototypeCreateGatewayReadings (decimal? id, SensorReading data = null)
+        {
+             ApiResponse<SensorReading> localVarResponse = DevicePrototypeCreateGatewayReadingsWithHttpInfo(id, data);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Creates a new instance in gatewayReadings of this model. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>ApiResponse of SensorReading</returns>
+        public ApiResponse< SensorReading > DevicePrototypeCreateGatewayReadingsWithHttpInfo (decimal? id, SensorReading data = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeCreateGatewayReadings");
+
+            var localVarPath = "/devices/{id}/gatewayReadings";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (data != null && data.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(data); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = data; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeCreateGatewayReadings", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SensorReading>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (SensorReading) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SensorReading)));
+        }
+
+        /// <summary>
+        /// Creates a new instance in gatewayReadings of this model. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of SensorReading</returns>
+        public async System.Threading.Tasks.Task<SensorReading> DevicePrototypeCreateGatewayReadingsAsync (decimal? id, SensorReading data = null)
+        {
+             ApiResponse<SensorReading> localVarResponse = await DevicePrototypeCreateGatewayReadingsAsyncWithHttpInfo(id, data);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Creates a new instance in gatewayReadings of this model. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of ApiResponse (SensorReading)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<SensorReading>> DevicePrototypeCreateGatewayReadingsAsyncWithHttpInfo (decimal? id, SensorReading data = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeCreateGatewayReadings");
+
+            var localVarPath = "/devices/{id}/gatewayReadings";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (data != null && data.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(data); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = data; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeCreateGatewayReadings", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SensorReading>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (SensorReading) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SensorReading)));
         }
 
         /// <summary>
@@ -1720,6 +2265,153 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        /// Deletes all gatewayReadings of this model. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <returns></returns>
+        public void DevicePrototypeDeleteGatewayReadings (decimal? id)
+        {
+             DevicePrototypeDeleteGatewayReadingsWithHttpInfo(id);
+        }
+
+        /// <summary>
+        /// Deletes all gatewayReadings of this model. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DevicePrototypeDeleteGatewayReadingsWithHttpInfo (decimal? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeDeleteGatewayReadings");
+
+            var localVarPath = "/devices/{id}/gatewayReadings";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeDeleteGatewayReadings", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Deletes all gatewayReadings of this model. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DevicePrototypeDeleteGatewayReadingsAsync (decimal? id)
+        {
+             await DevicePrototypeDeleteGatewayReadingsAsyncWithHttpInfo(id);
+
+        }
+
+        /// <summary>
+        /// Deletes all gatewayReadings of this model. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDeleteGatewayReadingsAsyncWithHttpInfo (decimal? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeDeleteGatewayReadings");
+
+            var localVarPath = "/devices/{id}/gatewayReadings";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeDeleteGatewayReadings", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
         /// Deletes all messages of this model. 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -2005,6 +2697,165 @@ namespace IO.Swagger.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("DevicePrototypeDeleteNotificationTriggers", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Delete a related item by id for gatewayReadings. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <returns></returns>
+        public void DevicePrototypeDestroyByIdGatewayReadings (decimal? id, decimal? fk)
+        {
+             DevicePrototypeDestroyByIdGatewayReadingsWithHttpInfo(id, fk);
+        }
+
+        /// <summary>
+        /// Delete a related item by id for gatewayReadings. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DevicePrototypeDestroyByIdGatewayReadingsWithHttpInfo (decimal? id, decimal? fk)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeDestroyByIdGatewayReadings");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeDestroyByIdGatewayReadings");
+
+            var localVarPath = "/devices/{id}/gatewayReadings/{fk}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeDestroyByIdGatewayReadings", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Delete a related item by id for gatewayReadings. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DevicePrototypeDestroyByIdGatewayReadingsAsync (decimal? id, decimal? fk)
+        {
+             await DevicePrototypeDestroyByIdGatewayReadingsAsyncWithHttpInfo(id, fk);
+
+        }
+
+        /// <summary>
+        /// Delete a related item by id for gatewayReadings. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeDestroyByIdGatewayReadingsAsyncWithHttpInfo (decimal? id, decimal? fk)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeDestroyByIdGatewayReadings");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeDestroyByIdGatewayReadings");
+
+            var localVarPath = "/devices/{id}/gatewayReadings/{fk}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeDestroyByIdGatewayReadings", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2488,6 +3339,167 @@ namespace IO.Swagger.Api
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
+        }
+
+        /// <summary>
+        /// Find a related item by id for gatewayReadings. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <returns>SensorReading</returns>
+        public SensorReading DevicePrototypeFindByIdGatewayReadings (decimal? id, decimal? fk)
+        {
+             ApiResponse<SensorReading> localVarResponse = DevicePrototypeFindByIdGatewayReadingsWithHttpInfo(id, fk);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Find a related item by id for gatewayReadings. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <returns>ApiResponse of SensorReading</returns>
+        public ApiResponse< SensorReading > DevicePrototypeFindByIdGatewayReadingsWithHttpInfo (decimal? id, decimal? fk)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeFindByIdGatewayReadings");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeFindByIdGatewayReadings");
+
+            var localVarPath = "/devices/{id}/gatewayReadings/{fk}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeFindByIdGatewayReadings", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SensorReading>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (SensorReading) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SensorReading)));
+        }
+
+        /// <summary>
+        /// Find a related item by id for gatewayReadings. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <returns>Task of SensorReading</returns>
+        public async System.Threading.Tasks.Task<SensorReading> DevicePrototypeFindByIdGatewayReadingsAsync (decimal? id, decimal? fk)
+        {
+             ApiResponse<SensorReading> localVarResponse = await DevicePrototypeFindByIdGatewayReadingsAsyncWithHttpInfo(id, fk);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Find a related item by id for gatewayReadings. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <returns>Task of ApiResponse (SensorReading)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<SensorReading>> DevicePrototypeFindByIdGatewayReadingsAsyncWithHttpInfo (decimal? id, decimal? fk)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeFindByIdGatewayReadings");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeFindByIdGatewayReadings");
+
+            var localVarPath = "/devices/{id}/gatewayReadings/{fk}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeFindByIdGatewayReadings", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SensorReading>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (SensorReading) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SensorReading)));
         }
 
         /// <summary>
@@ -3451,6 +4463,161 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        /// Queries gatewayReadings of device. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>List&lt;SensorReading&gt;</returns>
+        public List<SensorReading> DevicePrototypeGetGatewayReadings (decimal? id, string filter = null)
+        {
+             ApiResponse<List<SensorReading>> localVarResponse = DevicePrototypeGetGatewayReadingsWithHttpInfo(id, filter);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Queries gatewayReadings of device. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>ApiResponse of List&lt;SensorReading&gt;</returns>
+        public ApiResponse< List<SensorReading> > DevicePrototypeGetGatewayReadingsWithHttpInfo (decimal? id, string filter = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeGetGatewayReadings");
+
+            var localVarPath = "/devices/{id}/gatewayReadings";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeGetGatewayReadings", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<SensorReading>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<SensorReading>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SensorReading>)));
+        }
+
+        /// <summary>
+        /// Queries gatewayReadings of device. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>Task of List&lt;SensorReading&gt;</returns>
+        public async System.Threading.Tasks.Task<List<SensorReading>> DevicePrototypeGetGatewayReadingsAsync (decimal? id, string filter = null)
+        {
+             ApiResponse<List<SensorReading>> localVarResponse = await DevicePrototypeGetGatewayReadingsAsyncWithHttpInfo(id, filter);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Queries gatewayReadings of device. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="filter">JSON Filter object (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;SensorReading&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<SensorReading>>> DevicePrototypeGetGatewayReadingsAsyncWithHttpInfo (decimal? id, string filter = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeGetGatewayReadings");
+
+            var localVarPath = "/devices/{id}/gatewayReadings";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeGetGatewayReadings", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<SensorReading>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<SensorReading>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SensorReading>)));
+        }
+
+        /// <summary>
         /// Queries messages of device. 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -4375,6 +5542,340 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="nearbyId"></param>
+        /// <param name="dateRange"></param>
+        /// <returns>Object</returns>
+        public List<Object> DevicePrototypeNearbyDeviceData (decimal? id, string nearbyId, string dateRange)
+        {
+             ApiResponse<List<Object>> localVarResponse = DevicePrototypeNearbyDeviceDataWithHttpInfo(id, nearbyId, dateRange);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="nearbyId"></param>
+        /// <param name="dateRange"></param>
+        /// <returns>ApiResponse of Object</returns>
+        public ApiResponse<List<Object>> DevicePrototypeNearbyDeviceDataWithHttpInfo (decimal? id, string nearbyId, string dateRange)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeNearbyDeviceData");
+            // verify the required parameter 'nearbyId' is set
+            if (nearbyId == null)
+                throw new ApiException(400, "Missing required parameter 'nearbyId' when calling DeviceApi->DevicePrototypeNearbyDeviceData");
+            // verify the required parameter 'dateRange' is set
+            if (dateRange == null)
+                throw new ApiException(400, "Missing required parameter 'dateRange' when calling DeviceApi->DevicePrototypeNearbyDeviceData");
+
+            var localVarPath = "/devices/{id}/nearbyDeviceData";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (nearbyId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nearbyId", nearbyId)); // query parameter
+            if (dateRange != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "dateRange", dateRange)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeNearbyDeviceData", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Object>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Object>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Object>)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="nearbyId"></param>
+        /// <param name="dateRange"></param>
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> DevicePrototypeNearbyDeviceDataAsync (decimal? id, string nearbyId, string dateRange)
+        {
+             ApiResponse<Object> localVarResponse = await DevicePrototypeNearbyDeviceDataAsyncWithHttpInfo(id, nearbyId, dateRange);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="nearbyId"></param>
+        /// <param name="dateRange"></param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeNearbyDeviceDataAsyncWithHttpInfo (decimal? id, string nearbyId, string dateRange)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeNearbyDeviceData");
+            // verify the required parameter 'nearbyId' is set
+            if (nearbyId == null)
+                throw new ApiException(400, "Missing required parameter 'nearbyId' when calling DeviceApi->DevicePrototypeNearbyDeviceData");
+            // verify the required parameter 'dateRange' is set
+            if (dateRange == null)
+                throw new ApiException(400, "Missing required parameter 'dateRange' when calling DeviceApi->DevicePrototypeNearbyDeviceData");
+
+            var localVarPath = "/devices/{id}/nearbyDeviceData";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (nearbyId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nearbyId", nearbyId)); // query parameter
+            if (dateRange != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "dateRange", dateRange)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeNearbyDeviceData", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="dateRange"> (optional)</param>
+        /// <param name="correlationId"> (optional)</param>
+        /// <returns>Object</returns>
+        public List<Object> DevicePrototypeNearbyDevices (decimal? id, string dateRange = null, string correlationId = null)
+        {
+             ApiResponse<List<Object>> localVarResponse = DevicePrototypeNearbyDevicesWithHttpInfo(id, dateRange, correlationId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="dateRange"> (optional)</param>
+        /// <param name="correlationId"> (optional)</param>
+        /// <returns>ApiResponse of Object</returns>
+        public ApiResponse<List<Object>> DevicePrototypeNearbyDevicesWithHttpInfo (decimal? id, string dateRange = null, string correlationId = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeNearbyDevices");
+
+            var localVarPath = "/devices/{id}/nearbyDevices";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (dateRange != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "dateRange", dateRange)); // query parameter
+            if (correlationId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "correlationId", correlationId)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeNearbyDevices", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Object>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Object>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Object>)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="dateRange"> (optional)</param>
+        /// <param name="correlationId"> (optional)</param>
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<List<Object>> DevicePrototypeNearbyDevicesAsync (decimal? id, string dateRange = null, string correlationId = null)
+        {
+             ApiResponse<List<Object>> localVarResponse = await DevicePrototypeNearbyDevicesAsyncWithHttpInfo(id, dateRange, correlationId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="dateRange"> (optional)</param>
+        /// <param name="correlationId"> (optional)</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<Object>>> DevicePrototypeNearbyDevicesAsyncWithHttpInfo (decimal? id, string dateRange = null, string correlationId = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeNearbyDevices");
+
+            var localVarPath = "/devices/{id}/nearbyDevices";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (dateRange != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "dateRange", dateRange)); // query parameter
+            if (correlationId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "correlationId", correlationId)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeNearbyDevices", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Object>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Object>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Object>)));
+        }
+
+        /// <summary>
         /// Update safe-zone for device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -4547,6 +6048,187 @@ namespace IO.Swagger.Api
             return new ApiResponse<Geofence>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Geofence) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Geofence)));
+        }
+
+        /// <summary>
+        /// Update a related item by id for gatewayReadings. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>SensorReading</returns>
+        public SensorReading DevicePrototypeUpdateByIdGatewayReadings (decimal? id, decimal? fk, SensorReading data = null)
+        {
+             ApiResponse<SensorReading> localVarResponse = DevicePrototypeUpdateByIdGatewayReadingsWithHttpInfo(id, fk, data);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update a related item by id for gatewayReadings. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>ApiResponse of SensorReading</returns>
+        public ApiResponse< SensorReading > DevicePrototypeUpdateByIdGatewayReadingsWithHttpInfo (decimal? id, decimal? fk, SensorReading data = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeUpdateByIdGatewayReadings");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeUpdateByIdGatewayReadings");
+
+            var localVarPath = "/devices/{id}/gatewayReadings/{fk}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+            if (data != null && data.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(data); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = data; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeUpdateByIdGatewayReadings", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SensorReading>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (SensorReading) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SensorReading)));
+        }
+
+        /// <summary>
+        /// Update a related item by id for gatewayReadings. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of SensorReading</returns>
+        public async System.Threading.Tasks.Task<SensorReading> DevicePrototypeUpdateByIdGatewayReadingsAsync (decimal? id, decimal? fk, SensorReading data = null)
+        {
+             ApiResponse<SensorReading> localVarResponse = await DevicePrototypeUpdateByIdGatewayReadingsAsyncWithHttpInfo(id, fk, data);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update a related item by id for gatewayReadings. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="fk">Foreign key for gatewayReadings</param>
+        /// <param name="data">Body (JSON) (optional)</param>
+        /// <returns>Task of ApiResponse (SensorReading)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<SensorReading>> DevicePrototypeUpdateByIdGatewayReadingsAsyncWithHttpInfo (decimal? id, decimal? fk, SensorReading data = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeUpdateByIdGatewayReadings");
+            // verify the required parameter 'fk' is set
+            if (fk == null)
+                throw new ApiException(400, "Missing required parameter 'fk' when calling DeviceApi->DevicePrototypeUpdateByIdGatewayReadings");
+
+            var localVarPath = "/devices/{id}/gatewayReadings/{fk}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (fk != null) localVarPathParams.Add("fk", this.Configuration.ApiClient.ParameterToString(fk)); // path parameter
+            if (data != null && data.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(data); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = data; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeUpdateByIdGatewayReadings", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SensorReading>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (SensorReading) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SensorReading)));
         }
 
         /// <summary>

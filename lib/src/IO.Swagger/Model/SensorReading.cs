@@ -45,12 +45,13 @@ namespace IO.Swagger.Model
         /// <param name="rssi">RSSI if from secondary wireless device.</param>
         /// <param name="meta">JSON metadata.</param>
         /// <param name="relatedId">LoraId of another (ie for signal strength).</param>
+        /// <param name="correlationId">Internal use - correlation identifier.</param>
         /// <param name="id">id.</param>
         /// <param name="gatewayId">gatewayId.</param>
         /// <param name="deviceId">deviceId.</param>
         /// <param name="sensorDeviceId">sensorDeviceId.</param>
         /// <param name="datapointId">datapointId.</param>
-        public SensorReading(DateTime? timestamp = default(DateTime?), DateTime? created = default(DateTime?), string type = default(string), Object value = default(Object), decimal? rssi = default(decimal?), Object meta = default(Object), decimal? relatedId = default(decimal?), decimal? id = default(decimal?), decimal? gatewayId = default(decimal?), decimal? deviceId = default(decimal?), string sensorDeviceId = default(string), decimal? datapointId = default(decimal?))
+        public SensorReading(DateTime? timestamp = default(DateTime?), DateTime? created = default(DateTime?), string type = default(string), Object value = default(Object), decimal? rssi = default(decimal?), Object meta = default(Object), decimal? relatedId = default(decimal?), string correlationId = default(string), decimal? id = default(decimal?), decimal? gatewayId = default(decimal?), decimal? deviceId = default(decimal?), string sensorDeviceId = default(string), decimal? datapointId = default(decimal?))
         {
             // to ensure "timestamp" is required (not null)
             if (timestamp == null)
@@ -91,6 +92,7 @@ namespace IO.Swagger.Model
             this.Rssi = rssi;
             this.Meta = meta;
             this.RelatedId = relatedId;
+            this.CorrelationId = correlationId;
             this.Id = id;
             this.GatewayId = gatewayId;
             this.DeviceId = deviceId;
@@ -148,6 +150,13 @@ namespace IO.Swagger.Model
         public decimal? RelatedId { get; set; }
 
         /// <summary>
+        /// Internal use - correlation identifier
+        /// </summary>
+        /// <value>Internal use - correlation identifier</value>
+        [DataMember(Name="correlationId", EmitDefaultValue=false)]
+        public string CorrelationId { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name="id", EmitDefaultValue=false)]
@@ -192,6 +201,7 @@ namespace IO.Swagger.Model
             sb.Append("  Rssi: ").Append(Rssi).Append("\n");
             sb.Append("  Meta: ").Append(Meta).Append("\n");
             sb.Append("  RelatedId: ").Append(RelatedId).Append("\n");
+            sb.Append("  CorrelationId: ").Append(CorrelationId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  GatewayId: ").Append(GatewayId).Append("\n");
             sb.Append("  DeviceId: ").Append(DeviceId).Append("\n");
@@ -267,6 +277,11 @@ namespace IO.Swagger.Model
                     this.RelatedId.Equals(input.RelatedId))
                 ) && 
                 (
+                    this.CorrelationId == input.CorrelationId ||
+                    (this.CorrelationId != null &&
+                    this.CorrelationId.Equals(input.CorrelationId))
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -316,6 +331,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Meta.GetHashCode();
                 if (this.RelatedId != null)
                     hashCode = hashCode * 59 + this.RelatedId.GetHashCode();
+                if (this.CorrelationId != null)
+                    hashCode = hashCode * 59 + this.CorrelationId.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.GatewayId != null)

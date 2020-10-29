@@ -115,6 +115,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'BtMacAddress'
         }
         /// <summary>
+        /// Test the property 'UwbId'
+        /// </summary>
+        [Test]
+        public void UwbIdTest()
+        {
+            // TODO unit test for the property 'UwbId'
+        }
+        /// <summary>
         /// Test the property 'Serial'
         /// </summary>
         [Test]
@@ -267,6 +275,22 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Meta'
         }
         /// <summary>
+        /// Test the property 'ResellerId'
+        /// </summary>
+        [Test]
+        public void ResellerIdTest()
+        {
+            // TODO unit test for the property 'ResellerId'
+        }
+        /// <summary>
+        /// Test the property 'ResellerPlanId'
+        /// </summary>
+        [Test]
+        public void ResellerPlanIdTest()
+        {
+            // TODO unit test for the property 'ResellerPlanId'
+        }
+        /// <summary>
         /// Test the property 'Id'
         /// </summary>
         [Test]
@@ -289,22 +313,6 @@ namespace IO.Swagger.Test
         public void SecurePhoneIdTest()
         {
             // TODO unit test for the property 'SecurePhoneId'
-        }
-        /// <summary>
-        /// Test the property 'ResellerId'
-        /// </summary>
-        [Test]
-        public void ResellerIdTest()
-        {
-            // TODO unit test for the property 'ResellerId'
-        }
-        /// <summary>
-        /// Test the property 'ResellerPlanId'
-        /// </summary>
-        [Test]
-        public void ResellerPlanIdTest()
-        {
-            // TODO unit test for the property 'ResellerPlanId'
         }
 
     }

@@ -78,6 +78,19 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test DevicePrototypeCreateGatewayReadings
+        /// </summary>
+        [Test]
+        public void DevicePrototypeCreateGatewayReadingsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //SensorReading data = null;
+            //var response = instance.DevicePrototypeCreateGatewayReadings(id, data);
+            //Assert.IsInstanceOf<SensorReading> (response, "response is SensorReading");
+        }
+        
+        /// <summary>
         /// Test DevicePrototypeCreateMessages
         /// </summary>
         [Test]
@@ -104,6 +117,18 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test DevicePrototypeDeleteGatewayReadings
+        /// </summary>
+        [Test]
+        public void DevicePrototypeDeleteGatewayReadingsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //instance.DevicePrototypeDeleteGatewayReadings(id);
+            
+        }
+        
+        /// <summary>
         /// Test DevicePrototypeDeleteMessages
         /// </summary>
         [Test]
@@ -124,6 +149,19 @@ namespace IO.Swagger.Test
             // TODO uncomment below to test the method and replace null with proper value
             //decimal? id = null;
             //instance.DevicePrototypeDeleteNotificationTriggers(id);
+            
+        }
+        
+        /// <summary>
+        /// Test DevicePrototypeDestroyByIdGatewayReadings
+        /// </summary>
+        [Test]
+        public void DevicePrototypeDestroyByIdGatewayReadingsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //decimal? fk = null;
+            //instance.DevicePrototypeDestroyByIdGatewayReadings(id, fk);
             
         }
         
@@ -164,6 +202,19 @@ namespace IO.Swagger.Test
             //decimal? fk = null;
             //instance.DevicePrototypeDestroyByIdTransients(id, fk);
             
+        }
+        
+        /// <summary>
+        /// Test DevicePrototypeFindByIdGatewayReadings
+        /// </summary>
+        [Test]
+        public void DevicePrototypeFindByIdGatewayReadingsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //decimal? fk = null;
+            //var response = instance.DevicePrototypeFindByIdGatewayReadings(id, fk);
+            //Assert.IsInstanceOf<SensorReading> (response, "response is SensorReading");
         }
         
         /// <summary>
@@ -245,6 +296,19 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test DevicePrototypeGetGatewayReadings
+        /// </summary>
+        [Test]
+        public void DevicePrototypeGetGatewayReadingsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //string filter = null;
+            //var response = instance.DevicePrototypeGetGatewayReadings(id, filter);
+            //Assert.IsInstanceOf<List<SensorReading>> (response, "response is List<SensorReading>");
+        }
+        
+        /// <summary>
         /// Test DevicePrototypeGetMessages
         /// </summary>
         [Test]
@@ -322,6 +386,34 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test DevicePrototypeNearbyDeviceData
+        /// </summary>
+        [Test]
+        public void DevicePrototypeNearbyDeviceDataTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //string nearbyId = null;
+            //string dateRange = null;
+            //var response = instance.DevicePrototypeNearbyDeviceData(id, nearbyId, dateRange);
+            //Assert.IsInstanceOf<Object> (response, "response is Object");
+        }
+        
+        /// <summary>
+        /// Test DevicePrototypeNearbyDevices
+        /// </summary>
+        [Test]
+        public void DevicePrototypeNearbyDevicesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //string dateRange = null;
+            //string correlationId = null;
+            //var response = instance.DevicePrototypeNearbyDevices(id, dateRange, correlationId);
+            //Assert.IsInstanceOf<Object> (response, "response is Object");
+        }
+        
+        /// <summary>
         /// Test DevicePrototypeSetSafeZone
         /// </summary>
         [Test]
@@ -332,6 +424,20 @@ namespace IO.Swagger.Test
             //List<GeoPoint> data = null;
             //var response = instance.DevicePrototypeSetSafeZone(id, data);
             //Assert.IsInstanceOf<Geofence> (response, "response is Geofence");
+        }
+        
+        /// <summary>
+        /// Test DevicePrototypeUpdateByIdGatewayReadings
+        /// </summary>
+        [Test]
+        public void DevicePrototypeUpdateByIdGatewayReadingsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //decimal? id = null;
+            //decimal? fk = null;
+            //SensorReading data = null;
+            //var response = instance.DevicePrototypeUpdateByIdGatewayReadings(id, fk, data);
+            //Assert.IsInstanceOf<SensorReading> (response, "response is SensorReading");
         }
         
         /// <summary>

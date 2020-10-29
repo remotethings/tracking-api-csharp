@@ -219,6 +219,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'GsmSignal'
         }
         /// <summary>
+        /// Test the property 'CorrelationId'
+        /// </summary>
+        [Test]
+        public void CorrelationIdTest()
+        {
+            // TODO unit test for the property 'CorrelationId'
+        }
+        /// <summary>
         /// Test the property 'Id'
         /// </summary>
         [Test]

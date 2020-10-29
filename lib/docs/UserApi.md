@@ -9,7 +9,9 @@ Method | HTTP request | Description
 [**UserPrototypeDeleteGeofences**](UserApi.md#userprototypedeletegeofences) | **DELETE** /users/{id}/geofences | Deletes all geofences of this model.
 [**UserPrototypeDestroyByIdGeofences**](UserApi.md#userprototypedestroybyidgeofences) | **DELETE** /users/{id}/geofences/{fk} | Delete a related item by id for geofences.
 [**UserPrototypeFindByIdGeofences**](UserApi.md#userprototypefindbyidgeofences) | **GET** /users/{id}/geofences/{fk} | Find a related item by id for geofences.
+[**UserPrototypeGetDeviceSummary**](UserApi.md#userprototypegetdevicesummary) | **GET** /users/{id}/getDeviceSummary | Retrieve a summary of all devices on this user account.
 [**UserPrototypeGetDevices**](UserApi.md#userprototypegetdevices) | **GET** /users/{id}/devices | Queries devices of user.
+[**UserPrototypeGetDevicesInZone**](UserApi.md#userprototypegetdevicesinzone) | **GET** /users/{id}/getDevicesInZone | Retrieve a list of devices in any given zone or group of zones.
 [**UserPrototypeGetGeofences**](UserApi.md#userprototypegetgeofences) | **GET** /users/{id}/geofences | Queries geofences of user.
 [**UserPrototypeGetMqttCredentials**](UserApi.md#userprototypegetmqttcredentials) | **GET** /users/{id}/getMqttCredentials | 
 [**UserPrototypeUpdateByIdGeofences**](UserApi.md#userprototypeupdatebyidgeofences) | **PUT** /users/{id}/geofences/{fk} | Update a related item by id for geofences.
@@ -316,6 +318,71 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="userprototypegetdevicesummary"></a>
+# **UserPrototypeGetDeviceSummary**
+> List<Object> UserPrototypeGetDeviceSummary (string id, string pointCount = null, string dateRange = null, string hideApprox = null)
+
+Retrieve a summary of all devices on this user account.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class UserPrototypeGetDeviceSummaryExample
+    {
+        public void main()
+        {
+            var apiInstance = new UserApi();
+            var id = id_example;  // string | user id
+            var pointCount = pointCount_example;  // string | Maximum number of points to return per device. Default 5. (optional) 
+            var dateRange = dateRange_example;  // string | What date range to consider when retrieving recent points. Typical use is [TimeOfLastPointDownload, NOW]. Defaults to all time. (optional) 
+            var hideApprox = hideApprox_example;  // string | Don't include GSM / poor accuracy locations. Default to false. (optional) 
+
+            try
+            {
+                // Retrieve a summary of all devices on this user account.
+                List&lt;Object&gt; result = apiInstance.UserPrototypeGetDeviceSummary(id, pointCount, dateRange, hideApprox);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UserApi.UserPrototypeGetDeviceSummary: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| user id | 
+ **pointCount** | **string**| Maximum number of points to return per device. Default 5. | [optional] 
+ **dateRange** | **string**| What date range to consider when retrieving recent points. Typical use is [TimeOfLastPointDownload, NOW]. Defaults to all time. | [optional] 
+ **hideApprox** | **string**| Don&#39;t include GSM / poor accuracy locations. Default to false. | [optional] 
+
+### Return type
+
+**List<Object>**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="userprototypegetdevices"></a>
 # **UserPrototypeGetDevices**
 > List<Device> UserPrototypeGetDevices (string id, string filter = null)
@@ -365,6 +432,71 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List<Device>**](Device.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="userprototypegetdevicesinzone"></a>
+# **UserPrototypeGetDevicesInZone**
+> List<Object> UserPrototypeGetDevicesInZone (string id, string zoneId = null, string zoneType = null, string includeApprox = null)
+
+Retrieve a list of devices in any given zone or group of zones.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class UserPrototypeGetDevicesInZoneExample
+    {
+        public void main()
+        {
+            var apiInstance = new UserApi();
+            var id = id_example;  // string | user id
+            var zoneId = zoneId_example;  // string | ID of geofence to search. zoneId or zoneType required. (optional) 
+            var zoneType = zoneType_example;  // string | Type of zones to search. Ignored if zoneId is specified. zoneId or zoneType required. (optional) 
+            var includeApprox = includeApprox_example;  // string | Include GSM / poor accuracy locations. Default to false. (optional) 
+
+            try
+            {
+                // Retrieve a list of devices in any given zone or group of zones.
+                List&lt;Object&gt; result = apiInstance.UserPrototypeGetDevicesInZone(id, zoneId, zoneType, includeApprox);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UserApi.UserPrototypeGetDevicesInZone: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| user id | 
+ **zoneId** | **string**| ID of geofence to search. zoneId or zoneType required. | [optional] 
+ **zoneType** | **string**| Type of zones to search. Ignored if zoneId is specified. zoneId or zoneType required. | [optional] 
+ **includeApprox** | **string**| Include GSM / poor accuracy locations. Default to false. | [optional] 
+
+### Return type
+
+**List<Object>**
 
 ### Authorization
 
