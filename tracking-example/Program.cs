@@ -98,6 +98,11 @@ namespace tracking_example
            //this.deviceApi.DevicePrototypeGetTransients(deviceId, "{\"where\": {\"sent\":null},\"order\":\"triggeredAt DESC\", \"limit\": 1}");
         }
 
+        void activateBuzzer(Decimal deviceId)
+        {
+            this.deviceApi.DevicePrototypeCreateMessages(deviceId, new DeviceMessage(message: "#hi0202"));
+        }
+
 
         // Setup forwarding of datapoints to SQS for all devices on account
         // You will need to have setup an SQS queue on your account with the following Policy Document:
