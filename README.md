@@ -22,7 +22,7 @@ See Program.login()
 
 See Program.cs
 ```
-NotificationTrigger setupSqsPush(Decimal deviceId)
+NotificationTrigger setupSqsPush(Decimal deviceId, string eventType, string hookName, string sqsArn)
 ```
 
 You will need to have setup an SQS queue on your account with the following Policy Document:

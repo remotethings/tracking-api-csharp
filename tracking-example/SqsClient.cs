@@ -52,7 +52,14 @@ namespace Sqs
                 }
                  else if (reading.Type.Equals("geofence_sync"))
                 {
+                    //RTK devices only
     `               Debug.Print("Device {0} has synchronised geofence settings", reading.DeviceId);        
+                }
+                 else if (reading.Type.Equals("geofence_log"))
+                {
+                    //RTK devices only
+                    dynamic data = JObject.Parse(reading.Value.ToString());                    
+                    Debug.Print($"Device {reading.DeviceId} had geofence event @ {reading.Timestamp}. ZoneId = {data.zoneId}, type = {data.type}, action taken = {data.action}");        
                 }
                 */
 
