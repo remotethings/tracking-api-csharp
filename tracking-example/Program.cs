@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
-using IO.Swagger.Client;
 using IO.Swagger.Model;
 using System.Web.Script.Serialization;
 using System.Dynamic;
 using Newtonsoft.Json.Linq;
+using Amazon;
 
 namespace tracking_example
 {
@@ -129,30 +126,26 @@ namespace tracking_example
         // Based on information available https://docs.aws.amazon.com/sns/latest/dg/SendMessageToSQS.cross.account.html
         // Once you have run this script, you will need to wait for "SubscriptionConfirmation" message and
         // visit the SubscribeURL to confirm subscription, as detailed int the above link under *To confirm a subscription using the Amazon SQS console*
-        NotificationTrigger setupSqsPush(Decimal deviceId)
+        NotificationTrigger setupSqsPush(Decimal deviceId, string eventType, string hookName, string sqsArn)
         {
-
-            var triggers = this.deviceApi.DevicePrototypeGetNotificationTriggers(deviceId);
-            for(var i=0; i< triggers.Count; i++)
-            {
-                if (triggers[i].Name == "PushSQS")
-                {
-                    Debug.Print("Push already setup for device {0}", deviceId);
-                    return triggers[i];
-                }
-            }
+            var filter = new {
+                where = new {
+                    name = hookName,
+                    type = eventType                    
+                },
+            };
+            var jsonFilter = new JavaScriptSerializer().Serialize(filter);
+            var triggers = this.deviceApi.DevicePrototypeGetNotificationTriggers(deviceId, jsonFilter);
+            if (triggers.Count > 0) return triggers[0]; // already exists
 
             //Not found, create
-            dynamic parameters = new ExpandoObject();
-            parameters.sqsArn = "arn:aws:sqs:us-east-2:829297355604:test_lb"; // TODO change to your ARN
-
             var notif = new NotificationTrigger(
-                name: "PushSQS",
-                type: "newLoc",
+                name: hookName,
+                type: eventType,
                 muteFor: 0, // disable rate limit
-                delivery: new Dictionary<string, bool>() { { "sqs", true } },
+                delivery: new { sqs = true , sqsArn= sqsArn},
                 userId: Decimal.Parse(this.userId),
-                parameters: parameters
+                parameters: new { }
             );
 
             Debug.Print("Setting up push for device {0}", deviceId);
@@ -278,11 +271,32 @@ namespace tracking_example
 
         }
 
-        async Task listenForNewData()
+        async Task listenForNewDataMqtt()
         {
             //Subscribe to receive new data
             var messaging = new Messaging(userApi, userId);
             await messaging.start();
+        }
+        
+        async Task listenForNewDataSqs()
+        {
+            // Configuration
+            // Remember your queue needs to have the specified policy document (see README)
+            // and you will need to confirm subscription (read the Debug output for instructions / see SqsClient.cs Line 152)
+            var REGION = RegionEndpoint.EUWest1;
+            const string ACCESS_KEY = "IAM_ACCESSKEY"; // needs SQS access
+            const string SECRET = "IAM_SECRET";
+            const string QUEUE_ARN = "arn:aws:sqs:eu-west-1:123456789:test-push";
+            const string QUEUE_URL = "https://sqs.eu-west-1.amazonaws.com/123456789/test-push";
+
+            this.devices.ForEach(d => {
+                this.setupSqsPush((decimal)d.Id, "newLoc", "AllNewPoints-SQS", QUEUE_ARN);
+                this.setupSqsPush((decimal)d.Id, "newReading", "AllNewReadings-SQS", QUEUE_ARN);
+            });
+            
+            //Subscribe to receive new data
+            var sqsClient = new Sqs.SqsClient(REGION, ACCESS_KEY, SECRET);
+            await sqsClient.Listen(QUEUE_URL);
         }
 
         static void Main(string[] args)
@@ -300,11 +314,6 @@ namespace tracking_example
             example.getDevices();
 
 
-            //setup SQS push:
-            //example.devices.ForEach(d => {
-            //    if (d.Id != null) example.setupSqsPush((decimal)d.Id);
-            //});
-
             // send Device into flightMode for 1 day
             //example.enterFlightMode(deviceId, 60 * 24);
 
@@ -316,10 +325,12 @@ namespace tracking_example
 
             // For bluetooth enabled devices, we can also perform a date search
             // this is much faster than querying one point at a time using CorrelationId as in the above example (printLastLocations)
-            example.printNearbyData();
+            //example.printNearbyData();
 
-            //  example.listenForNewData().Wait();
 
+            // Listen for new points
+            //  example.listenForNewDataMqtt().Wait();
+            example.listenForNewDataSqs().Wait();
 
         }
     }
