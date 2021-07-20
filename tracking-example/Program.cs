@@ -100,58 +100,6 @@ namespace tracking_example
             this.deviceApi.DevicePrototypeCreateMessages(deviceId, new DeviceMessage(message: "#hi0202"));
         }
 
-
-        // Setup forwarding of datapoints to SQS for all devices on account
-        // You will need to have setup an SQS queue on your account with the following Policy Document:
-        // NOTE: replace  "arn:aws:sqs:us-east-2:829297355604:test_lb" with your queue ARN
-        // {
-        //     "Version": "2012-10-17",
-        //     "Id": "AllowLightbugPush",
-        //     "Statement": [
-        //      {
-        //         "Sid": "AllowLightbugPush001",
-        //         "Effect": "Allow",
-        //         "Principal": "*",
-        //         "Action": "sqs:SendMessage",
-        //         "Resource": "arn:aws:sqs:us-east-2:829297355604:test_lb",
-        //         "Condition": {
-        //             "ArnEquals": {
-        //                 "aws:SourceArn": "arn:aws:sns:*:367158939173:*"
-        //             }
-        //         }
-        //      }
-        //     ]
-        // }
-        //
-        // Based on information available https://docs.aws.amazon.com/sns/latest/dg/SendMessageToSQS.cross.account.html
-        // Once you have run this script, you will need to wait for "SubscriptionConfirmation" message and
-        // visit the SubscribeURL to confirm subscription, as detailed int the above link under *To confirm a subscription using the Amazon SQS console*
-        NotificationTrigger setupSqsPush(Decimal deviceId, string eventType, string hookName, string sqsArn)
-        {
-            var filter = new {
-                where = new {
-                    name = hookName,
-                    type = eventType                    
-                },
-            };
-            var jsonFilter = new JavaScriptSerializer().Serialize(filter);
-            var triggers = this.deviceApi.DevicePrototypeGetNotificationTriggers(deviceId, jsonFilter);
-            if (triggers.Count > 0) return triggers[0]; // already exists
-
-            //Not found, create
-            var notif = new NotificationTrigger(
-                name: hookName,
-                type: eventType,
-                muteFor: 0, // disable rate limit
-                delivery: new { sqs = true , sqsArn= sqsArn},
-                userId: Decimal.Parse(this.userId),
-                parameters: new { }
-            );
-
-            Debug.Print("Setting up push for device {0}", deviceId);
-            return this.deviceApi.DevicePrototypeCreateNotificationTriggers(deviceId, notif);
-        }
-
         void getDevices()
         {
             this.devices = this.userApi.UserPrototypeGetDevices(this.userId);
@@ -289,6 +237,31 @@ namespace tracking_example
             const string QUEUE_ARN = "arn:aws:sqs:eu-west-1:123456789:test-push";
             const string QUEUE_URL = "https://sqs.eu-west-1.amazonaws.com/123456789/test-push";
 
+            // Setup forwarding of datapoints to SQS for all devices on account
+            // You will need to have setup an SQS queue on your account with the following Policy Document:
+            // NOTE: replace  "arn:aws:sqs:us-east-2:829297355604:test_lb" with your queue ARN
+            // {
+            //     "Version": "2012-10-17",
+            //     "Id": "AllowLightbugPush",
+            //     "Statement": [
+            //      {
+            //         "Sid": "AllowLightbugPush001",
+            //         "Effect": "Allow",
+            //         "Principal": "*",
+            //         "Action": "sqs:SendMessage",
+            //         "Resource": "arn:aws:sqs:us-east-2:829297355604:test_lb",
+            //         "Condition": {
+            //             "ArnEquals": {
+            //                 "aws:SourceArn": "arn:aws:sns:*:367158939173:*"
+            //             }
+            //         }
+            //      }
+            //     ]
+            // }
+            //
+            // Based on information available https://docs.aws.amazon.com/sns/latest/dg/SendMessageToSQS.cross.account.html
+            // Once you have run this script, you will need to wait for "SubscriptionConfirmation" message and
+            // visit the SubscribeURL to confirm subscription, as detailed int the above link under *To confirm a subscription using the Amazon SQS console*
             this.devices.ForEach(d => {
                 this.deviceApi.DevicePrototypeSetupSqsForwarding(d.Id, QUEUE_ARN);
             });
