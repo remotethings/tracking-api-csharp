@@ -665,6 +665,31 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of Geofence</returns>
         ApiResponse<Geofence> DevicePrototypeSetSafeZoneWithHttpInfo (decimal? id, List<GeoPoint> data);
         /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="sqsArn"></param>
+        /// <param name="types"> (optional)</param>
+        /// <returns>Object</returns>
+        Object DevicePrototypeSetupSqsForwarding (decimal? id, string sqsArn, string types = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="sqsArn"></param>
+        /// <param name="types"> (optional)</param>
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> DevicePrototypeSetupSqsForwardingWithHttpInfo (decimal? id, string sqsArn, string types = null);
+        /// <summary>
         /// Update a related item by id for gatewayReadings.
         /// </summary>
         /// <remarks>
@@ -1404,6 +1429,31 @@ namespace IO.Swagger.Api
         /// <param name="data">Array of {lat:x,lng:y} points denoting the vertices of the safe-zone</param>
         /// <returns>Task of ApiResponse (Geofence)</returns>
         System.Threading.Tasks.Task<ApiResponse<Geofence>> DevicePrototypeSetSafeZoneAsyncWithHttpInfo (decimal? id, List<GeoPoint> data);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="sqsArn"></param>
+        /// <param name="types"> (optional)</param>
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> DevicePrototypeSetupSqsForwardingAsync (decimal? id, string sqsArn, string types = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="sqsArn"></param>
+        /// <param name="types"> (optional)</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeSetupSqsForwardingAsyncWithHttpInfo (decimal? id, string sqsArn, string types = null);
         /// <summary>
         /// Update a related item by id for gatewayReadings.
         /// </summary>
@@ -6048,6 +6098,173 @@ namespace IO.Swagger.Api
             return new ApiResponse<Geofence>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Geofence) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Geofence)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="sqsArn"></param>
+        /// <param name="types"> (optional)</param>
+        /// <returns>Object</returns>
+        public Object DevicePrototypeSetupSqsForwarding (decimal? id, string sqsArn, string types = null)
+        {
+             ApiResponse<Object> localVarResponse = DevicePrototypeSetupSqsForwardingWithHttpInfo(id, sqsArn, types);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="sqsArn"></param>
+        /// <param name="types"> (optional)</param>
+        /// <returns>ApiResponse of Object</returns>
+        public ApiResponse< Object > DevicePrototypeSetupSqsForwardingWithHttpInfo (decimal? id, string sqsArn, string types = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeSetupSqsForwarding");
+            // verify the required parameter 'sqsArn' is set
+            if (sqsArn == null)
+                throw new ApiException(400, "Missing required parameter 'sqsArn' when calling DeviceApi->DevicePrototypeSetupSqsForwarding");
+
+            var localVarPath = "/devices/{id}/setupSqsForwarding";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (sqsArn != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sqsArn", sqsArn)); // query parameter
+            if (types != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "types", types)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeSetupSqsForwarding", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="sqsArn"></param>
+        /// <param name="types"> (optional)</param>
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> DevicePrototypeSetupSqsForwardingAsync (decimal? id, string sqsArn, string types = null)
+        {
+             ApiResponse<Object> localVarResponse = await DevicePrototypeSetupSqsForwardingAsyncWithHttpInfo(id, sqsArn, types);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="sqsArn"></param>
+        /// <param name="types"> (optional)</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeSetupSqsForwardingAsyncWithHttpInfo (decimal? id, string sqsArn, string types = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeSetupSqsForwarding");
+            // verify the required parameter 'sqsArn' is set
+            if (sqsArn == null)
+                throw new ApiException(400, "Missing required parameter 'sqsArn' when calling DeviceApi->DevicePrototypeSetupSqsForwarding");
+
+            var localVarPath = "/devices/{id}/setupSqsForwarding";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (sqsArn != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sqsArn", sqsArn)); // query parameter
+            if (types != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "types", types)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeSetupSqsForwarding", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
         /// <summary>

@@ -290,8 +290,7 @@ namespace tracking_example
             const string QUEUE_URL = "https://sqs.eu-west-1.amazonaws.com/123456789/test-push";
 
             this.devices.ForEach(d => {
-                this.setupSqsPush((decimal)d.Id, "newLoc", "AllNewPoints-SQS", QUEUE_ARN);
-                this.setupSqsPush((decimal)d.Id, "newReading", "AllNewReadings-SQS", QUEUE_ARN);
+                this.deviceApi.DevicePrototypeSetupSqsForwarding(d.Id, QUEUE_ARN);
             });
             
             //Subscribe to receive new data

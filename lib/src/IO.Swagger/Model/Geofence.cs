@@ -41,11 +41,13 @@ namespace IO.Swagger.Model
         /// <param name="wasInside">If the last point received was inside the geofence. Only updated for notifications (not the safe-zone as that is evaluated on the device) (default to false).</param>
         /// <param name="lastChecked">When the geofence was last evaluated. Only updated for notifications (not the safe-zone as that is evaluated on the device).</param>
         /// <param name="modified">modified (default to false).</param>
+        /// <param name="meta">meta.</param>
+        /// <param name="foreignId">foreignId.</param>
         /// <param name="id">id.</param>
         /// <param name="deviceId">deviceId.</param>
         /// <param name="configId">configId.</param>
         /// <param name="userId">userId.</param>
-        public Geofence(List<Object> outline = default(List<Object>), GeoPoint center = default(GeoPoint), decimal? radius = default(decimal?), string type = default(string), string name = default(string), bool? wasInside = false, DateTime? lastChecked = default(DateTime?), bool? modified = false, decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? configId = default(decimal?), decimal? userId = default(decimal?))
+        public Geofence(List<Object> outline = default(List<Object>), GeoPoint center = default(GeoPoint), decimal? radius = default(decimal?), string type = default(string), string name = default(string), bool? wasInside = false, DateTime? lastChecked = default(DateTime?), bool? modified = false, Object meta = default(Object), string foreignId = default(string), decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? configId = default(decimal?), decimal? userId = default(decimal?))
         {
             this.Outline = outline;
             this.Center = center;
@@ -71,6 +73,8 @@ namespace IO.Swagger.Model
             {
                 this.Modified = modified;
             }
+            this.Meta = meta;
+            this.ForeignId = foreignId;
             this.Id = id;
             this.DeviceId = deviceId;
             this.ConfigId = configId;
@@ -132,6 +136,18 @@ namespace IO.Swagger.Model
         public bool? Modified { get; set; }
 
         /// <summary>
+        /// Gets or Sets Meta
+        /// </summary>
+        [DataMember(Name="meta", EmitDefaultValue=false)]
+        public Object Meta { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ForeignId
+        /// </summary>
+        [DataMember(Name="foreignId", EmitDefaultValue=false)]
+        public string ForeignId { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name="id", EmitDefaultValue=false)]
@@ -171,6 +187,8 @@ namespace IO.Swagger.Model
             sb.Append("  WasInside: ").Append(WasInside).Append("\n");
             sb.Append("  LastChecked: ").Append(LastChecked).Append("\n");
             sb.Append("  Modified: ").Append(Modified).Append("\n");
+            sb.Append("  Meta: ").Append(Meta).Append("\n");
+            sb.Append("  ForeignId: ").Append(ForeignId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DeviceId: ").Append(DeviceId).Append("\n");
             sb.Append("  ConfigId: ").Append(ConfigId).Append("\n");
@@ -250,6 +268,16 @@ namespace IO.Swagger.Model
                     this.Modified.Equals(input.Modified))
                 ) && 
                 (
+                    this.Meta == input.Meta ||
+                    (this.Meta != null &&
+                    this.Meta.Equals(input.Meta))
+                ) && 
+                (
+                    this.ForeignId == input.ForeignId ||
+                    (this.ForeignId != null &&
+                    this.ForeignId.Equals(input.ForeignId))
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -296,6 +324,10 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.LastChecked.GetHashCode();
                 if (this.Modified != null)
                     hashCode = hashCode * 59 + this.Modified.GetHashCode();
+                if (this.Meta != null)
+                    hashCode = hashCode * 59 + this.Meta.GetHashCode();
+                if (this.ForeignId != null)
+                    hashCode = hashCode * 59 + this.ForeignId.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.DeviceId != null)

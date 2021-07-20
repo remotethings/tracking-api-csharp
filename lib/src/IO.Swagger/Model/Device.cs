@@ -53,6 +53,7 @@ namespace IO.Swagger.Model
         /// <param name="mode">mode (default to &quot;default&quot;).</param>
         /// <param name="name">name.</param>
         /// <param name="batteryVoltage">batteryVoltage.</param>
+        /// <param name="batteryPct">batteryPct.</param>
         /// <param name="batteryType">batteryType (default to &quot;LIO&quot;).</param>
         /// <param name="tags">tags.</param>
         /// <param name="currentMode">Indicates last known device state. 0 &#x3D; awake, 1 &#x3D; sleep, 6 &#x3D; flight mode.</param>
@@ -66,10 +67,12 @@ namespace IO.Swagger.Model
         /// <param name="meta">meta.</param>
         /// <param name="resellerId">resellerId.</param>
         /// <param name="resellerPlanId">resellerPlanId.</param>
+        /// <param name="btPasskey">btPasskey.</param>
+        /// <param name="simType">simType (default to &quot;JT&quot;).</param>
         /// <param name="id">id.</param>
         /// <param name="ownerId">ownerId.</param>
         /// <param name="securePhoneId">securePhoneId.</param>
-        public Device(string imei = default(string), string iccid = default(string), decimal? loraId = default(decimal?), string imsi = default(string), decimal? btMac = default(decimal?), string btMacAddress = default(string), decimal? uwbId = default(decimal?), string serial = default(string), string type = default(string), DateTime? expires = default(DateTime?), DateTime? lastConnection = default(DateTime?), DateTime? firstSeen = default(DateTime?), string mode = "default", string name = default(string), decimal? batteryVoltage = default(decimal?), string batteryType = "LIO", List<string> tags = default(List<string>), decimal? currentMode = default(decimal?), string color = "fc7c3d", bool? saveToWeb = false, bool? active = false, bool? deepSleep = false, string simstate = "active", string stripeSubscription = default(string), string subscriptionType = default(string), Object meta = default(Object), decimal? resellerId = default(decimal?), decimal? resellerPlanId = default(decimal?), decimal? id = default(decimal?), decimal? ownerId = default(decimal?), decimal? securePhoneId = default(decimal?))
+        public Device(string imei = default(string), string iccid = default(string), decimal? loraId = default(decimal?), string imsi = default(string), decimal? btMac = default(decimal?), string btMacAddress = default(string), decimal? uwbId = default(decimal?), string serial = default(string), string type = default(string), DateTime? expires = default(DateTime?), DateTime? lastConnection = default(DateTime?), DateTime? firstSeen = default(DateTime?), string mode = "default", string name = default(string), decimal? batteryVoltage = default(decimal?), decimal? batteryPct = default(decimal?), string batteryType = "LIO", List<string> tags = default(List<string>), decimal? currentMode = default(decimal?), string color = "fc7c3d", bool? saveToWeb = false, bool? active = false, bool? deepSleep = false, string simstate = "active", string stripeSubscription = default(string), string subscriptionType = default(string), Object meta = default(Object), decimal? resellerId = default(decimal?), decimal? resellerPlanId = default(decimal?), decimal? btPasskey = default(decimal?), string simType = "JT", decimal? id = default(decimal?), decimal? ownerId = default(decimal?), decimal? securePhoneId = default(decimal?))
         {
             // to ensure "firstSeen" is required (not null)
             if (firstSeen == null)
@@ -102,6 +105,7 @@ namespace IO.Swagger.Model
             }
             this.Name = name;
             this.BatteryVoltage = batteryVoltage;
+            this.BatteryPct = batteryPct;
             // use default value if no "batteryType" provided
             if (batteryType == null)
             {
@@ -163,6 +167,16 @@ namespace IO.Swagger.Model
             this.Meta = meta;
             this.ResellerId = resellerId;
             this.ResellerPlanId = resellerPlanId;
+            this.BtPasskey = btPasskey;
+            // use default value if no "simType" provided
+            if (simType == null)
+            {
+                this.SimType = "JT";
+            }
+            else
+            {
+                this.SimType = simType;
+            }
             this.Id = id;
             this.OwnerId = ownerId;
             this.SecurePhoneId = securePhoneId;
@@ -262,6 +276,12 @@ namespace IO.Swagger.Model
         public decimal? BatteryVoltage { get; set; }
 
         /// <summary>
+        /// Gets or Sets BatteryPct
+        /// </summary>
+        [DataMember(Name="batteryPct", EmitDefaultValue=false)]
+        public decimal? BatteryPct { get; set; }
+
+        /// <summary>
         /// Gets or Sets BatteryType
         /// </summary>
         [DataMember(Name="batteryType", EmitDefaultValue=false)]
@@ -341,6 +361,18 @@ namespace IO.Swagger.Model
         public decimal? ResellerPlanId { get; set; }
 
         /// <summary>
+        /// Gets or Sets BtPasskey
+        /// </summary>
+        [DataMember(Name="btPasskey", EmitDefaultValue=false)]
+        public decimal? BtPasskey { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SimType
+        /// </summary>
+        [DataMember(Name="simType", EmitDefaultValue=false)]
+        public string SimType { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name="id", EmitDefaultValue=false)]
@@ -381,6 +413,7 @@ namespace IO.Swagger.Model
             sb.Append("  Mode: ").Append(Mode).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  BatteryVoltage: ").Append(BatteryVoltage).Append("\n");
+            sb.Append("  BatteryPct: ").Append(BatteryPct).Append("\n");
             sb.Append("  BatteryType: ").Append(BatteryType).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  CurrentMode: ").Append(CurrentMode).Append("\n");
@@ -394,6 +427,8 @@ namespace IO.Swagger.Model
             sb.Append("  Meta: ").Append(Meta).Append("\n");
             sb.Append("  ResellerId: ").Append(ResellerId).Append("\n");
             sb.Append("  ResellerPlanId: ").Append(ResellerPlanId).Append("\n");
+            sb.Append("  BtPasskey: ").Append(BtPasskey).Append("\n");
+            sb.Append("  SimType: ").Append(SimType).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("  SecurePhoneId: ").Append(SecurePhoneId).Append("\n");
@@ -507,6 +542,11 @@ namespace IO.Swagger.Model
                     this.BatteryVoltage.Equals(input.BatteryVoltage))
                 ) && 
                 (
+                    this.BatteryPct == input.BatteryPct ||
+                    (this.BatteryPct != null &&
+                    this.BatteryPct.Equals(input.BatteryPct))
+                ) && 
+                (
                     this.BatteryType == input.BatteryType ||
                     (this.BatteryType != null &&
                     this.BatteryType.Equals(input.BatteryType))
@@ -572,6 +612,16 @@ namespace IO.Swagger.Model
                     this.ResellerPlanId.Equals(input.ResellerPlanId))
                 ) && 
                 (
+                    this.BtPasskey == input.BtPasskey ||
+                    (this.BtPasskey != null &&
+                    this.BtPasskey.Equals(input.BtPasskey))
+                ) && 
+                (
+                    this.SimType == input.SimType ||
+                    (this.SimType != null &&
+                    this.SimType.Equals(input.SimType))
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -627,6 +677,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.BatteryVoltage != null)
                     hashCode = hashCode * 59 + this.BatteryVoltage.GetHashCode();
+                if (this.BatteryPct != null)
+                    hashCode = hashCode * 59 + this.BatteryPct.GetHashCode();
                 if (this.BatteryType != null)
                     hashCode = hashCode * 59 + this.BatteryType.GetHashCode();
                 if (this.Tags != null)
@@ -653,6 +705,10 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.ResellerId.GetHashCode();
                 if (this.ResellerPlanId != null)
                     hashCode = hashCode * 59 + this.ResellerPlanId.GetHashCode();
+                if (this.BtPasskey != null)
+                    hashCode = hashCode * 59 + this.BtPasskey.GetHashCode();
+                if (this.SimType != null)
+                    hashCode = hashCode * 59 + this.SimType.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.OwnerId != null)
