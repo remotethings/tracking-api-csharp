@@ -642,6 +642,31 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<List<Object>> DevicePrototypeNearbyDevicesWithHttpInfo (decimal? id, string dateRange = null, string correlationId = null);
         /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="key"></param>
+        /// <param name="value"> (optional)</param>
+        /// <returns>Object</returns>
+        Object DevicePrototypeSetMetaItem (decimal? id, string key, string value = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="key"></param>
+        /// <param name="value"> (optional)</param>
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> DevicePrototypeSetMetaItemWithHttpInfo (decimal? id, string key, string value = null);
+        /// <summary>
         /// Update safe-zone for device
         /// </summary>
         /// <remarks>
@@ -1391,7 +1416,7 @@ namespace IO.Swagger.Api
         /// <param name="id">device id</param>
         /// <param name="dateRange"> (optional)</param>
         /// <param name="correlationId"> (optional)</param>
-        /// <returns>Task of Object</returns>
+        /// <returns>Task of List&lt;Object&gt;</returns>
         System.Threading.Tasks.Task<List<Object>> DevicePrototypeNearbyDevicesAsync (decimal? id, string dateRange = null, string correlationId = null);
 
         /// <summary>
@@ -1404,8 +1429,33 @@ namespace IO.Swagger.Api
         /// <param name="id">device id</param>
         /// <param name="dateRange"> (optional)</param>
         /// <param name="correlationId"> (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
+        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Object>>> DevicePrototypeNearbyDevicesAsyncWithHttpInfo (decimal? id, string dateRange = null, string correlationId = null);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="key"></param>
+        /// <param name="value"> (optional)</param>
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> DevicePrototypeSetMetaItemAsync (decimal? id, string key, string value = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="key"></param>
+        /// <param name="value"> (optional)</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeSetMetaItemAsyncWithHttpInfo (decimal? id, string key, string value = null);
         /// <summary>
         /// Update safe-zone for device
         /// </summary>
@@ -5923,6 +5973,173 @@ namespace IO.Swagger.Api
             return new ApiResponse<List<Object>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<Object>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Object>)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="key"></param>
+        /// <param name="value"> (optional)</param>
+        /// <returns>Object</returns>
+        public Object DevicePrototypeSetMetaItem (decimal? id, string key, string value = null)
+        {
+             ApiResponse<Object> localVarResponse = DevicePrototypeSetMetaItemWithHttpInfo(id, key, value);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="key"></param>
+        /// <param name="value"> (optional)</param>
+        /// <returns>ApiResponse of Object</returns>
+        public ApiResponse< Object > DevicePrototypeSetMetaItemWithHttpInfo (decimal? id, string key, string value = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeSetMetaItem");
+            // verify the required parameter 'key' is set
+            if (key == null)
+                throw new ApiException(400, "Missing required parameter 'key' when calling DeviceApi->DevicePrototypeSetMetaItem");
+
+            var localVarPath = "/devices/{id}/setMetaItem";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (key != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "key", key)); // query parameter
+            if (value != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "value", value)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeSetMetaItem", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="key"></param>
+        /// <param name="value"> (optional)</param>
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> DevicePrototypeSetMetaItemAsync (decimal? id, string key, string value = null)
+        {
+             ApiResponse<Object> localVarResponse = await DevicePrototypeSetMetaItemAsyncWithHttpInfo(id, key, value);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">device id</param>
+        /// <param name="key"></param>
+        /// <param name="value"> (optional)</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DevicePrototypeSetMetaItemAsyncWithHttpInfo (decimal? id, string key, string value = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DeviceApi->DevicePrototypeSetMetaItem");
+            // verify the required parameter 'key' is set
+            if (key == null)
+                throw new ApiException(400, "Missing required parameter 'key' when calling DeviceApi->DevicePrototypeSetMetaItem");
+
+            var localVarPath = "/devices/{id}/setMetaItem";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/x-www-form-urlencoded", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml",
+                "text/xml",
+                "application/javascript",
+                "text/javascript"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (key != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "key", key)); // query parameter
+            if (value != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "value", value)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DevicePrototypeSetMetaItem", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
         /// <summary>

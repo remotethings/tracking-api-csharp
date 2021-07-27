@@ -124,7 +124,9 @@ Class | Method | HTTP request | Description
 *DeviceApi* | [**DevicePrototypeGetTransients**](docs/DeviceApi.md#deviceprototypegettransients) | **GET** /devices/{id}/transients | Queries transients of device.
 *DeviceApi* | [**DevicePrototypeNearbyDeviceData**](docs/DeviceApi.md#deviceprototypenearbydevicedata) | **GET** /devices/{id}/nearbyDeviceData | 
 *DeviceApi* | [**DevicePrototypeNearbyDevices**](docs/DeviceApi.md#deviceprototypenearbydevices) | **GET** /devices/{id}/nearbyDevices | 
+*DeviceApi* | [**DevicePrototypeSetMetaItem**](docs/DeviceApi.md#deviceprototypesetmetaitem) | **GET** /devices/{id}/setMetaItem | 
 *DeviceApi* | [**DevicePrototypeSetSafeZone**](docs/DeviceApi.md#deviceprototypesetsafezone) | **POST** /devices/{id}/setSafeZone | Update safe-zone for device
+*DeviceApi* | [**DevicePrototypeSetupSqsForwarding**](docs/DeviceApi.md#deviceprototypesetupsqsforwarding) | **GET** /devices/{id}/setupSqsForwarding | 
 *DeviceApi* | [**DevicePrototypeUpdateByIdGatewayReadings**](docs/DeviceApi.md#deviceprototypeupdatebyidgatewayreadings) | **PUT** /devices/{id}/gatewayReadings/{fk} | Update a related item by id for gatewayReadings.
 *DeviceApi* | [**DevicePrototypeUpdateByIdNotificationTriggers**](docs/DeviceApi.md#deviceprototypeupdatebyidnotificationtriggers) | **PUT** /devices/{id}/notificationTriggers/{fk} | Update an alert/notification trigger by id {fk} for device
 *DeviceApi* | [**DevicePrototypeUpdateByIdTransients**](docs/DeviceApi.md#deviceprototypeupdatebyidtransients) | **PUT** /devices/{id}/transients/{fk} | Update a related item by id for transients.

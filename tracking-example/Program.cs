@@ -264,6 +264,7 @@ namespace tracking_example
             // visit the SubscribeURL to confirm subscription, as detailed int the above link under *To confirm a subscription using the Amazon SQS console*
             this.devices.ForEach(d => {
                 this.deviceApi.DevicePrototypeSetupSqsForwarding(d.Id, QUEUE_ARN);
+                //this.deviceApi.DevicePrototypeSetMetaItem(d.Id, "myLink", "https://...........");
             });
             
             //Subscribe to receive new data

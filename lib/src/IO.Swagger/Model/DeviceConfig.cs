@@ -63,14 +63,14 @@ namespace IO.Swagger.Model
         /// <param name="reset">Non NULL values cause unit to restart on next connection   0 &#x3D; Normal reboot   1 &#x3D; Clear settings cache and restart   2 &#x3D; Clear cache and bluetooth connection data, then restart.</param>
         /// <param name="flashTryCount">Internal use. Set to 0 when changing otaFW.</param>
         /// <param name="homeWifiNetwork">WiFi network name to use as a Safe-zone. When this network is visible, stay asleep.</param>
-        /// <param name="homeWifiPassword">WiFi network paswword. If set enables transmission over WiFi..</param>
         /// <param name="wakeAction">Internal Use Only. What to do when the unit wakes up (ie is moved and not in a safe-zone). Options are &#39;available&#39; (lost and found), and &#39;normal&#39; (tracking) (required) (default to &quot;normal&quot;).</param>
-        /// <param name="onDemandTime">Deprecated (required).</param>
         /// <param name="alertAction">What to do when the button is pressed or the unit is dropped. Options are &#39;available&#39; (stay registered on the mobile network), &#39;nothing&#39; (one transmission) and  &#39;lockOn&#39; (keep transmitting at &#39;interval&#39; until instructed otherwise (required) (default to &quot;nothing&quot;).</param>
+        /// <param name="timed">Timed update settings. Must be array of objects matching [{hh: number, mm: number, day: number, action: number}, ...] format.</param>
+        /// <param name="command">Internal use. Sends command to device on next connection.</param>
         /// <param name="id">id.</param>
         /// <param name="deviceId">deviceId.</param>
         /// <param name="safeZoneId">safeZoneId.</param>
-        public DeviceConfig(string currentFW = default(string), string otaFW = default(string), decimal? interval = default(decimal?), decimal? sleepInterval = default(decimal?), decimal? checkInInterval = default(decimal?), decimal? packing = default(decimal?), decimal? movementSensitivity = default(decimal?), decimal? debounce = default(decimal?), decimal? movementSensitivity2 = default(decimal?), decimal? behavior = default(decimal?), decimal? modeControl = default(decimal?), decimal? modeControl2 = default(decimal?), decimal? gpsTimeout = default(decimal?), decimal? transmitTimeout = default(decimal?), decimal? gpsStabilize = default(decimal?), decimal? gpsCheckInterval = default(decimal?), decimal? stopTimeout = default(decimal?), decimal? tolerancePercentage = default(decimal?), List<Object> reasonsToWake = default(List<Object>), DateTime? modified = default(DateTime?), bool? forceFw = false, DateTime? receivedAt = default(DateTime?), decimal? reset = default(decimal?), decimal? flashTryCount = default(decimal?), string homeWifiNetwork = default(string), string homeWifiPassword = default(string), string wakeAction = "normal", decimal? onDemandTime = default(decimal?), string alertAction = "nothing", decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? safeZoneId = default(decimal?))
+        public DeviceConfig(string currentFW = default(string), string otaFW = default(string), decimal? interval = default(decimal?), decimal? sleepInterval = default(decimal?), decimal? checkInInterval = default(decimal?), decimal? packing = default(decimal?), decimal? movementSensitivity = default(decimal?), decimal? debounce = default(decimal?), decimal? movementSensitivity2 = default(decimal?), decimal? behavior = default(decimal?), decimal? modeControl = default(decimal?), decimal? modeControl2 = default(decimal?), decimal? gpsTimeout = default(decimal?), decimal? transmitTimeout = default(decimal?), decimal? gpsStabilize = default(decimal?), decimal? gpsCheckInterval = default(decimal?), decimal? stopTimeout = default(decimal?), decimal? tolerancePercentage = default(decimal?), List<Object> reasonsToWake = default(List<Object>), DateTime? modified = default(DateTime?), bool? forceFw = false, DateTime? receivedAt = default(DateTime?), decimal? reset = default(decimal?), decimal? flashTryCount = default(decimal?), string homeWifiNetwork = default(string), string wakeAction = "normal", string alertAction = "nothing", List<Object> timed = default(List<Object>), decimal? command = default(decimal?), decimal? id = default(decimal?), decimal? deviceId = default(decimal?), decimal? safeZoneId = default(decimal?))
         {
             // to ensure "interval" is required (not null)
             if (interval == null)
@@ -107,15 +107,6 @@ namespace IO.Swagger.Model
             else
             {
                 this.WakeAction = wakeAction;
-            }
-            // to ensure "onDemandTime" is required (not null)
-            if (onDemandTime == null)
-            {
-                throw new InvalidDataException("onDemandTime is a required property for DeviceConfig and cannot be null");
-            }
-            else
-            {
-                this.OnDemandTime = onDemandTime;
             }
             // to ensure "alertAction" is required (not null)
             if (alertAction == null)
@@ -156,7 +147,8 @@ namespace IO.Swagger.Model
             this.Reset = reset;
             this.FlashTryCount = flashTryCount;
             this.HomeWifiNetwork = homeWifiNetwork;
-            this.HomeWifiPassword = homeWifiPassword;
+            this.Timed = timed;
+            this.Command = command;
             this.Id = id;
             this.DeviceId = deviceId;
             this.SafeZoneId = safeZoneId;
@@ -337,13 +329,6 @@ namespace IO.Swagger.Model
         public string HomeWifiNetwork { get; set; }
 
         /// <summary>
-        /// WiFi network paswword. If set enables transmission over WiFi.
-        /// </summary>
-        /// <value>WiFi network paswword. If set enables transmission over WiFi.</value>
-        [DataMember(Name="homeWifiPassword", EmitDefaultValue=false)]
-        public string HomeWifiPassword { get; set; }
-
-        /// <summary>
         /// Internal Use Only. What to do when the unit wakes up (ie is moved and not in a safe-zone). Options are &#39;available&#39; (lost and found), and &#39;normal&#39; (tracking)
         /// </summary>
         /// <value>Internal Use Only. What to do when the unit wakes up (ie is moved and not in a safe-zone). Options are &#39;available&#39; (lost and found), and &#39;normal&#39; (tracking)</value>
@@ -351,18 +336,25 @@ namespace IO.Swagger.Model
         public string WakeAction { get; set; }
 
         /// <summary>
-        /// Deprecated
-        /// </summary>
-        /// <value>Deprecated</value>
-        [DataMember(Name="onDemandTime", EmitDefaultValue=false)]
-        public decimal? OnDemandTime { get; set; }
-
-        /// <summary>
         /// What to do when the button is pressed or the unit is dropped. Options are &#39;available&#39; (stay registered on the mobile network), &#39;nothing&#39; (one transmission) and  &#39;lockOn&#39; (keep transmitting at &#39;interval&#39; until instructed otherwise
         /// </summary>
         /// <value>What to do when the button is pressed or the unit is dropped. Options are &#39;available&#39; (stay registered on the mobile network), &#39;nothing&#39; (one transmission) and  &#39;lockOn&#39; (keep transmitting at &#39;interval&#39; until instructed otherwise</value>
         [DataMember(Name="alertAction", EmitDefaultValue=false)]
         public string AlertAction { get; set; }
+
+        /// <summary>
+        /// Timed update settings. Must be array of objects matching [{hh: number, mm: number, day: number, action: number}, ...] format
+        /// </summary>
+        /// <value>Timed update settings. Must be array of objects matching [{hh: number, mm: number, day: number, action: number}, ...] format</value>
+        [DataMember(Name="timed", EmitDefaultValue=false)]
+        public List<Object> Timed { get; set; }
+
+        /// <summary>
+        /// Internal use. Sends command to device on next connection
+        /// </summary>
+        /// <value>Internal use. Sends command to device on next connection</value>
+        [DataMember(Name="command", EmitDefaultValue=false)]
+        public decimal? Command { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -415,10 +407,10 @@ namespace IO.Swagger.Model
             sb.Append("  Reset: ").Append(Reset).Append("\n");
             sb.Append("  FlashTryCount: ").Append(FlashTryCount).Append("\n");
             sb.Append("  HomeWifiNetwork: ").Append(HomeWifiNetwork).Append("\n");
-            sb.Append("  HomeWifiPassword: ").Append(HomeWifiPassword).Append("\n");
             sb.Append("  WakeAction: ").Append(WakeAction).Append("\n");
-            sb.Append("  OnDemandTime: ").Append(OnDemandTime).Append("\n");
             sb.Append("  AlertAction: ").Append(AlertAction).Append("\n");
+            sb.Append("  Timed: ").Append(Timed).Append("\n");
+            sb.Append("  Command: ").Append(Command).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DeviceId: ").Append(DeviceId).Append("\n");
             sb.Append("  SafeZoneId: ").Append(SafeZoneId).Append("\n");
@@ -582,24 +574,24 @@ namespace IO.Swagger.Model
                     this.HomeWifiNetwork.Equals(input.HomeWifiNetwork))
                 ) && 
                 (
-                    this.HomeWifiPassword == input.HomeWifiPassword ||
-                    (this.HomeWifiPassword != null &&
-                    this.HomeWifiPassword.Equals(input.HomeWifiPassword))
-                ) && 
-                (
                     this.WakeAction == input.WakeAction ||
                     (this.WakeAction != null &&
                     this.WakeAction.Equals(input.WakeAction))
                 ) && 
                 (
-                    this.OnDemandTime == input.OnDemandTime ||
-                    (this.OnDemandTime != null &&
-                    this.OnDemandTime.Equals(input.OnDemandTime))
-                ) && 
-                (
                     this.AlertAction == input.AlertAction ||
                     (this.AlertAction != null &&
                     this.AlertAction.Equals(input.AlertAction))
+                ) && 
+                (
+                    this.Timed == input.Timed ||
+                    this.Timed != null &&
+                    this.Timed.SequenceEqual(input.Timed)
+                ) && 
+                (
+                    this.Command == input.Command ||
+                    (this.Command != null &&
+                    this.Command.Equals(input.Command))
                 ) && 
                 (
                     this.Id == input.Id ||
@@ -677,14 +669,14 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.FlashTryCount.GetHashCode();
                 if (this.HomeWifiNetwork != null)
                     hashCode = hashCode * 59 + this.HomeWifiNetwork.GetHashCode();
-                if (this.HomeWifiPassword != null)
-                    hashCode = hashCode * 59 + this.HomeWifiPassword.GetHashCode();
                 if (this.WakeAction != null)
                     hashCode = hashCode * 59 + this.WakeAction.GetHashCode();
-                if (this.OnDemandTime != null)
-                    hashCode = hashCode * 59 + this.OnDemandTime.GetHashCode();
                 if (this.AlertAction != null)
                     hashCode = hashCode * 59 + this.AlertAction.GetHashCode();
+                if (this.Timed != null)
+                    hashCode = hashCode * 59 + this.Timed.GetHashCode();
+                if (this.Command != null)
+                    hashCode = hashCode * 59 + this.Command.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.DeviceId != null)
@@ -706,12 +698,6 @@ namespace IO.Swagger.Model
             if(this.HomeWifiNetwork != null && this.HomeWifiNetwork.Length > 127)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for HomeWifiNetwork, length must be less than 127.", new [] { "HomeWifiNetwork" });
-            }
-
-            // HomeWifiPassword (string) maxLength
-            if(this.HomeWifiPassword != null && this.HomeWifiPassword.Length > 127)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for HomeWifiPassword, length must be less than 127.", new [] { "HomeWifiPassword" });
             }
 
             yield break;
